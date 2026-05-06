@@ -458,27 +458,53 @@ section{padding:120px 40px;position:relative}
   margin:8px 14px 0 -2px;color:var(--papaya);
 }
 .about-quote{
-  margin-top:48px;padding:32px;
-  background:var(--ink);color:var(--paper-light);
+  margin-top:48px;
+  padding:44px 40px 32px;
+  background:var(--ink);
+  color:#ffffff;
   position:relative;
+  border-left:4px solid var(--papaya);
 }
-.about-quote::before{
-  content:'"';
-  position:absolute;top:-20px;left:20px;
-  font-family:'Noto Serif TC',serif;
-  font-size:120px;color:var(--papaya);
-  line-height:1;font-weight:700;
+.about-quote .quote-mark{
+  font-family:'Manrope',sans-serif;
+  font-size:64px;
+  font-weight:800;
+  color:var(--papaya);
+  line-height:.5;
+  margin-bottom:20px;
+  letter-spacing:-.06em;
 }
-.about-quote p{
+.about-quote blockquote{
+  margin:0;padding:0;
+}
+.about-quote blockquote p{
   font-family:'Noto Serif TC',serif;
-  font-size:20px;font-weight:500;
-  line-height:1.6;padding-left:20px;
+  font-size:22px;
+  font-weight:500;
+  line-height:1.75;
+  color:#ffffff;
+  margin:0;
+}
+.about-quote blockquote em{
+  font-style:normal;
+  font-weight:700;
+  background:var(--papaya);
+  color:var(--ink);
+  padding:0 10px 2px;
+  display:inline-block;
+  margin:0 2px;
 }
 .about-quote cite{
-  display:block;margin-top:16px;padding-left:20px;
+  display:block;
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid rgba(168,197,220,.25);
   font-style:normal;
   font-family:'JetBrains Mono',monospace;
-  font-size:12px;letter-spacing:.25em;color:var(--papaya);
+  font-size:11px;
+  letter-spacing:.3em;
+  color:var(--papaya);
+  font-weight:500;
 }
 .about-stats{
   display:grid;grid-template-columns:repeat(2,1fr);
@@ -1012,10 +1038,6 @@ footer{background:var(--ink);color:var(--sky);padding:80px 40px 40px}
       <div class="hero-image-frame"></div>
       <img src="images/hero.jpg" alt="蘇智弦形象照">
     </div>
-    <div class="hero-image-circle">
-      <span class="circle"></span>
-      <small>NO. 待抽號</small>
-    </div>
   </div>
 </section>
 
@@ -1092,7 +1114,12 @@ footer{background:var(--ink);color:var(--sky);padding:80px 40px 40px}
         <p>退伍後曾在美國 Grand View Lodge 渡假村擔任房務人員四個月，熟稔基層服務業現場。114 年 4 月起進入立法院，目前擔任<strong style="color:var(--papaya-deep)">立法委員廖先翔法案助理</strong>，是國會最年輕法案助理之一——身為民眾黨員，他選擇用實務經驗而非政黨色彩看待立法工作。</p>
 
         <div class="about-quote">
-          <p>「我希望未來身為民代<br>能有<strong style="color:var(--papaya-bright)">接納、包容、妥協</strong><br>與公平分配資源的能力。」</p>
+          <div class="quote-mark">"</div>
+          <blockquote>
+            <p>希望未來身為民代，<br>
+            能有 <em>接納、包容、妥協</em><br>
+            與公平分配資源的能力。</p>
+          </blockquote>
           <cite>— 蘇智弦　SU CHIH-HSUAN</cite>
         </div>
       </div>
