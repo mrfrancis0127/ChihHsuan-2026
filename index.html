@@ -1,1394 +1,586 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>蘇智弦 — 彰化縣議員參選人 ｜ 選弦與能，福利加乘</title>
-<meta name="description" content="蘇智弦，台灣民眾黨提名彰化縣第三選區（和美、線西、伸港）議員參選人。23 歲青年世代、立法院法案助理、文化大學國際企業管理＋政治學雙學士。跨越色彩，實用至上；世代融合，重塑彰化。">
-<meta property="og:title" content="蘇智弦 ｜ 選弦與能，福利加乘">
-<meta property="og:description" content="2026 彰化縣議員參選人 ・ 第三選區（和美、線西、伸港）・ 台灣民眾黨提名">
+<title>蘇智弦 Chih-Hsien|彰化縣議員候選人 ‧ 和美 ‧ 伸港 ‧ 線西</title>
+<meta name="description" content="蘇智弦,台灣民眾黨彰化縣議員候選人(和美鎮、伸港鄉、線西鄉)。從中央歷練到地方深耕,用國會專業換家鄉改變,打造宜居、宜業、宜遊的新和伸線。">
+<meta property="og:title" content="蘇智弦|和美 ‧ 伸港 ‧ 線西 縣議員候選人">
+<meta property="og:description" content="從中央歷練到地方深耕,用國會專業換家鄉改變。">
+<meta property="og:image" content="images/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0e1f3a;
-  --ink-deep:#06122a;
-  --ink-soft:#2a3e5e;
-  --paper:#f4ede0;
-  --paper-warm:#e9dec9;
-  --paper-deep:#dac9a8;
-  --paper-light:#fbf6ec;
-  --papaya:#ed7d3a;
-  --papaya-bright:#ff8c42;
-  --papaya-deep:#c4561e;
-  --papaya-soft:#fce7d4;
-  --sky:#a8c5dc;
-  --gray:#7a8aa0;
-  --line:rgba(255,255,255,.1);
+  --teal:#149a8c;
+  --teal-dark:#0c6b64;
+  --teal-deep:#0a5a55;
+  --teal-band:#0d635d;
+  --teal-light:#e7f6f4;
+  --teal-lighter:#f3fbfa;
+  --mint:#5ecfc0;
+  --yellow:#ffd335;
+  --ink:#123433;
+  --gray:#5b7472;
+  --white:#ffffff;
+  --radius:16px;
+  --shadow:0 6px 24px rgba(10,90,85,.10);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'Noto Sans TC','Manrope',sans-serif;
-  font-weight:400;
-  line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
+body{font-family:'Noto Sans TC',"PingFang TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--white);line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 22px}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--teal);font-size:.85rem;letter-spacing:.35em;font-weight:700;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:34px;height:3px;background:var(--teal);border-radius:2px}
+.sec-title{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:900;text-align:center;color:var(--teal-deep);letter-spacing:.05em}
+.sec-sub{text-align:center;color:var(--gray);margin-top:10px;font-size:.98rem}
+section{padding:88px 0}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* ---------- NAV ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(10,90,85,.08)}
+.nav{display:flex;align-items:center;gap:26px;height:64px;max-width:1180px;margin:0 auto;padding:0 22px}
+.brand{font-size:1.2rem;font-weight:900;color:var(--teal-deep);letter-spacing:.06em;white-space:nowrap}
+.brand span{color:var(--teal);font-weight:700;font-size:.95rem;margin-left:4px}
+.nav-links{display:flex;gap:22px;margin-left:auto}
+.nav-links a{font-size:.95rem;font-weight:500;color:var(--ink);padding:6px 2px;border-bottom:2px solid transparent;transition:.2s}
+.nav-links a:hover{color:var(--teal);border-color:var(--teal)}
+.nav-socials{display:flex;gap:10px;align-items:center}
+.nav-socials a{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal-deep);transition:.2s}
+.nav-socials a:hover{background:var(--teal-light)}
+.nav-socials svg{width:17px;height:17px;fill:currentColor}
+.btn-support{background:var(--yellow);color:#123433;font-weight:700;padding:9px 20px;border-radius:999px;font-size:.92rem;transition:.2s;white-space:nowrap;box-shadow:0 3px 10px rgba(255,211,53,.4)}
+.btn-support:hover{transform:translateY(-2px)}
+.burger{display:none;margin-left:auto;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:3px;background:var(--teal-deep);margin:5px 0;border-radius:2px;transition:.25s}
+@media(max-width:960px){
+  .nav{gap:14px}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:10px 24px 18px;box-shadow:0 14px 24px rgba(10,90,85,.12)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;border-bottom:1px solid var(--teal-light)}
+  .burger{display:block}
+  .nav-socials{margin-left:auto}
+  .burger{margin-left:0}
+}
+@media(max-width:640px){
+  .btn-support{display:none}
+  .nav-links a.m-support{color:var(--teal-dark);font-weight:700}
+}
+.nav-links a.m-support{display:none}
+@media(max-width:640px){.nav-links a.m-support{display:block}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:150px 0 96px;background:linear-gradient(135deg,#17a293 0%,#0f7f74 55%,#0b625c 100%);color:#fff;overflow:hidden}
+.hero::after{content:"弦";position:absolute;right:-4%;bottom:-22%;font-size:34rem;font-weight:900;color:rgba(255,255,255,.06);line-height:1;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .95fr;gap:44px;align-items:center;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:.85rem;letter-spacing:.4em;font-weight:700;color:#d9f4ef;margin-bottom:18px}
+.hero-tag::before{content:"";width:30px;height:3px;background:var(--yellow)}
+.hero-name{font-size:clamp(3rem,7vw,4.6rem);font-weight:900;letter-spacing:.08em;line-height:1.15;display:flex;align-items:flex-end;gap:.06em}
+.zhuyin{display:inline-flex;flex-direction:column;justify-content:center;font-size:.9rem;font-weight:700;color:var(--yellow);line-height:1.2;letter-spacing:0;transform:translateY(-8px)}
+.hero-party{margin-top:12px;color:#c9efe9;font-size:1rem;letter-spacing:.08em}
+.hero-slogan{margin-top:26px;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:900;line-height:1.3;letter-spacing:.1em}
+.hero-slogan em{font-style:normal;color:var(--yellow)}
+.hero-desc{margin-top:20px;color:#dff5f1;max-width:30em;font-size:1rem}
+.hero-btns{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:#fff;color:var(--teal-deep);font-weight:700;padding:13px 30px;border-radius:999px;transition:.2s;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border:2px solid rgba(255,255,255,.75);color:#fff;font-weight:700;padding:11px 28px;border-radius:999px;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.hero-photo{position:relative}
+.hero-photo img{border-radius:24px;box-shadow:0 24px 60px rgba(0,0,0,.28);border:5px solid rgba(255,255,255,.55)}
+.hero-photo::before{content:"";position:absolute;inset:-16px -16px auto auto;width:120px;height:120px;border-radius:50%;background:var(--yellow);opacity:.25;z-index:-1}
+@media(max-width:860px){
+  .hero{padding:120px 0 70px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-photo{max-width:420px;margin:0 auto}
+  .hero::after{font-size:20rem}
 }
 
-::selection{background:var(--papaya);color:var(--paper-light)}
+/* ---------- STATS ---------- */
+.stats{background:linear-gradient(160deg,var(--teal-band),#0a4f4b);color:#fff;position:relative;overflow:hidden}
+.stats::before{content:"和";position:absolute;left:-3%;top:-18%;font-size:22rem;font-weight:900;color:rgba(255,255,255,.05);line-height:1}
+.stats .eyebrow{color:#9adfd5}.stats .eyebrow::before{background:#9adfd5}
+.stats .sec-title{color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;position:relative;z-index:2}
+.stat-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:30px 18px;text-align:center;transition:.25s}
+.stat-card:hover{background:rgba(255,255,255,.14);transform:translateY(-4px)}
+.stat-num{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:900;color:#fff;letter-spacing:.02em}
+.stat-num small{font-size:1rem;font-weight:700;color:#a7e6dd;margin-left:2px}
+.stat-label{margin-top:6px;color:#bfeae4;font-size:.92rem;letter-spacing:.1em}
+.stat-chips{display:flex;gap:12px;justify-content:center;margin-top:34px;flex-wrap:wrap;position:relative;z-index:2}
+.chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#e4f8f4;border-radius:999px;padding:8px 18px;font-size:.85rem}
+.stats-src{text-align:center;margin-top:22px;color:#8fd2c9;font-size:.78rem;position:relative;z-index:2}
+@media(max-width:720px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
 
-body::before{
-  content:'';
-  position:fixed;inset:0;
-  pointer-events:none;
-  z-index:1000;
-  opacity:.04;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
-}
+/* ---------- ABOUT ---------- */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;margin-top:48px;align-items:start}
+.quote-bar{background:var(--teal-light);border-left:5px solid var(--teal);padding:13px 18px;border-radius:8px;margin-bottom:14px;font-size:.96rem}
+.quote-bar b{color:var(--teal-dark)}
+.about-text p{color:#33514f;margin-top:18px;font-size:.97rem}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.about-photos img{border-radius:14px;box-shadow:var(--shadow);object-fit:cover;width:100%;height:100%}
+.about-photos .tall{grid-row:span 2}
+.about-photos img{aspect-ratio:4/3}
+.about-photos .tall img,.about-photos img.tall{aspect-ratio:3/4}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
 
-nav.topnav{
-  position:fixed;top:0;left:0;right:0;
-  z-index:100;
-  padding:18px 40px;
-  display:flex;justify-content:space-between;align-items:center;
-  background:rgba(244,237,224,.85);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(14,31,58,.1);
-}
-nav.topnav .brand{
-  display:flex;align-items:baseline;gap:14px;
-  font-family:'Noto Serif TC',serif;
-  font-weight:700;
-  font-size:18px;
-  letter-spacing:.05em;
-}
-nav.topnav .brand small{
-  font-family:'Manrope',sans-serif;
-  font-weight:600;
-  font-size:11px;
-  letter-spacing:.2em;
-  color:var(--papaya);
-  text-transform:uppercase;
-}
-nav.topnav ul{display:flex;gap:28px;list-style:none}
-nav.topnav ul a{
-  color:var(--ink);
-  text-decoration:none;
-  font-size:13px;
-  letter-spacing:.1em;
-  font-weight:500;
-  position:relative;
-  padding:6px 0;
-  transition:color .2s;
-}
-nav.topnav ul a::after{
-  content:'';
-  position:absolute;left:0;bottom:0;
-  width:0;height:2px;
-  background:var(--papaya);
-  transition:width .3s ease;
-}
-nav.topnav ul a:hover{color:var(--papaya)}
-nav.topnav ul a:hover::after{width:100%}
-@media (max-width:1024px){
-  nav.topnav{padding:14px 20px}
-  nav.topnav ul{display:none}
-}
+/* ---------- VISION ---------- */
+.vision{background:linear-gradient(180deg,var(--teal-lighter),#eaf7f5)}
+.vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.v-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s;display:flex;flex-direction:column}
+.v-card:hover{transform:translateY(-6px);box-shadow:0 16px 38px rgba(10,90,85,.16)}
+.v-media{position:relative;height:200px;overflow:hidden}
+.v-media img{width:100%;height:100%;object-fit:cover}
+.v-tag{position:absolute;top:14px;left:14px;background:var(--mint);color:#0a4f4b;font-weight:700;font-size:.8rem;padding:5px 14px;border-radius:999px}
+.v-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px}
+.v-title{font-size:1.15rem;font-weight:900;color:var(--teal-deep)}
+.v-quote{border-left:4px solid var(--yellow);padding-left:12px;color:var(--teal-dark);font-weight:700;font-size:.92rem}
+.v-desc{color:var(--gray);font-size:.9rem}
+.vision-cta{text-align:center;margin-top:38px}
+.btn-teal{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:13px 34px;border-radius:999px;transition:.2s;box-shadow:0 8px 20px rgba(20,154,140,.35)}
+.btn-teal:hover{transform:translateY(-2px)}
+@media(max-width:860px){.vision-grid{grid-template-columns:1fr}}
 
-.hero{
-  min-height:100vh;
-  position:relative;
-  background:var(--ink);
-  color:var(--paper-light);
-  padding:140px 40px 80px;
-  display:grid;
-  grid-template-columns:1.15fr 1fr;
-  gap:60px;
-  align-items:center;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background-image:
-    radial-gradient(circle at 85% 25%, rgba(237,125,58,.18), transparent 50%),
-    radial-gradient(circle at 10% 90%, rgba(168,197,220,.1), transparent 50%);
-  pointer-events:none;
-}
-.hero-text{position:relative;z-index:2;animation:fadeUp 1s .2s both}
+/* ---------- POLICY ---------- */
+.policy{background:#fff;padding-top:70px}
+.acc{max-width:840px;margin:42px auto 0}
+.acc-item{background:#fff;border:1px solid #dbeeeb;border-radius:12px;margin-bottom:12px;overflow:hidden;box-shadow:0 2px 10px rgba(10,90,85,.05)}
+.acc-head{width:100%;background:none;border:none;font-family:inherit;font-size:1rem;font-weight:700;color:var(--ink);padding:18px 22px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left}
+.acc-head .no{color:var(--teal);font-weight:900;letter-spacing:.05em}
+.acc-head::after{content:"+";margin-left:auto;font-size:1.4rem;color:var(--teal);font-weight:400;transition:.25s}
+.acc-item.open .acc-head::after{transform:rotate(45deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-body-in{padding:0 22px 20px;color:#33514f;font-size:.93rem}
+.acc-body-in ul{list-style:none}
+.acc-body-in li{padding:7px 0 7px 26px;position:relative;border-top:1px dashed #e2f0ee}
+.acc-body-in li::before{content:"";position:absolute;left:4px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--mint)}
+.acc-body-in li b{color:var(--teal-dark)}
 
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:14px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;
-  letter-spacing:.25em;
-  font-weight:500;
-  color:var(--papaya);
-  margin-bottom:36px;
-  padding:6px 14px;
-  border:1px solid var(--papaya);
-}
-.hero-eyebrow::before{
-  content:'';
-  width:6px;height:6px;
-  background:var(--papaya);
-  animation:pulse 2s infinite;
-}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+/* ---------- SERVICES ---------- */
+.services{background:linear-gradient(180deg,#eaf7f5,var(--teal-lighter))}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.svc-card{background:#fff;border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow);transition:.25s;display:flex;flex-direction:column;gap:8px}
+.svc-card:hover{transform:translateY(-5px)}
+.svc-ico{width:46px;height:46px;border-radius:12px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.svc-title{font-weight:900;color:var(--teal-deep);font-size:1.02rem}
+.svc-desc{color:var(--gray);font-size:.86rem;flex:1}
+.svc-link{color:var(--teal);font-weight:700;font-size:.86rem}
+.svc-link:hover{text-decoration:underline}
+@media(max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
 
-.hero h1{
-  font-family:'Noto Serif TC',serif;
-  font-weight:900;
-  font-size:clamp(60px,8.5vw,128px);
-  line-height:.92;
-  letter-spacing:-.03em;
-  color:var(--paper-light);
-  margin-bottom:8px;
-}
-.hero h1 .second{
-  display:block;
-  font-family:'Manrope',sans-serif;
-  font-weight:700;
-  color:var(--papaya);
-  font-size:.32em;
-  margin-top:.3em;
-  letter-spacing:.05em;
-}
+/* ---------- GALLERY ---------- */
+.gallery{background:#fff}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.g-grid img{border-radius:12px;aspect-ratio:1/1;object-fit:cover;width:100%;box-shadow:var(--shadow);transition:.3s}
+.g-grid img:hover{transform:scale(1.03)}
+@media(max-width:760px){.g-grid{grid-template-columns:repeat(2,1fr)}}
 
-.hero-slogan{
-  margin-top:48px;
-  display:flex;flex-direction:column;
-  gap:6px;
-}
-.hero-slogan .line{
-  font-family:'Noto Serif TC',serif;
-  font-weight:900;
-  font-size:clamp(28px,3.5vw,48px);
-  line-height:1.15;
-  color:var(--paper-light);
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-}
-.hero-slogan .em{
-  background:var(--papaya);
-  color:var(--ink);
-  padding:0 12px 4px;
-  display:inline-block;
-  transform:rotate(-1deg);
-}
-.hero-slogan .op{
-  font-family:'Manrope',sans-serif;
-  color:var(--papaya);
-  font-weight:600;
-  font-size:.7em;
-}
-.hero-slogan .sub{
-  margin-top:24px;
-  font-family:'Noto Sans TC',sans-serif;
-  font-size:14px;
-  letter-spacing:.25em;
-  color:var(--sky);
-  font-weight:500;
-  font-style:italic;
-}
+/* ---------- SUPPORT ---------- */
+.support{background:linear-gradient(180deg,#eef9f7,#e4f4f1)}
+.sup-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
+.sup-card{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+.sup-card h3{color:var(--teal-deep);font-size:1.15rem;font-weight:900;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.sup-card p{color:var(--gray);font-size:.93rem}
+.sup-card .btn-teal{margin-top:18px;padding:11px 28px}
+.btn-outline{display:inline-block;border:2px solid var(--teal);color:var(--teal);font-weight:700;padding:9px 26px;border-radius:999px;margin-top:18px;transition:.2s}
+.btn-outline:hover{background:var(--teal);color:#fff}
+.donate-table{margin-top:14px;font-size:.93rem;width:100%}
+.donate-table td{padding:9px 0;border-bottom:1px solid #ecf6f4}
+.donate-table td:last-child{text-align:right;font-weight:700;color:var(--ink)}
+.copy-tag{display:inline-block;background:var(--teal-light);color:var(--teal-dark);font-size:.72rem;padding:2px 9px;border-radius:6px;margin-left:8px;cursor:pointer;font-weight:700}
+.qr-box{display:flex;gap:18px;align-items:center;margin-top:16px}
+.qr-box img{width:130px;border-radius:10px;border:1px solid #e3f1ef}
+.qr-ph{width:130px;aspect-ratio:1/1;border:2px dashed #bcded9;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#8bb7b1;font-size:.78rem;text-align:center;padding:10px}
+.mail-card{grid-column:1/-1}
+.mail-note{font-weight:700;color:var(--teal-deep)}
+.mail-sub{font-size:.85rem;color:var(--gray);margin-top:4px}
+.mail-tpl{background:var(--teal-light);border-radius:12px;padding:20px;margin-top:16px;font-size:.88rem;white-space:pre-wrap;color:#2c4a48;line-height:1.9}
+.placeholder-note{margin-top:10px;font-size:.76rem;color:#b0876a;background:#fdf6ec;border-radius:8px;padding:8px 12px}
+@media(max-width:860px){.sup-grid{grid-template-columns:1fr}}
 
-.hero-meta{
-  margin-top:56px;
-  display:grid;
-  grid-template-columns:repeat(3,auto);
-  gap:32px;
-}
-.hero-meta .item{
-  border-top:2px solid var(--papaya);
-  padding-top:12px;
-}
-.hero-meta .item .label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  letter-spacing:.2em;
-  color:var(--gray);
-  margin-bottom:6px;
-}
-.hero-meta .item .value{
-  font-family:'Noto Serif TC',serif;
-  font-weight:700;
-  font-size:16px;
-  color:var(--paper-light);
-}
+/* ---------- FAQ ---------- */
+.faq{background:#fff}
+.faq .acc{max-width:760px}
 
-.hero-cta{margin-top:56px;display:flex;gap:20px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:18px 32px;
-  font-family:'Noto Sans TC',sans-serif;
-  font-size:14px;
-  letter-spacing:.1em;
-  font-weight:700;
-  text-decoration:none;
-  border:2px solid;
-  transition:all .25s;
-  cursor:pointer;
-}
-.btn-primary{background:var(--papaya);color:var(--ink);border-color:var(--papaya)}
-.btn-primary:hover{
-  background:var(--papaya-bright);border-color:var(--papaya-bright);
-  transform:translate(-2px,-2px);
-  box-shadow:6px 6px 0 var(--paper-light);
-}
-.btn-ghost{background:transparent;color:var(--paper-light);border-color:var(--paper-light)}
-.btn-ghost:hover{background:var(--paper-light);color:var(--ink)}
+/* ---------- CONTACT ---------- */
+.contact{background:linear-gradient(180deg,var(--teal-lighter),#e9f6f4);text-align:center}
+.contact-card{max-width:860px;margin:44px auto 0;background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;text-align:left}
+.contact-info h3{color:var(--teal-deep);font-weight:900;font-size:1.1rem;margin-bottom:6px}
+.contact-line{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px solid #eef7f5;font-size:.95rem}
+.contact-line span{color:var(--gray);font-size:.82rem;min-width:64px}
+.contact-line b{color:var(--ink);font-weight:700}
+.contact-socials{display:flex;gap:12px;margin-top:18px}
+.contact-socials a{width:42px;height:42px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;transition:.2s}
+.contact-socials a:hover{transform:translateY(-3px);background:var(--teal-dark)}
+.contact-socials svg{width:20px;height:20px;fill:currentColor}
+.contact-map img{border-radius:14px;box-shadow:var(--shadow)}
+.map-cap{font-size:.78rem;color:var(--gray);text-align:center;margin-top:8px}
+@media(max-width:820px){.contact-card{grid-template-columns:1fr}}
 
-.hero-image-wrap{position:relative;z-index:2;animation:fadeUp 1s .4s both}
-.hero-image{
-  position:relative;
-  aspect-ratio:3/4;
-  overflow:hidden;
-  background:var(--ink-deep);
-  border:2px solid var(--papaya);
-}
-.hero-image img{
-  width:100%;height:100%;
-  object-fit:cover;
-  object-position:center 15%;
-  filter:contrast(1.05) saturate(.92);
-}
-.hero-image-tag{
-  position:absolute;
-  top:24px;left:-12px;
-  background:var(--papaya);
-  color:var(--ink);
-  padding:8px 20px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;
-  letter-spacing:.2em;
-  font-weight:700;
-  z-index:3;
-}
-.hero-image-circle{
-  position:absolute;
-  bottom:-30px;right:-10px;
-  z-index:3;
-  display:flex;flex-direction:column;align-items:center;gap:14px;
-}
-.hero-image-circle .circle{
-  width:180px;height:180px;
-  border-radius:50%;
-  border:8px solid #e63946;
-  background:transparent;
-  box-shadow:6px 6px 0 var(--ink-deep);
-}
-.hero-image-circle small{
-  font-size:14px;
-  letter-spacing:.3em;
-  color:var(--paper-light);
-  font-family:'JetBrains Mono',monospace;
-  font-weight:500;
-}
-.hero-image-frame{
-  position:absolute;
-  top:20px;left:20px;right:-20px;bottom:-20px;
-  border:1px solid var(--papaya);
-  z-index:-1;
-}
-@media (max-width:900px){
-  .hero{grid-template-columns:1fr;gap:60px;padding-top:120px}
-  .hero-image-circle .circle{width:120px;height:120px;border-width:6px}
-  .hero-meta{grid-template-columns:repeat(2,1fr);gap:24px}
-}
-
-.ticker{
-  background:var(--papaya);
-  color:var(--ink);
-  padding:18px 0;
-  overflow:hidden;
-  font-family:'Noto Serif TC',serif;
-  border-top:2px solid var(--ink);
-  border-bottom:2px solid var(--ink);
-}
-.ticker-track{
-  display:flex;gap:48px;
-  animation:scroll 32s linear infinite;
-  white-space:nowrap;
-  font-size:18px;
-  letter-spacing:.15em;
-  font-weight:900;
-}
-.ticker-track span{display:inline-flex;align-items:center;gap:48px}
-.ticker-track .dot{font-size:20px}
-@keyframes scroll{to{transform:translateX(-50%)}}
-
-.election{background:var(--ink-deep);color:var(--paper-light);padding:80px 40px}
-.election-grid{
-  max-width:1280px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;
-  background:rgba(237,125,58,.25);
-  border:1px solid rgba(237,125,58,.25);
-}
-.election-cell{background:var(--ink-deep);padding:32px 24px}
-.election-cell .label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.2em;
-  color:var(--papaya);margin-bottom:12px;font-weight:500;
-}
-.election-cell .value{
-  font-family:'Noto Serif TC',serif;
-  font-size:22px;font-weight:700;
-  color:var(--paper-light);line-height:1.3;
-}
-.election-cell .value strong{color:var(--papaya)}
-.election-cell .value small{
-  display:block;font-size:13px;color:var(--gray);
-  font-weight:400;margin-top:6px;
-  font-family:'Noto Sans TC',sans-serif;
-}
-@media (max-width:900px){.election-grid{grid-template-columns:repeat(2,1fr)}}
-
-section{padding:120px 40px;position:relative}
-.container{max-width:1280px;margin:0 auto}
-.section-label{
-  display:flex;align-items:center;gap:16px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.3em;font-weight:500;
-  color:var(--papaya-deep);margin-bottom:24px;
-}
-.section-label::before{content:'';width:32px;height:2px;background:var(--papaya-deep)}
-.section-label .num{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700}
-.section-title{
-  font-family:'Noto Serif TC',serif;
-  font-weight:900;
-  font-size:clamp(38px,5.5vw,72px);
-  line-height:1.05;
-  letter-spacing:-.02em;
-  margin-bottom:48px;
-}
-.section-title .accent{
-  background:var(--papaya);
-  padding:0 8px 4px;
-  display:inline-block;
-  transform:rotate(-1deg);
-  margin:0 4px;
-}
-.section-title .ink{color:var(--ink)}
-
-.manifesto{background:var(--paper-light);position:relative;overflow:hidden}
-.manifesto::before{
-  content:'';
-  position:absolute;top:50px;right:-150px;
-  width:500px;height:500px;
-  background:var(--papaya-soft);
-  border-radius:50%;
-  filter:blur(120px);
-  opacity:.5;
-  pointer-events:none;
-}
-.manifesto-content{position:relative;z-index:2;max-width:1100px}
-.manifesto-pre{
-  font-family:'JetBrains Mono',monospace;
-  font-size:13px;letter-spacing:.25em;
-  color:var(--ink-soft);margin-bottom:24px;
-}
-.manifesto h2{
-  font-family:'Noto Serif TC',serif;
-  font-weight:900;
-  font-size:clamp(40px,6.5vw,88px);
-  line-height:1;letter-spacing:-.03em;
-  color:var(--ink);margin-bottom:48px;
-}
-.manifesto h2 .em{
-  background:var(--papaya);
-  padding:0 12px 4px;
-  display:inline-block;
-  transform:rotate(-1.5deg);
-}
-.manifesto h2 .sub{
-  display:block;font-size:.45em;
-  font-weight:500;margin-top:.4em;
-  color:var(--ink-soft);letter-spacing:.05em;
-}
-.manifesto-pillars{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:48px;margin-top:80px;
-}
-.pillar{position:relative}
-.pillar-num{
-  font-family:'Manrope',sans-serif;
-  font-weight:800;font-size:96px;
-  line-height:.9;color:var(--papaya);
-  letter-spacing:-.04em;margin-bottom:16px;
-}
-.pillar-tag{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.25em;
-  color:var(--ink-soft);margin-bottom:16px;
-}
-.pillar h3{
-  font-family:'Noto Serif TC',serif;
-  font-weight:900;font-size:32px;
-  color:var(--ink);margin-bottom:20px;line-height:1.3;
-}
-.pillar p{
-  font-family:'Noto Serif TC',serif;
-  font-size:17px;line-height:1.95;color:var(--ink-soft);
-}
-.pillar p strong{
-  color:var(--ink);font-weight:700;
-  background:var(--papaya-soft);padding:0 4px;
-}
-@media (max-width:900px){.manifesto-pillars{grid-template-columns:1fr;gap:48px}}
-
-.about{background:var(--paper-warm)}
-.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
-.about-intro p{
-  font-family:'Noto Serif TC',serif;
-  font-size:18px;line-height:1.9;
-  color:var(--ink-soft);margin-bottom:24px;
-}
-.about-intro p:first-of-type::first-letter{
-  font-family:'Manrope',sans-serif;
-  font-size:90px;font-weight:800;
-  float:left;line-height:.85;
-  margin:8px 14px 0 -2px;color:var(--papaya);
-}
-.about-quote{
-  margin-top:48px;
-  padding:44px 40px 32px;
-  background:var(--ink);
-  color:#ffffff;
-  position:relative;
-  border-left:4px solid var(--papaya);
-}
-.about-quote .quote-mark{
-  font-family:'Manrope',sans-serif;
-  font-size:64px;
-  font-weight:800;
-  color:var(--papaya);
-  line-height:.5;
-  margin-bottom:20px;
-  letter-spacing:-.06em;
-}
-.about-quote blockquote{
-  margin:0;padding:0;
-}
-.about-quote blockquote p{
-  font-family:'Noto Serif TC',serif;
-  font-size:22px;
-  font-weight:500;
-  line-height:1.75;
-  color:#ffffff;
-  margin:0;
-}
-.about-quote blockquote em{
-  font-style:normal;
-  font-weight:700;
-  background:var(--papaya);
-  color:var(--ink);
-  padding:0 10px 2px;
-  display:inline-block;
-  margin:0 2px;
-}
-.about-quote cite{
-  display:block;
-  margin-top:28px;
-  padding-top:20px;
-  border-top:1px solid rgba(168,197,220,.25);
-  font-style:normal;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;
-  letter-spacing:.3em;
-  color:var(--papaya);
-  font-weight:500;
-}
-.about-stats{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:1px;background:var(--ink);border:1px solid var(--ink);
-}
-.stat{background:var(--paper-warm);padding:32px 28px}
-.stat .num{
-  font-family:'Manrope',sans-serif;
-  font-size:64px;font-weight:800;line-height:1;
-  color:var(--papaya);letter-spacing:-.04em;
-}
-.stat .num small{font-size:20px;color:var(--ink-soft);margin-left:4px;font-weight:500}
-.stat .label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.15em;
-  color:var(--ink-soft);margin-top:12px;font-weight:500;
-}
-
-.bio-list{margin-top:32px;border-top:2px solid var(--ink)}
-.bio-list .row{
-  display:grid;grid-template-columns:140px 1fr;
-  gap:24px;padding:20px 0;
-  border-bottom:1px solid rgba(14,31,58,.15);
-  align-items:start;
-}
-.bio-list .row .key{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.2em;
-  color:var(--papaya-deep);font-weight:700;padding-top:4px;
-}
-.bio-list .row .val{
-  font-family:'Noto Serif TC',serif;
-  font-size:16px;color:var(--ink);line-height:1.7;
-}
-@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px}}
-
-.journey{background:var(--ink);color:var(--paper-light);overflow:hidden}
-.journey .section-label{color:var(--papaya)}
-.journey .section-label::before{background:var(--papaya)}
-.journey .section-title{color:var(--paper-light)}
-.journey-line{
-  display:grid;grid-template-columns:repeat(5,1fr);
-  gap:0;margin-top:80px;
-  border-top:2px solid var(--papaya);position:relative;
-}
-.j-step{
-  padding:32px 24px 32px 0;position:relative;
-  border-right:1px solid rgba(168,197,220,.15);
-}
-.j-step:last-child{border-right:none}
-.j-step::before{
-  content:'';position:absolute;
-  top:-9px;left:0;
-  width:16px;height:16px;
-  border-radius:50%;
-  background:var(--papaya);
-  border:3px solid var(--ink);
-}
-.j-step .year{
-  font-family:'Manrope',sans-serif;
-  font-weight:800;font-size:36px;
-  color:var(--papaya);letter-spacing:-.02em;
-  margin-bottom:8px;line-height:1;
-}
-.j-step .place{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.2em;
-  color:var(--sky);margin-bottom:16px;
-}
-.j-step h4{
-  font-family:'Noto Serif TC',serif;
-  font-weight:700;font-size:18px;
-  color:var(--paper-light);margin-bottom:8px;line-height:1.4;
-}
-.j-step p{font-size:13px;line-height:1.6;color:var(--sky)}
-@media (max-width:900px){
-  .journey-line{grid-template-columns:1fr;border-top:none}
-  .j-step{
-    border-right:none;
-    border-left:2px solid var(--papaya);
-    padding:24px 0 24px 24px;
-  }
-  .j-step::before{top:24px;left:-9px}
-}
-
-.district{background:var(--paper-deep);position:relative;overflow:hidden}
-.district::before{
-  content:'';
-  position:absolute;left:-100px;bottom:-100px;
-  width:400px;height:400px;
-  background:var(--papaya);
-  border-radius:50%;
-  filter:blur(140px);opacity:.3;pointer-events:none;
-}
-.district-grid{
-  display:grid;grid-template-columns:1fr 1.3fr;
-  gap:80px;align-items:start;
-  position:relative;z-index:2;
-}
-.district-intro p{
-  font-family:'Noto Serif TC',serif;
-  font-size:17px;line-height:1.9;
-  color:var(--ink-soft);margin-bottom:24px;
-}
-.district-towns{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--ink);border:1px solid var(--ink);
-}
-.town{background:var(--paper-light);padding:40px 32px;position:relative}
-.town-num{
-  font-family:'Manrope',sans-serif;
-  font-weight:800;font-size:52px;
-  color:var(--papaya);line-height:.9;
-  letter-spacing:-.04em;margin-bottom:16px;
-}
-.town h4{
-  font-family:'Noto Serif TC',serif;
-  font-weight:900;font-size:24px;
-  color:var(--ink);margin-bottom:12px;
-}
-.town .tag{
-  display:inline-block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:.2em;
-  background:var(--papaya);color:var(--ink);
-  padding:3px 10px;margin-bottom:16px;font-weight:700;
-}
-.town p{font-size:14px;line-height:1.7;color:var(--ink-soft)}
-@media (max-width:900px){
-  .district-grid{grid-template-columns:1fr;gap:48px}
-  .district-towns{grid-template-columns:1fr}
-}
-
-.service{background:var(--paper-light)}
-.service-intro{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;margin-bottom:80px;align-items:end;
-}
-.service-intro p{
-  font-family:'Noto Serif TC',serif;
-  font-size:18px;line-height:1.9;color:var(--ink-soft);
-}
-.service-gallery{
-  display:grid;grid-template-columns:repeat(12,1fr);gap:24px;
-}
-.service-item{
-  position:relative;overflow:hidden;
-  background:var(--ink);cursor:pointer;
-  transition:transform .4s;
-}
-.service-item:hover{transform:translateY(-4px)}
-.service-item img{
-  width:100%;height:100%;
-  object-fit:cover;transition:transform .8s ease;
-}
-.service-item:hover img{transform:scale(1.05)}
-.service-item .overlay{
-  position:absolute;bottom:0;left:0;right:0;
-  padding:32px 24px 24px;
-  background:linear-gradient(180deg,transparent,rgba(6,18,42,.95));
-  color:var(--paper-light);
-}
-.service-item .overlay .tag{
-  display:inline-block;background:var(--papaya);color:var(--ink);
-  padding:4px 12px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:.2em;
-  margin-bottom:12px;font-weight:700;
-}
-.service-item .overlay h4{
-  font-family:'Noto Serif TC',serif;
-  font-size:20px;font-weight:700;
-  line-height:1.4;margin-bottom:6px;
-}
-.service-item .overlay p{
-  font-size:13px;color:var(--sky);line-height:1.5;
-}
-.service-item.full{grid-column:span 12;aspect-ratio:21/9}
-.service-item.large7{grid-column:span 7;aspect-ratio:4/3}
-.service-item.medium5{grid-column:span 5;aspect-ratio:4/3}
-.service-item.tall5{grid-column:span 5;aspect-ratio:3/4}
-.service-item.tall7{grid-column:span 7;aspect-ratio:4/3}
-@media (max-width:900px){
-  .service-intro{grid-template-columns:1fr;gap:24px}
-  .service-item{grid-column:span 12!important;aspect-ratio:4/3!important}
-}
-
-.policy{background:var(--paper-warm)}
-.policy-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;align-items:start;
-}
-.policy-list{list-style:none}
-.policy-list li{
-  padding:36px 0;
-  border-bottom:1px solid rgba(14,31,58,.15);
-  display:grid;grid-template-columns:80px 1fr;
-  gap:24px;align-items:start;
-  transition:padding .3s;
-}
-.policy-list li:hover{padding-left:12px}
-.policy-list li:first-child{border-top:2px solid var(--ink)}
-.policy-list .num{
-  font-family:'Manrope',sans-serif;
-  font-size:42px;font-weight:800;
-  color:var(--papaya);line-height:.9;letter-spacing:-.04em;
-}
-.policy-list h4{
-  font-family:'Noto Serif TC',serif;
-  font-size:22px;font-weight:900;margin-bottom:8px;
-}
-.policy-list h4 .badge{
-  display:inline-block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;letter-spacing:.2em;
-  background:var(--ink);color:var(--papaya);
-  padding:3px 8px;margin-left:8px;
-  vertical-align:middle;font-weight:500;
-}
-.policy-list p{font-size:15px;line-height:1.7;color:var(--ink-soft)}
-.policy-side{
-  position:sticky;top:140px;
-  background:var(--ink);color:var(--paper-light);
-  padding:48px 40px;
-  position:relative;
-}
-.policy-side::after{
-  content:'';
-  position:absolute;
-  top:16px;left:16px;right:-16px;bottom:-16px;
-  border:2px solid var(--papaya);
-  z-index:-1;
-}
-.policy-side .quote-mark{
-  font-family:'Noto Serif TC',serif;
-  font-size:120px;color:var(--papaya);
-  line-height:.5;font-weight:700;
-}
-.policy-side h3{
-  font-family:'Noto Serif TC',serif;
-  font-size:28px;font-weight:900;
-  line-height:1.4;margin:24px 0;color:var(--paper-light);
-}
-.policy-side p{color:var(--sky);font-size:15px;line-height:1.85}
-.policy-side .signature{
-  margin-top:40px;padding-top:24px;
-  border-top:1px solid rgba(168,197,220,.3);
-  display:flex;justify-content:space-between;align-items:center;
-}
-.policy-side .signature .name{
-  font-family:'Noto Serif TC',serif;
-  font-size:24px;font-weight:700;color:var(--paper-light);
-}
-.policy-side .signature .title{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.2em;color:var(--papaya);
-}
-@media (max-width:900px){
-  .policy-grid{grid-template-columns:1fr;gap:48px}
-  .policy-side{position:static}
-}
-
-.contact{background:var(--paper);padding:120px 40px}
-.contact-grid{
-  display:grid;grid-template-columns:1fr 1.2fr;
-  gap:80px;max-width:1280px;margin:0 auto;align-items:start;
-}
-.contact-info h2{
-  font-family:'Noto Serif TC',serif;
-  font-weight:900;
-  font-size:clamp(32px,4vw,52px);
-  line-height:1.15;margin-bottom:32px;
-}
-.contact-info h2 .accent{
-  background:var(--papaya);padding:0 8px 4px;
-  display:inline-block;transform:rotate(-1deg);
-}
-.contact-info > p{
-  font-family:'Noto Serif TC',serif;
-  font-size:17px;line-height:1.85;
-  color:var(--ink-soft);margin-bottom:32px;
-}
-.contact-detail{border-top:2px solid var(--ink);margin-top:32px}
-.contact-detail .row{
-  display:grid;grid-template-columns:120px 1fr;
-  gap:20px;padding:18px 0;
-  border-bottom:1px solid rgba(14,31,58,.15);
-  align-items:center;
-}
-.contact-detail .key{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.2em;
-  color:var(--ink-soft);font-weight:700;
-}
-.contact-detail .val{
-  font-family:'Noto Serif TC',serif;
-  font-size:16px;color:var(--ink);
-}
-.contact-detail .val a{
-  color:var(--ink);text-decoration:none;font-weight:700;
-  border-bottom:2px solid var(--papaya);
-}
-.contact-detail .val a:hover{background:var(--papaya);}
-.contact-form{
-  background:var(--paper-light);padding:48px 40px;
-  position:relative;border:2px solid var(--ink);
-}
-.contact-form::before{
-  content:'';position:absolute;
-  top:-2px;left:-2px;right:-2px;height:8px;
-  background:var(--papaya);
-}
-.contact-form h3{
-  font-family:'Noto Serif TC',serif;
-  font-size:24px;font-weight:900;
-  margin-bottom:6px;margin-top:8px;
-}
-.contact-form .form-sub{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.2em;
-  color:var(--ink-soft);margin-bottom:32px;
-}
-.field{margin-bottom:20px}
-.field label{
-  display:block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.2em;
-  color:var(--ink-soft);margin-bottom:8px;font-weight:500;
-}
-.field input,.field select,.field textarea{
-  width:100%;padding:12px 14px;
-  background:var(--paper);
-  border:1px solid rgba(14,31,58,.2);
-  font-family:'Noto Sans TC',sans-serif;
-  font-size:15px;color:var(--ink);
-  transition:all .2s;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  outline:none;border-color:var(--papaya);background:var(--paper-light);
-}
-.field textarea{resize:vertical;min-height:120px}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-submit{
-  margin-top:8px;width:100%;padding:18px;
-  background:var(--ink);color:var(--papaya);
-  border:none;
-  font-family:'Noto Sans TC',sans-serif;
-  font-size:14px;letter-spacing:.2em;
-  font-weight:700;cursor:pointer;transition:all .2s;
-}
-.form-submit:hover{background:var(--papaya);color:var(--ink)}
-@media (max-width:900px){
-  .contact-grid{grid-template-columns:1fr;gap:48px}
-  .field-row{grid-template-columns:1fr}
-}
-
-.cta{
-  background:var(--ink-deep);color:var(--paper-light);
-  padding:140px 40px;text-align:center;
-  position:relative;overflow:hidden;
-}
-.cta::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(237,125,58,.15), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(237,125,58,.1), transparent 40%);
-}
-.cta-content{position:relative;z-index:2;max-width:900px;margin:0 auto}
-.cta .label{
-  display:inline-block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.4em;
-  color:var(--ink);background:var(--papaya);
-  padding:8px 20px;margin-bottom:32px;font-weight:500;
-}
-.cta h2{
-  font-family:'Noto Serif TC',serif;
-  font-size:clamp(48px,7vw,108px);
-  font-weight:900;line-height:1;
-  margin-bottom:32px;letter-spacing:-.02em;
-}
-.cta h2 .accent{
-  background:var(--papaya);color:var(--ink);
-  padding:0 12px 4px;display:inline-block;
-  transform:rotate(-1deg);margin:0 4px;
-}
-.cta p{
-  font-family:'Noto Serif TC',serif;
-  font-size:20px;color:var(--sky);
-  margin-bottom:48px;line-height:1.7;
-}
-.ballot{
-  display:inline-block;
-  border:3px solid var(--papaya);
-  padding:24px 48px;margin-top:32px;
-  position:relative;background:rgba(0,0,0,.3);
-}
-.ballot .ballot-label{
-  position:absolute;top:-14px;left:50%;
-  transform:translateX(-50%);
-  background:var(--ink-deep);padding:0 16px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.3em;color:var(--papaya);
-}
-.ballot-row{display:flex;align-items:center;gap:32px}
-.ballot-circle{
-  width:80px;height:80px;
-  border-radius:50%;
-  border:5px solid #e63946;
-  flex-shrink:0;
-}
-.ballot-info{text-align:left}
-.ballot-info .name{
-  font-family:'Noto Serif TC',serif;
-  font-size:32px;font-weight:900;
-  margin-bottom:6px;color:var(--paper-light);
-}
-.ballot-info .role{
-  font-family:'JetBrains Mono',monospace;
-  font-size:12px;letter-spacing:.2em;color:var(--papaya);
-}
-
-footer{background:var(--ink);color:var(--sky);padding:80px 40px 40px}
-.foot-grid{
-  max-width:1280px;margin:0 auto;
-  display:grid;grid-template-columns:1.5fr 1fr 1fr;
-  gap:60px;margin-bottom:60px;
-}
-.foot-brand h3{
-  font-family:'Noto Serif TC',serif;
-  font-size:32px;color:var(--paper-light);
-  margin-bottom:8px;font-weight:900;
-}
-.foot-brand .slogan{
-  font-family:'Manrope',sans-serif;
-  letter-spacing:.05em;color:var(--papaya);
-  margin-bottom:24px;font-size:16px;font-weight:700;
-}
-.foot-brand p{font-size:14px;line-height:1.7;color:var(--gray)}
-.foot-col h5{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.3em;
-  color:var(--papaya);margin-bottom:20px;font-weight:500;
-}
-.foot-col ul{list-style:none}
-.foot-col li{padding:8px 0;font-size:14px}
-.foot-col a{color:var(--sky);text-decoration:none;transition:color .2s}
-.foot-col a:hover{color:var(--paper-light)}
-.foot-legal{
-  max-width:1280px;margin:0 auto;
-  padding:24px 0;
-  border-top:1px solid rgba(168,197,220,.2);
-  font-size:12px;line-height:1.7;color:var(--gray);
-}
-.foot-bottom{
-  max-width:1280px;margin:0 auto;
-  padding-top:24px;
-  border-top:1px solid rgba(168,197,220,.2);
-  display:flex;justify-content:space-between;
-  font-family:'JetBrains Mono',monospace;
-  font-size:11px;letter-spacing:.15em;
-  flex-wrap:wrap;gap:16px;color:var(--gray);
-}
-@media (max-width:768px){.foot-grid{grid-template-columns:1fr;gap:40px}}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(40px);transition:all .9s cubic-bezier(.2,.8,.2,1)}
-.reveal.in{opacity:1;transform:translateY(0)}
+/* ---------- FOOTER ---------- */
+footer{background:var(--teal-deep);color:#cdeee9;padding:56px 0 30px}
+.f-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px}
+.f-brand{font-size:1.25rem;font-weight:900;color:#fff}
+.f-brand small{display:block;font-size:.85rem;font-weight:400;color:#9adfd5;margin-top:8px}
+.f-col h4{color:#fff;font-size:.95rem;margin-bottom:14px;letter-spacing:.1em}
+.f-col a{display:block;padding:5px 0;font-size:.88rem;color:#bce8e1;transition:.2s}
+.f-col a:hover{color:#fff}
+.f-socials{display:flex;gap:10px;margin-top:12px}
+.f-socials a{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff;padding:0}
+.f-socials a:hover{background:rgba(255,255,255,.25)}
+.f-socials svg{width:16px;height:16px;fill:currentColor}
+.f-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:40px;padding-top:22px;text-align:center;font-size:.8rem;color:#8fd2c9}
+@media(max-width:760px){.f-grid{grid-template-columns:1fr;gap:24px}}
 </style>
 </head>
 <body>
 
-<nav class="topnav">
-  <div class="brand">
-    蘇智弦 <small>SU CHIH-HSUAN</small>
-  </div>
-  <ul>
-    <li><a href="#manifesto">跨越色彩</a></li>
-    <li><a href="#about">認識智弦</a></li>
-    <li><a href="#journey">國際視野</a></li>
-    <li><a href="#district">三鄉鎮</a></li>
-    <li><a href="#service">行動足跡</a></li>
-    <li><a href="#policy">政見規劃</a></li>
-    <li><a href="#contact">聯絡我們</a></li>
-  </ul>
-</nav>
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top">蘇智弦 <span>Chih-Hsien</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#stats">概況</a>
+      <a href="#about">關於</a>
+      <a href="#vision">願景</a>
+      <a href="#services">服務</a>
+      <a href="#gallery">走訪</a>
+      <a href="#contact">聯絡</a>
+      <a href="#support" class="m-support">⭐ 支持我們</a>
+    </div>
+    <div class="nav-socials">
+      <a href="https://www.facebook.com/chihhsien.0819" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21.9v-8h2.7l.4-3.1h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.6v3.1h2.8v8h3.1z"/></svg></a>
+      <a href="https://www.threads.com/@kk_8.19" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24"><path d="M12.2 22c-2.9 0-5.1-1-6.6-2.9C4.2 17.4 3.5 15 3.5 12c0-3 .7-5.4 2.1-7.1C7.1 3 9.3 2 12.2 2c2.2 0 4 .6 5.4 1.7 1.3 1 2.2 2.5 2.7 4.3l-2.1.6c-.7-2.7-2.7-4.4-6-4.4-2.2 0-3.9.7-5 2.2-1 1.3-1.6 3.2-1.6 5.6s.5 4.3 1.6 5.6c1.1 1.4 2.8 2.2 5 2.2 2 0 3.3-.5 4.3-1.5.8-.8 1.2-1.9 1.1-2.9-.1-.7-.4-1.3-.9-1.8-.4 1.7-1.7 4-4.7 4-1.3 0-2.4-.4-3.2-1.1-.8-.8-1.2-1.8-1.2-2.9.1-2.2 1.9-3.7 4.5-3.7.8 0 1.5.1 2.2.2 0-.6-.2-1.1-.5-1.5-.4-.5-1.1-.8-1.9-.8h-.1c-.7 0-1.6.2-2.2 1.1l-1.8-1.2c.9-1.4 2.4-2.1 4.1-2.1 1.5 0 2.7.5 3.5 1.4.8.8 1.2 2 1.3 3.4l.1.6c1.5.8 2.4 2 2.6 3.6.2 1.7-.5 3.5-1.8 4.7-1.4 1.4-3.3 2.1-5.8 2.1zm.4-8.2c-1.2 0-2.4.5-2.4 1.7 0 .8.7 1.6 2.1 1.6 1.9 0 2.6-1.9 2.7-3-.7-.2-1.6-.3-2.4-.3z"/></svg></a>
+      <a href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener" aria-label="LINE 官方帳號"><svg viewBox="0 0 24 24"><path d="M12 3C6.8 3 2.5 6.4 2.5 10.7c0 3.8 3.4 7 7.9 7.6.3.1.7.2.8.5.1.2.1.6 0 .8l-.1.8c0 .2-.2.9.8.5s5.2-3.1 7.1-5.3c1.3-1.4 1.9-2.9 1.9-4.5C21.5 6.4 17.2 3 12 3zM8.1 13.2H6.2c-.3 0-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3h1.4c.3 0 .5.2.5.5s-.2.5-.5.5zm1.9-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3.5zm4.5 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-1.9-2.6v2.3c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.2c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l1.9 2.6V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3.5zm3.1-2.3c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.9h1.4c.3 0 .5.2.5.5s-.2.5-.5.5h-1.9c-.3 0-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5h1.9c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.7h1.4z"/></svg></a>
+      <a href="https://www.instagram.com/kk_8.19" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 4.3c2.5 0 2.8 0 3.8.1.9 0 1.4.2 1.8.3.4.2.8.4 1.1.7.3.3.5.6.7 1.1.1.3.3.8.3 1.8 0 1 .1 1.3.1 3.8s0 2.8-.1 3.8c0 .9-.2 1.4-.3 1.8-.2.4-.4.8-.7 1.1-.3.3-.6.5-1.1.7-.3.1-.8.3-1.8.3-1 0-1.3.1-3.8.1s-2.8 0-3.8-.1c-.9 0-1.4-.2-1.8-.3-.4-.2-.8-.4-1.1-.7-.3-.3-.5-.6-.7-1.1-.1-.3-.3-.8-.3-1.8 0-1-.1-1.3-.1-3.8s0-2.8.1-3.8c0-.9.2-1.4.3-1.8.2-.4.4-.8.7-1.1.3-.3.6-.5 1.1-.7.3-.1.8-.3 1.8-.3 1-.1 1.3-.1 3.8-.1zM12 2.2c-2.7 0-3 0-4 .1-1 .1-1.8.2-2.4.5-.6.2-1.2.6-1.7 1.1-.5.5-.9 1.1-1.1 1.7-.3.6-.4 1.3-.5 2.4 0 1-.1 1.3-.1 4s0 3 .1 4c.1 1 .2 1.8.5 2.4.2.6.6 1.2 1.1 1.7.5.5 1.1.9 1.7 1.1.6.3 1.3.4 2.4.5 1 0 1.3.1 4 .1s3 0 4-.1c1-.1 1.8-.2 2.4-.5.6-.2 1.2-.6 1.7-1.1.5-.5.9-1.1 1.1-1.7.3-.6.4-1.3.5-2.4 0-1 .1-1.3.1-4s0-3-.1-4c-.1-1-.2-1.8-.5-2.4-.2-.6-.6-1.2-1.1-1.7-.5-.5-1.1-.9-1.7-1.1-.6-.3-1.3-.4-2.4-.5-1-.1-1.3-.1-4-.1zm0 4.8a5 5 0 100 10 5 5 0 000-10zm0 8.3a3.3 3.3 0 110-6.5 3.3 3.3 0 010 6.5zM18.4 6.8a1.2 1.2 0 11-2.3 0 1.2 1.2 0 012.3 0z"/></svg></a>
+    </div>
+    <a class="btn-support" href="#support">支持我們</a>
+    <button class="burger" id="burger" aria-label="選單"><span></span><span></span><span></span></button>
+  </nav>
+</header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <div class="hero-eyebrow">2026・彰化縣議員・第三選區</div>
-    <h1>
-      蘇智弦
-      <span class="second">SU CHIH-HSUAN ・ AGE 23</span>
-    </h1>
-
-    <div class="hero-slogan">
-      <div class="line">
-        <span class="em">選弦</span><span class="op">×</span>與能
-      </div>
-      <div class="line">
-        <span class="em">福利</span><span class="op">＋</span>加乘
-      </div>
-      <div class="sub">A NEW GENERATION VOICE FOR CHANGHUA COUNTY</div>
-    </div>
-
-    <div class="hero-meta">
-      <div class="item">
-        <div class="label">Party 政黨</div>
-        <div class="value">台灣民眾黨</div>
-      </div>
-      <div class="item">
-        <div class="label">District 選區</div>
-        <div class="value">和美 ・ 線西 ・ 伸港</div>
-      </div>
-      <div class="item">
-        <div class="label">Generation 世代</div>
-        <div class="value">23 歲・00 後</div>
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-tag">和美 ‧ 伸港 ‧ 線西</div>
+      <h1 class="hero-name">蘇 智 弦<span class="zhuyin">ㄒ<br>ㄧ<br>ㄢ<br>ˊ</span></h1>
+      <div class="hero-party">台灣民眾黨 ‧ 彰化縣議員候選人(和美鎮 ‧ 伸港鄉 ‧ 線西鄉)</div>
+      <div class="hero-slogan">用<em>國會專業</em><br>換家鄉改變</div>
+      <p class="hero-desc">從中央歷練到地方深耕。23 歲的和美囝仔,帶著立法院第一線的法案研擬與選民服務經驗回到家鄉,與您一起打造「宜居、宜業、宜遊」的新和伸線。</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#vision">了解行動政見</a>
+        <a class="btn-ghost" href="#contact">聯絡我們</a>
       </div>
     </div>
-
-    <div class="hero-cta">
-      <a href="#manifesto" class="btn btn-primary">看主張 →</a>
-      <a href="#contact" class="btn btn-ghost">聯絡服務</a>
-    </div>
-  </div>
-
-  <div class="hero-image-wrap">
-    <div class="hero-image">
-      <span class="hero-image-tag">2026 ELECTION</span>
-      <div class="hero-image-frame"></div>
-      <img src="images/hero.jpg" alt="蘇智弦形象照">
-    </div>
+    <div class="hero-photo"><img src="images/hero.jpg" alt="蘇智弦形象照"></div>
   </div>
 </section>
 
-<div class="ticker">
-  <div class="ticker-track">
-    <span>選弦與能 <span class="dot">✦</span> 福利加乘 <span class="dot">✦</span> 跨越色彩 <span class="dot">✦</span> 實用至上 <span class="dot">✦</span> 世代融合 <span class="dot">✦</span> 重塑彰化 <span class="dot">✦</span></span>
-    <span>選弦與能 <span class="dot">✦</span> 福利加乘 <span class="dot">✦</span> 跨越色彩 <span class="dot">✦</span> 實用至上 <span class="dot">✦</span> 世代融合 <span class="dot">✦</span> 重塑彰化 <span class="dot">✦</span></span>
-  </div>
-</div>
-
-<section class="election">
-  <div class="election-grid">
-    <div class="election-cell">
-      <div class="label">Election 選舉</div>
-      <div class="value">彰化縣議員<small>第三選區・應選 6 席</small></div>
+<!-- STATS -->
+<section class="stats" id="stats">
+  <div class="container">
+    <div class="eyebrow">和美 ‧ 伸港 ‧ 線西 概況</div>
+    <h2 class="sec-title">用數字認識和伸線</h2>
+    <div class="stats-grid">
+      <div class="stat-card reveal"><div class="stat-num"><span class="count" data-n="140044">0</span><small>人</small></div><div class="stat-label">選區總人口</div></div>
+      <div class="stat-card reveal"><div class="stat-num"><span class="count" data-n="86128">0</span><small>人</small></div><div class="stat-label">和美鎮人口</div></div>
+      <div class="stat-card reveal"><div class="stat-num"><span class="count" data-n="37907">0</span><small>人</small></div><div class="stat-label">伸港鄉人口</div></div>
+      <div class="stat-card reveal"><div class="stat-num"><span class="count" data-n="16009">0</span><small>人</small></div><div class="stat-label">線西鄉人口</div></div>
+      <div class="stat-card reveal"><div class="stat-num"><span class="count" data-n="43">0</span><small>%</small></div><div class="stat-label">扶養比</div></div>
+      <div class="stat-card reveal"><div class="stat-num"><span class="count" data-n="160">0</span></div><div class="stat-label">老化指數</div></div>
     </div>
-    <div class="election-cell">
-      <div class="label">Coverage 覆蓋</div>
-      <div class="value"><strong>3</strong> 鄉鎮<small>和美鎮・線西鄉・伸港鄉</small></div>
+    <div class="stat-chips">
+      <span class="chip">📊 人口結構分析</span>
+      <span class="chip">💡 青年留鄉觀察</span>
+      <span class="chip">⏳ 高齡化趨勢</span>
     </div>
-    <div class="election-cell">
-      <div class="label">Vote Day 投票日</div>
-      <div class="value">2026/<strong>11/28</strong><small>日期以中選會公告為準</small></div>
-    </div>
-    <div class="election-cell">
-      <div class="label">Number 號次</div>
-      <div class="value"><strong>TBD</strong>　待抽號<small>選號於登記後公告</small></div>
-    </div>
-  </div>
-</section>
-
-<!-- MANIFESTO -->
-<section class="manifesto" id="manifesto">
-  <div class="container manifesto-content">
-    <div class="manifesto-pre">— A MANIFESTO ／ 從政理念</div>
-    <h2>
-      <span class="em">跨越色彩</span>，<br>
-      實用至上；<br>
-      <span class="em">世代融合</span>，<br>
-      重塑彰化。
-      <span class="sub">突破藍綠買票政治，由我們這一代為家鄉灌注新鮮活力。</span>
-    </h2>
-
-    <div class="manifesto-pillars">
-      <div class="pillar reveal">
-        <div class="pillar-num">01</div>
-        <div class="pillar-tag">BEYOND COLORS ／ 跨越色彩</div>
-        <h3>實用至上，<br>不被顏色綁架。</h3>
-        <p>身為 00 後出身的年輕人，從小看著台灣社會被藍綠惡鬥撕裂——選舉時的對立、執政時的零和、民生議題被意識形態綁架。我希望由我們這一代<strong>突破藍綠買票政治</strong>，把焦點還給「事情本身」：交通通不通、孩子有沒有照顧、青年願不願意留下來。</p>
-      </div>
-      <div class="pillar reveal">
-        <div class="pillar-num">02</div>
-        <div class="pillar-tag">GENERATIONS UNITED ／ 世代融合</div>
-        <h3>世代融合，<br>重塑彰化。</h3>
-        <p>長輩有經驗，青年有銳氣——這兩者不是對立，而是缺一不可的合作關係。智弦從家族企業<strong>高北木瓜牛乳</strong>到立法院法案助理、從泰北志工到國際企業學位，學到的是：<strong>跨世代對話</strong>，才能把彰化從「全國第一大縣的記憶」帶回到實際的進步。</p>
-      </div>
-    </div>
+    <div class="stats-src">資料來源:彰化縣民政處(2026 年 7 月)</div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
-    <div class="section-label"><span class="num">02</span> About <span style="color:var(--ink-soft)">— 認識蘇智弦</span></div>
-    <h2 class="section-title reveal">
-      23 歲、<br>雙主修畢業、<br>
-      <span class="accent">立法院法案助理</span>。
-    </h2>
-
+    <div class="eyebrow">關於智弦</div>
+    <h2 class="sec-title">從立法院幕僚到家鄉代言人</h2>
+    <p class="sec-sub">服務和伸線、關懷和伸線,23 歲的行動派,把每一位鄉親的事放在第一位。</p>
     <div class="about-grid">
-      <div class="about-intro reveal">
-        <p>民國 92 年 8 月 19 日於彰化出生，今年（2026）8/19 滿 23 歲，剛達到民意代表被選舉人年齡門檻。家中經營高北木瓜牛乳連鎖飲料店，從小在和美長大、求學、回家幫忙水果加工與夜市服務員工作。</p>
-        <p>從<strong style="color:var(--papaya-deep)">縣立大成國小數理資優班</strong>、<strong style="color:var(--papaya-deep)">精誠中學國中部數理資優班</strong>、<strong style="color:var(--papaya-deep)">國立彰化高中</strong>，到<strong style="color:var(--papaya-deep)">中國文化大學國際企業管理學系 + 政治學系雙主修</strong>畢業（總成績 85+ / 系排 20%）。在求學期間擔任康輔社副社長、學友會副會長、國際志工團，主辦偏鄉夏令營、老人安養服務、泰北志工團（獲教育部 114 年青年海外和平志工<strong>績優團隊「特優」</strong>）。</p>
-        <p>退伍後曾在美國 Grand View Lodge 渡假村擔任房務人員四個月，熟稔基層服務業現場。114 年 4 月起進入立法院，目前擔任<strong style="color:var(--papaya-deep)">立法委員廖先翔法案助理</strong>，是國會最年輕法案助理之一——身為民眾黨員，他選擇用實務經驗而非政黨色彩看待立法工作。</p>
-
-        <div class="about-quote">
-          <div class="quote-mark">"</div>
-          <blockquote>
-            <p>希望未來身為民代，<br>
-            能有 <em>接納、包容、妥協</em><br>
-            與公平分配資源的能力。</p>
-          </blockquote>
-          <cite>— 蘇智弦　SU CHIH-HSUAN</cite>
-        </div>
+      <div class="about-text reveal">
+        <div class="quote-bar"><b>勤於問政:</b>「我不想只做一個『選舉才出現』的參選人。」</div>
+        <div class="quote-bar"><b>勤於服務:</b>「只要跟智弦反映,不分貧富貴賤,每一位鄉親的事情都放在第一位。」</div>
+        <div class="quote-bar"><b>專業承諾:</b>「用數據解決問題,用服務取代口水,讓政治回歸『解決人民問題』的本質。」</div>
+        <p>我是智弦,一個在嘉犁、詔安、鎮平長大的和美囝仔。從國小的公益服務開始,到冬夏令營、安養院照護與國際志工,「莫忘世上苦人多」不只是諺語,更是我從政的初衷。</p>
+        <p>大學主修政治,在學期間就進入立法院第一線,先後於立法委員王安祥(和美伸港線西區特助)、廖先翔與張啟楷服務團隊擔任法案助理,累積了「法案研擬」與「選民服務」的實戰經驗——拒絕毒品走私、打擊社群詐騙、科學化交通改革,都是我親身推動過的戰役。</p>
+        <p>回到故鄉,是因為我對這片土地有著深深的責任感。我要把在中央練就的專業帶回地方,讓彰化不再只是人口外流的縣市,而是能讓長輩安居樂業、讓年輕人敢於實現夢想的家園!讓 20 年不變的和伸線,開始變得不太一樣!</p>
       </div>
-
-      <div>
-        <div class="about-stats">
-          <div class="stat">
-            <div class="num">23<small>歲</small></div>
-            <div class="label">剛達民代年齡門檻 ・ Z 世代</div>
-          </div>
-          <div class="stat">
-            <div class="num">2<small>學位</small></div>
-            <div class="label">國企管理＋政治學雙主修</div>
-          </div>
-          <div class="stat">
-            <div class="num">4<small>國</small></div>
-            <div class="label">美・中・日・泰 國際歷練</div>
-          </div>
-          <div class="stat">
-            <div class="num">TBD</div>
-            <div class="label">候選號次・待抽出</div>
-          </div>
-        </div>
-
-        <div class="bio-list">
-          <div class="row">
-            <div class="key">出 身</div>
-            <div class="val">彰化縣和美鎮 ・ 民國 92 年 8 月生<br>家族經營高北木瓜牛乳連鎖飲料店</div>
-          </div>
-          <div class="row">
-            <div class="key">學 歷</div>
-            <div class="val">中國文化大學<br>國際企業管理學系・政治學系 雙學士<br>（110.09–114.06）</div>
-          </div>
-          <div class="row">
-            <div class="key">學 涯</div>
-            <div class="val">國立彰化高中（107–110）<br>私立精誠中學 數理資優班（104–107）<br>縣立大成國小 數理資優班</div>
-          </div>
-          <div class="row">
-            <div class="key">現 職</div>
-            <div class="val">立法院 立法委員廖先翔 法案助理<br>（114.04 至今）</div>
-          </div>
-          <div class="row">
-            <div class="key">黨 職</div>
-            <div class="val">民眾黨彰化縣黨部 和美鎮副主任</div>
-          </div>
-          <div class="row">
-            <div class="key">榮 譽</div>
-            <div class="val">教育部 114 年 青年海外和平志工<br>績優團隊「特優」（泰北團隊籌建）</div>
-          </div>
-          <div class="row">
-            <div class="key">特 質</div>
-            <div class="val">MBTI ENFJ／ENTJ ・ 邏輯推理強<br>務實、效率、彈性、追求公平正義</div>
-          </div>
-        </div>
+      <div class="about-photos reveal">
+        <img src="images/about-ly-desk.jpg" alt="立法院法案助理歷練" class="tall">
+        <img src="images/about-chamber.jpg" alt="立法院議場">
+        <img src="images/about-tutor.jpg" alt="陪伴孩子課輔">
+        <img src="images/about-elder.jpg" alt="關懷長輩" class="tall">
       </div>
     </div>
   </div>
 </section>
 
-<!-- JOURNEY -->
-<section class="journey" id="journey">
+<!-- VISION -->
+<section class="vision" id="vision">
   <div class="container">
-    <div class="section-label"><span class="num">03</span> International <span style="color:var(--sky)">— 國際視野養成</span></div>
-    <h2 class="section-title reveal">
-      從<span class="accent">和美</span>出發，<br>
-      看過世界<span class="accent">回來</span>。
-    </h2>
-    <p style="font-family:'Noto Serif TC',serif;font-size:18px;line-height:1.85;color:var(--sky);max-width:760px;margin-bottom:40px" class="reveal">
-      跨領域、跨地理、跨世代——智弦的養成不在彰化結束。<br>
-      他帶著對「外面世界怎麼運作」的觀察回到家鄉，不是要套用模板，而是要找出最適合彰化的解。
-    </p>
-
-    <div class="journey-line">
-      <div class="j-step reveal">
-        <div class="year">2018</div>
-        <div class="place">— TAIPEI ／ 北漂</div>
-        <h4>進入彰化高中</h4>
-        <p>從和美到彰化高中，第一次離開最熟悉的家鄉生活圈。</p>
-      </div>
-      <div class="j-step reveal">
-        <div class="year">2021</div>
-        <div class="place">— THAILAND ／ 泰北</div>
-        <h4>國際志工 ・ 泰北志工團</h4>
-        <p>前往泰北清萊大同中學進行教育志工服務、環境美化。獲教育部「特優」獎項。</p>
-      </div>
-      <div class="j-step reveal">
-        <div class="year">2022</div>
-        <div class="place">— CHINA ／ 中國</div>
-        <h4>遊歷中國七省</h4>
-        <p>福建、山東、北京、天津、四川、青海、上海——親眼觀察計劃經濟與都市規劃的得失。</p>
-      </div>
-      <div class="j-step reveal">
-        <div class="year">2024</div>
-        <div class="place">— USA ／ 美國</div>
-        <h4>Grand View Lodge 房務</h4>
-        <p>四個月美國中部渡假村基層服務業工作，第一線體會勞工辛勤。</p>
-      </div>
-      <div class="j-step reveal">
-        <div class="year">2025</div>
-        <div class="place">— LEGISLATURE ／ 立法院</div>
-        <h4>立法院法案助理</h4>
-        <p>114.04 進入立法院，6 月轉正，成為國會最年輕法案助理之一，專責法案撰寫、質詢稿、行政。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DISTRICT -->
-<section class="district" id="district">
-  <div class="container">
-    <div class="section-label"><span class="num">04</span> Coverage <span style="color:var(--ink-soft)">— 第三選區</span></div>
-    <div class="district-grid">
-      <div class="district-intro reveal">
-        <h2 class="section-title" style="margin-bottom:24px">
-          <span class="ink">和美 ・ 線西 ・</span><br>
-          <span class="ink">伸港，</span><br>
-          <span class="accent">三鄉鎮一條心</span>。
-        </h2>
-        <p>第三選區是彰化縣的西北角，三個鄉鎮各有性格，但也共享同樣的挑戰：<strong style="color:var(--papaya-deep)">人口外移、傳產轉型、交通建設不足、青年留不住</strong>。</p>
-        <p>智弦相信，三鄉鎮要一起想——和美鎮的紡織重金屬、線西鄉的彰濱工業、伸港鄉的海港與農漁業——這是一個有完整產業梯隊的選區，需要的是有跨領域視野的代議者，把它整合成<strong style="color:var(--papaya-deep)">台中大肚烏日的下一塊腹地</strong>。</p>
-      </div>
-
-      <div class="district-towns reveal">
-        <div class="town">
-          <div class="town-num">01</div>
-          <span class="tag">和美鎮</span>
-          <h4>商圈與住宅</h4>
-          <p>新興住宅區崛起，和美大肚大橋、國民運動中心已完工。但商圈凋零、傳產出口受阻，需要振興與轉型。</p>
+    <div class="eyebrow">智弦的願景</div>
+    <h2 class="sec-title">宜居 ‧ 宜業 ‧ 宜遊<br>三大願景打造新和伸線</h2>
+    <p class="sec-sub">和伸線不是沒有資源,而是資源還沒被真正串聯起來。從家庭到街道,從社區到產業,逐項落實。</p>
+    <div class="vision-grid">
+      <div class="v-card reveal">
+        <div class="v-media"><img src="images/vision-live.jpg" alt="宜居"><span class="v-tag">宜居</span></div>
+        <div class="v-body">
+          <div class="v-title">宜居和伸線 ‧ 全齡安心</div>
+          <div class="v-quote">「讓青年住得起、孩子安全長大、長輩安心養老。」</div>
+          <div class="v-desc">推動平價「彰化青年住宅」、幸福小巴與社區預約共乘、65 歲以上長者健保費補助與平價育兒托育,讓公共服務不因住在都市或偏鄉而有差距。</div>
         </div>
-        <div class="town">
-          <div class="town-num">02</div>
-          <span class="tag">線西鄉</span>
-          <h4>彰濱工業</h4>
-          <p>彰濱工業區所在地，肩負彰化縣製造業半邊天。需要產業升級、AI 與無人機等新興產業招商。</p>
+      </div>
+      <div class="v-card reveal">
+        <div class="v-media"><img src="images/vision-work.jpg" alt="宜業"><span class="v-tag">宜業</span></div>
+        <div class="v-body">
+          <div class="v-title">宜業和伸線 ‧ 青年返鄉</div>
+          <div class="v-quote">「不是叫年輕人為了情懷留下,而是創造值得留下的薪資與機會。」</div>
+          <div class="v-desc">設立「和伸線青年創新創業基地」,推動紡織、五金、機械等傳產「智慧化、精緻化、品牌化、客製化」升級,鏈結彰濱與中科,創造高附加價值工作。</div>
         </div>
-        <div class="town">
-          <div class="town-num">03</div>
-          <span class="tag">伸港鄉</span>
-          <h4>海港與農漁</h4>
-          <p>面對台中港，農漁業為主。需要海洋環境保護、農漁業機械化、農民保障，從第一級產業突圍。</p>
+      </div>
+      <div class="v-card reveal">
+        <div class="v-media"><img src="images/vision-play.jpg" alt="宜遊"><span class="v-tag">宜遊</span></div>
+        <div class="v-body">
+          <div class="v-title">宜遊和伸線 ‧ 文化驕傲</div>
+          <div class="v-quote">「讓文化不只是被保存,更能被看見、被體驗。」</div>
+          <div class="v-desc">活化和美「織女的故鄉」紡織文創、塭仔漁港與慶安水道休閒化、烏溪濱海運動觀光廊道,把老街、商圈、漁港與濱海休閒串聯起來。</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- SERVICE -->
-<section class="service" id="service">
-  <div class="container">
-    <div class="section-label"><span class="num">05</span> Field Notes <span style="color:var(--ink-soft)">— 行動足跡</span></div>
-    <div class="service-intro">
-      <h2 class="section-title reveal" style="margin-bottom:0">
-        從<span class="accent">夜市</span>到<span class="accent">海邊</span>，<br>
-        從<span class="accent">立法院</span>到<span class="accent">家門口</span>。
-      </h2>
-      <p class="reveal">
-        智弦的競選之路從不在冷氣房裡。從黨主席帶隊夜市掃街、與基層民眾合影、海洋淨灘、到參與黨主席發贈春聯活動——年輕人的參選，要靠著陸戰、空戰、海戰一起打。
-      </p>
-    </div>
-
-    <div class="service-gallery">
-      <div class="service-item full reveal">
-        <img src="images/ko_team.jpg" alt="與民眾黨彰化團隊夜市掃街拜票">
-        <div class="overlay">
-          <span class="tag">夜市掃街 ・ 黨主席帶隊</span>
-          <h4>與柯主席、彰化團隊夜市掃街</h4>
-          <p>跟著黨主席柯文哲、彰化縣議員吳韋達、北區董立凱、埔心鄉徐尚裕、彰化東區郭凱倫等彰化民眾黨團隊，一起在和美夜市掃街拜票。第三勢力在彰化，正一鄉一鎮地打底。</p>
-        </div>
-      </div>
-      <div class="service-item large7 reveal">
-        <img src="images/support.jpg" alt="與基層民眾合影支持">
-        <div class="overlay">
-          <span class="tag">基層服務 ・ 民眾支持</span>
-          <h4>跟鄉親站在一起</h4>
-          <p>夜市拜票、家門口的問候、選民的握手——基層政治的關鍵不是搞排場，是讓鄉親願意把手伸出來。</p>
-        </div>
-      </div>
-      <div class="service-item medium5 reveal">
-        <img src="images/night_market.jpg" alt="夜市拜票團隊">
-        <div class="overlay">
-          <span class="tag">和美夜市 ・ 團隊全員到齊</span>
-          <h4>夜市發傳單，看版立起來</h4>
-          <p>「選弦與能 ・ 福利加乘」的競選看板高高豎起，是 Z 世代政治新秀進入和美夜市的第一張宣戰書。</p>
-        </div>
-      </div>
-      <div class="service-item tall5 reveal">
-        <img src="images/spring.jpg" alt="與民眾黨主席黃國昌春聯合影">
-        <div class="overlay">
-          <span class="tag">萬眾同欣 ・ 黨主席祝福</span>
-          <h4>萬眾同欣 ・ 2026 新春</h4>
-          <p>由黨主席黃國昌親自致贈的春聯「萬眾同欣」。這是一份來自黨中央的祝福，也是對彰化第三選區年輕世代的期待。</p>
-        </div>
-      </div>
-      <div class="service-item tall7 reveal">
-        <img src="images/beach.jpg" alt="伸港鄉海洋環境清潔">
-        <div class="overlay">
-          <span class="tag">海洋永續 ・ 伸港淨灘</span>
-          <h4>海洋環境，從伸港做起</h4>
-          <p>伸港鄉面對台中港，是彰化的海洋門戶。淨灘不只是行動，是對這片海岸線負起的承諾。海洋好，漁業才能好；環境好，下一代才願意留下來。</p>
-        </div>
-      </div>
-    </div>
+    <div class="vision-cta"><a class="btn-teal" href="#policy">查看完整政見 ›</a></div>
   </div>
 </section>
 
 <!-- POLICY -->
 <section class="policy" id="policy">
   <div class="container">
-    <div class="section-label"><span class="num">06</span> Policy <span style="color:var(--ink-soft)">— 政見規劃</span></div>
-    <h2 class="section-title reveal">
-      <span class="accent">六項</span>具體承諾，<br>
-      送進議事廳。
-    </h2>
+    <div class="eyebrow">完整政見</div>
+    <h2 class="sec-title">如何翻轉在地,智弦的作法</h2>
+    <p class="sec-sub">八大政策方向,把「專業、理性、務實」帶進地方。</p>
+    <div class="acc">
+      <div class="acc-item">
+        <button class="acc-head"><span class="no">01</span>居住正義|回歸居住本質,落實青年安居</button>
+        <div class="acc-body"><div class="acc-body-in"><ul>
+          <li><b>彰化縣住宅及都市更新中心:</b>盤點和伸線國公有地,比照新加坡組屋 HDB 模式結合民間營建量能(公辦民營/BOT),推動平價「彰化青年住宅」。</li>
+          <li><b>容積獎勵回饋可負擔社宅:</b>比照桃園引導民間建案提供一定比例平價社宅(市價 5-7 折供青年承租或首購),建立長效平價住宅庫存。</li>
+          <li><b>重稅防囤防炒作:</b>落實地方囤房稅、非自住差別稅率與地價稅累進機制,杜絕空地養地與惡意炒房。</li>
+          <li><b>公有地「只租不售」與土地儲備機制:</b>推動公有非公用土地設定地上權或租賃,完善公共設施保留地檢討與市地重劃,建立公開透明的土地交易平台。</li>
+          <li><b>危老與老屋都更轉型:</b>爭取縣府提高危老重建輔導量能,和伸線舊街區危老建築導入容積獎勵,原住戶享優先購買或承租在地社宅權益。</li>
+        </ul></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head"><span class="no">02</span>產業復興|青年創業、傳產升級與智慧科技</button>
+        <div class="acc-body"><div class="acc-body-in"><ul>
+          <li><b>「和伸線青年創新創業基地」:</b>活化閒置公有建物,提供共享辦公、文創展演與社團孵化基地,搭配青年低利貸款一站式輔導。</li>
+          <li><b>傳統產業「四化」升級:</b>針對紡織、五金、機械、塑膠加工,督促經濟部爭取專案輔導經費,引進工研院輔導,朝「智慧化、精緻化、品牌化、客製化」轉型。</li>
+          <li><b>智慧農業與生科導入:</b>推動線西、伸港沿海溫室智慧農業、耐鹽作物栽種與生物科技水產養殖,提升農漁產品附加價值。</li>
+          <li><b>切入新興科技產業鏈:</b>鏈結彰濱與中科,爭取無人載具測試驗證場域,推動和伸線成為「半導體設備耗材、高階模具、無人機關鍵零組件、綠能產業」製造重鎮。</li>
+        </ul></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head"><span class="no">03</span>交通安全|人本交通與無縫大眾運輸</button>
+        <div class="acc-body"><div class="acc-body-in"><ul>
+          <li><b>人行道普及計畫:</b>優先於中山路、新港路、鹿和路、彰美路商圈與通學購物熱區,全面劃設實體人行道或綠底標線型人行道。</li>
+          <li><b>智慧交通號誌聯網:</b>爭取和美鎮試辦智慧號誌示範區,建立動態號誌調節系統,如彰美路 AI 路口監測系統。</li>
+          <li><b>落實「一里一 MOOVO 站點」:</b>優先在伸港、線西重要節點與和美生活圈增設共享單車站點,讓共享大眾運具普及化。</li>
+          <li><b>公車系統升級轉型:</b>推動公車站牌全數電子化(智慧站牌)與標準化遮陽避雨候車亭,依通勤大數據加密尖峰班次。</li>
+          <li><b>監督捷運和美線辦理進度:</b>持續透過立法院經驗,監督縣政府及中央加速捷運和美線的進度。</li>
+        </ul></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head"><span class="no">04</span>活絡觀光|濱海休閒廊道與紡織文創新生命</button>
+        <div class="acc-body"><div class="acc-body-in"><ul>
+          <li><b>特色商圈輔導專案:</b>針對中山路、鹿和路、彰美路與新港路店家密集區,爭取活化補助並打造彰化道地小吃與在地知名商圈品牌。</li>
+          <li><b>彰美路「和美紡織文化商圈」:</b>結合「織女的故鄉」歷史,活化老舊廠房與老屋,發展紡織工藝體驗、文創市集與漫遊商圈。</li>
+          <li><b>烏溪濱海運動觀光廊道:</b>整合伸港濱二路至烏溪河口段,設置戶外多功能球場、攀岩/滑板場地與停車場,公園盟流設施串聯防汛道路綠廊。</li>
+          <li><b>塭仔漁港與慶安水道休閒化:</b>升級觀光魚市設施,建置慶安水道沿岸自行車道,串聯線西肉粽角、白色海豚屋,推動討海文化體驗遊程。</li>
+          <li><b>老屋聚落觀光文化復興:</b>推動老屋街區立面修復與故事導覽,打造兼具生活與觀光價值的活態博物館聚落。</li>
+        </ul></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head"><span class="no">05</span>全齡友愛|健全長照、減負育兒與全齡共融</button>
+        <div class="acc-body"><div class="acc-body-in"><ul>
+          <li><b>偏鄉社區幸福專車:</b>推動「幸福小巴」與「社區預約共乘系統」,串聯偏遠聚落至醫院、公所、運動館、市場與轉運站點。</li>
+          <li><b>長者健康與弱勢照顧:</b>爭取 65 歲以上長者健保費全額補助,提高身心障礙補助並強化輔具申辦流程線上化,擴大獨居長者定期關懷與送餐服務。</li>
+          <li><b>平價育兒與友善托育:</b>提高公托名額、推動準公托收費比照公托標準補貼差額;加大推動公立幼兒園增設 2 歲專班;建置「臨時托育媒合平台」;爭取坐月子營養金及孕產婦心理諮商補助。</li>
+          <li><b>「一里一特色公園」計畫:</b>盤點閒置公有地與畸零綠地,優先改建為親子全齡共融遊戲場與寵物友善運動公園。</li>
+          <li><b>成立社福網:</b>建立社福資源線上媒合平台,提供各機關團體發布資訊,並推動中彰惜物網,讓政府、非政府組織及一般民眾可上網拍賣,達成永續惜物概念。</li>
+        </ul></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head"><span class="no">06</span>地方教育|三語扎根、產學鏈結與教育平權</button>
+        <div class="acc-body"><div class="acc-body-in"><ul>
+          <li><b>升學職涯實境探索:</b>推動「彰化青年在地產業實境探索計畫」,安排國高中生參訪和伸線在地隱形冠軍企業與鄰近大學實驗室。</li>
+          <li><b>扎根「三語教育」:</b>華語、英語、AI 數位語法——於國中小導入 AI 程式基礎與數位素養課程,提供高中職及大專青年每人 3,000 元 AI 數位工具學習補助。</li>
+          <li><b>產學研發在地化:</b>設立彰化產學合作基金,補助大專院校研發經費,推動研發團隊進駐在地企業,解決技術瓶頸並培育即戰力人才。</li>
+          <li><b>落實 AI 平權:</b>爭取青年 AI 數位工具補助 6,000 元,落實教育平權,提升在地青年競爭力。</li>
+        </ul></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head"><span class="no">07</span>地方困境突破|治安、環保與公安治理</button>
+        <div class="acc-body"><div class="acc-body-in"><ul>
+          <li><b>遊蕩犬管理強化:</b>督促動防所成立區域專案捕捉隊,結合民間動保落實「精準捕捉、嚴格絕育(TNvR)、積極送養」,杜絕追犬傷人事故。</li>
+          <li><b>住宅廢棄物囤積自治法規:</b>訂定住宅廢棄物與環境衛生自治條例,明定環保局強制清除、社會處介入關懷輔導、警察局維持秩序之跨局處機制。</li>
+          <li><b>岸際聯防與 AI 科技防制毒品:</b>督促彰檢警局與海巡建立港口安檢常態聯防,於重要聯外道路建置 AI 車牌辨識系統監控高危車輛。</li>
+          <li><b>科技執法防制偷排:</b>成立 24 小時科技環保稽查隊,針對工業區與重點河川(如番仔寮大排、洋仔厝溪周邊)裝設水質微型感測器與空氣 AI 煙霧辨識系統,監測夜間環境品質。</li>
+          <li><b>移工管理與輔導協助:</b>配合勞動部擴大查緝失聯非法移工,建立合法移工生活輔導與 G2B 雇主仲介溝通平台,兼顧產業缺工與社區治安。</li>
+          <li><b>公共工程品質透明化:</b>建立全民監督公共工程 App,公共工程進度透明公開;路面刨鋪全面落實「路平專案標準作業」,施工進度與品質驗收線上即時公開。</li>
+        </ul></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head"><span class="no">08</span>舊埕翻新與空間治理|國土計畫與創生接軌</button>
+        <div class="acc-body"><div class="acc-body-in"><ul>
+          <li><b>國土計畫與通盤檢討平衡:</b>因應國土計畫法上路,通盤檢討和伸線城鄉發展區(城1、城2)與農業發展區劃分,保留在地擴廠與生活擴展空間,兼顧農地保護。</li>
+          <li><b>督促縣府啟動「和伸線擴大與新訂都市計畫」:</b>針對和美、伸港既有都市計畫區發展飽和現況,督促縣府建設處儘早啟動通盤檢討與擴大程序,釋出住宅與產業發展用地。</li>
+          <li><b>產業群聚區整體開發:</b>透過擴大都市計畫或產業園區整體開發,解決農地違章工廠歷史問題,如水五金產業園區擴大含括南佃、嘉犁、鎮平、源埤等。</li>
+          <li><b>成立「和伸線地方創生顧問團」:</b>邀集都市計畫、景觀設計與社創專家,輔導在地青年與社區發展協會爭取國發會地方創生經費,活化閒置公有老建物,重現老街歷史魅力與商業動能。</li>
+        </ul></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="policy-grid">
-      <ol class="policy-list">
-        <li class="reveal">
-          <div class="num">01</div>
-          <div>
-            <h4>交通公共建設 <span class="badge">PRIORITY</span></h4>
-            <p>積極爭取彰南線、鹿港線、台中捷運綠線延伸彰化、客運路網優化。讓和美、線西、伸港不只是台中的腹地，而是真正擁有完整交通基礎設施的副都心。</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <div class="num">02</div>
-          <div>
-            <h4>育兒嬰與教育 <span class="badge">FAMILY</span></h4>
-            <p>母親從事幼保工作，深知第一線辛勞。爭取育嬰兒工作人員權益、提高彰化生育率、打造優質育嬰環境。讓年輕家庭願意在彰化結婚、生子、養老。</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <div class="num">03</div>
-          <div>
-            <h4>產業經濟轉型 <span class="badge">INDUSTRY</span></h4>
-            <p>傳統產業扶持、無人機與 AI 供應鏈招商、彰濱工業區升級。讓彰化的工業實力，從「世界第一廠商」的記憶，變成「世界第一廠商」的現在進行式。</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <div class="num">04</div>
-          <div>
-            <h4>農漁業機械化 <span class="badge">AGRI</span></h4>
-            <p>家族企業背景讓我深知農產品供應鏈。爭取農民保障、推動全縣農業機械化、智慧化、規模經濟。讓伸港、線西的農漁產品能走出彰化、走進通路。</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <div class="num">05</div>
-          <div>
-            <h4>動保與兒少 <span class="badge">CARE</span></h4>
-            <p>持續關注動保團體、兒少聯盟、護理師、保母托嬰協會等公民團體議題。為弱勢、為動物、為孩子發聲，是民代最基本的責任。</p>
-          </div>
-        </li>
-        <li class="reveal">
-          <div class="num">06</div>
-          <div>
-            <h4>立法院實務監督 <span class="badge">LEGAL</span></h4>
-            <p>運用立法院法案助理的實務經驗，將法律專業帶進縣議會。每一份質詢稿、每一筆預算審查，都用立院的嚴謹標準把關。讓地方議會也能<strong>專業問政</strong>。</p>
-          </div>
-        </li>
-      </ol>
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="eyebrow">在地服務</div>
+    <h2 class="sec-title">和伸線人的貼心服務站</h2>
+    <p class="sec-sub">蘇智弦服務團隊提供的免費諮詢與服務,有需要隨時聯繫,智弦第一時間前往。</p>
+    <div class="svc-grid">
+      <div class="svc-card reveal"><div class="svc-ico">🚀</div><div class="svc-title">創業諮詢</div><div class="svc-desc">青年創業資源、低利貸款與補助申請,一站式協助起步。</div><a class="svc-link" href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 預約 ›</a></div>
+      <div class="svc-card reveal"><div class="svc-ico">🍼</div><div class="svc-title">育兒諮詢</div><div class="svc-desc">托育補助、公托申請與育兒津貼,爸媽的問題我們懂。</div><a class="svc-link" href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 預約 ›</a></div>
+      <div class="svc-card reveal"><div class="svc-ico">🤝</div><div class="svc-title">長照諮詢</div><div class="svc-desc">長照 2.0 申請、輔具補助與居家照護資源轉介。</div><a class="svc-link" href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 預約 ›</a></div>
+      <div class="svc-card reveal"><div class="svc-ico">⚖️</div><div class="svc-title">法律諮詢</div><div class="svc-desc">勞資糾紛、契約與生活法律問題,免費專業諮詢預約。</div><a class="svc-link" href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 預約 ›</a></div>
+      <div class="svc-card reveal"><div class="svc-ico">📋</div><div class="svc-title">補助申請</div><div class="svc-desc">各項政府補助資訊查詢與申請協助,不漏接任何權益。</div><a class="svc-link" href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 預約 ›</a></div>
+      <div class="svc-card reveal"><div class="svc-ico">🚐</div><div class="svc-title">看診接送</div><div class="svc-desc">長輩就醫交通協助,偏鄉看診不再是難題。</div><a class="svc-link" href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 預約 ›</a></div>
+      <div class="svc-card reveal"><div class="svc-ico">📢</div><div class="svc-title">陳情案件服務</div><div class="svc-desc">道路、水溝、路燈、環境問題,反映後智弦前往現場勘查。</div><a class="svc-link" href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 反映 ›</a></div>
+      <div class="svc-card reveal"><div class="svc-ico">💪</div><div class="svc-title">志工招募</div><div class="svc-desc">加入「尚少年挺阿弦」志工社群,一起為和伸線努力。</div><a class="svc-link" href="https://line.me/ti/g2/8LAGkFNEgeIjVU0EcAUB_uR2IW0okK-ANpQbkQ?utm_source=invitation&utm_medium=QR_code&utm_campaign=default" target="_blank" rel="noopener">加入社群 ›</a></div>
+    </div>
+  </div>
+</section>
 
-      <aside class="policy-side reveal">
-        <div class="quote-mark">"</div>
-        <h3>由我們這一代<br>突破藍綠買票政治，<br>努力為家鄉<br>灌注<br>新鮮活力。</h3>
-        <p>「身為 00 後出身的年輕人，從小看到家鄉人口外移、商圈凋零、青年逃離無翻身機會的鄉村。我希望由我們這一代，跨越色彩、實用至上；世代融合、重塑彰化。我也期盼未來民眾黨能壯大，走出屬於自己的路線。」</p>
-        <div class="signature">
-          <span class="name">蘇智弦</span>
-          <span class="title">— CANDIDATE</span>
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="eyebrow">走訪和伸線</div>
+    <h2 class="sec-title">傾聽民意,走進每個村里</h2>
+    <div class="g-grid reveal">
+      <img src="images/g1.jpg" alt="國小夏令營">
+      <img src="images/g2.jpg" alt="線西鄉活動">
+      <img src="images/g3.jpg" alt="與長輩互動">
+      <img src="images/g4.jpg" alt="夜市走訪">
+      <img src="images/g5.jpg" alt="關懷長輩">
+      <img src="images/g6.jpg" alt="社區包粽活動">
+      <img src="images/g7.jpg" alt="社區活動分享">
+      <img src="images/g8.jpg" alt="道路會勘">
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support" id="support">
+  <div class="container">
+    <div class="eyebrow">支持我們</div>
+    <h2 class="sec-title">一起為和伸線努力</h2>
+    <p class="sec-sub">小額捐款、志工募集,每一份心意都是前進的動力。</p>
+    <div class="sup-grid">
+      <div class="sup-card reveal">
+        <h3>💚 小額捐款</h3>
+        <p>您的支持,是我們前進的動力。每一份心意都將用於市政推動與服務品質提升。</p>
+        <a class="btn-teal" href="#donate-info">立即捐款</a>
+      </div>
+      <div class="sup-card reveal">
+        <h3>💪 志工募集</h3>
+        <p>加入我們的團隊,一起為和伸線的未來努力。歡迎各行各業有志一同的朋友加入「尚少年挺阿弦」社群。</p>
+        <div class="qr-box">
+          <img src="images/line-group-qr.png" alt="尚少年挺阿弦 LINE 社群 QR Code">
+          <a class="btn-outline" href="https://line.me/ti/g2/8LAGkFNEgeIjVU0EcAUB_uR2IW0okK-ANpQbkQ?utm_source=invitation&utm_medium=QR_code&utm_campaign=default" target="_blank" rel="noopener">加入志工</a>
         </div>
-      </aside>
+      </div>
+      <div class="sup-card reveal" id="donate-info">
+        <h3>線上捐款</h3>
+        <p>透過線上平台快速完成捐款,最簡便的方式。<br>✓ 多元付款方式 ✓ 即時完成,不需手動轉帳</p>
+        <div class="qr-box">
+          <div class="qr-ph">線上捐款 QR Code<br>(待補)</div>
+        </div>
+        <div class="placeholder-note">※ 線上捐款連結與 QR Code 待政治獻金專戶核准後更新。</div>
+      </div>
+      <div class="sup-card reveal">
+        <h3>郵政劃撥 / ATM 匯款</h3>
+        <p>自行至銀行櫃台或 ATM 完成轉帳。</p>
+        <table class="donate-table">
+          <tr><td>收款銀行</td><td>中華郵政(700)</td></tr>
+          <tr><td>劃撥帳號</td><td>22878336 <span class="copy-tag" data-copy="22878336">複製</span></td></tr>
+          <tr><td>他行轉入</td><td>700001022878336 <span class="copy-tag" data-copy="700001022878336">複製</span></td></tr>
+          <tr><td>戶名</td><td>蘇智弦政治獻金專戶</td></tr>
+        </table>
+        <div class="placeholder-note">※ 以上帳戶資訊為示意版面,正式政治獻金專戶資料核准後更新。</div>
+      </div>
+      <div class="sup-card mail-card reveal">
+        <div class="mail-note">自行匯款者請依樣板來信告知,辦公室才能完成政治獻金申報。</div>
+        <div class="mail-sub">為保護您的個資,本站不收集任何資料;請選擇身份,於郵件 App 內依樣板填寫並寄至服務處信箱。</div>
+        <div class="mail-tpl" id="mailTpl">蘇智弦 候選人辦公室 您好。
+
+本人已完成政治獻金捐款,相關申報資訊如下:
+捐贈者類型:個人
+姓名:        身分證統一編號:
+聯絡地址:      聯絡電話:
+捐款金額:NT$    捐款日期:
+匯入帳戶:中華郵政(700)22878336
+
+本人聲明:年滿 18 歲,具中華民國國籍且是以本人名義捐輸。謝謝。</div>
+        <a class="btn-outline" id="copyTpl" href="javascript:void(0)">複製樣板</a>
+        <div class="placeholder-note">※ 收件信箱與匯入帳戶待正式資料確認後更新。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="eyebrow">常見問題</div>
+    <h2 class="sec-title">關於蘇智弦,你想知道的</h2>
+    <p class="sec-sub">認識和美 ‧ 伸港 ‧ 線西 縣議員參選人 蘇智弦。</p>
+    <div class="acc">
+      <div class="acc-item">
+        <button class="acc-head">蘇智弦是誰?</button>
+        <div class="acc-body"><div class="acc-body-in">蘇智弦,23 歲,在嘉犁、詔安、鎮平長大的和美囝仔。國立彰化高中、中國文化大學國際企業管理與政治學系雙學士。曾任立法委員王安祥(和美伸港線西區特助)、廖先翔法案助理、張啟楷服務團隊成員,具備第一線法案研擬與選民服務經驗。</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">蘇智弦是哪一黨?參選什麼?</button>
+        <div class="acc-body"><div class="acc-body-in">蘇智弦為台灣民眾黨提名,參選 2026 年彰化縣議員(選區:和美鎮、伸港鄉、線西鄉)。期盼打破極端對立的政治藩籬,把「專業、理性、務實」帶進地方。</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">蘇智弦的政見是什麼?</button>
+        <div class="acc-body"><div class="acc-body-in">以「宜居、宜業、宜遊」三大願景為主軸,推動居住正義、產業復興、交通安全、活絡觀光、全齡友愛、地方教育、治安環保與國土空間治理等八大政策。詳見<a href="#policy" style="color:var(--teal);font-weight:700">完整政見</a>。</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">服務處提供哪些服務?</button>
+        <div class="acc-body"><div class="acc-body-in">創業諮詢、育兒諮詢、長照諮詢、法律諮詢、補助申請、看診接送與各類陳情案件服務。透過 LINE 官方帳號即可預約,全部免費。</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">如何聯絡蘇智弦服務團隊?</button>
+        <div class="acc-body"><div class="acc-body-in">服務處位於彰化縣和美鎮線東路三段 9 號(彰和路、線東路交叉路口),電話 04-7519819,行動電話 0968-722-819,或透過 Facebook、Instagram、LINE 官方帳號與我們聯繫。</div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-head">如何擔任志工或參與?</button>
+        <div class="acc-body"><div class="acc-body-in">歡迎掃描或點選「尚少年挺阿弦」LINE 社群連結加入志工行列,不論是活動支援、文宣協助或社區服務,每一份力量都是改變的開始。</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1396,179 +588,94 @@ footer{background:var(--ink);color:var(--sky);padding:80px 40px 40px}
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
-    <div class="section-label"><span class="num">07</span> Contact <span style="color:var(--ink-soft)">— 聯絡我們</span></div>
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <h2>有事，<br><span class="accent">直接說</span>。</h2>
-        <p>無論是道路、長照、教育、農漁業、動保，或任何和美、線西、伸港的鄉親生活疑難雜症——電話、Email、社群私訊都歡迎。每一件陳情都會建檔、追蹤、回覆。</p>
-
-        <div class="contact-detail">
-          <div class="row">
-            <div class="key">PHONE</div>
-            <div class="val"><a href="tel:0968722819">0968-722-819</a></div>
-          </div>
-          <div class="row">
-            <div class="key">EMAIL</div>
-            <div class="val"><a href="mailto:a0968722819@gmail.com">a0968722819@gmail.com</a></div>
-          </div>
-          <div class="row">
-            <div class="key">FACEBOOK</div>
-            <div class="val">蘇智弦（待連結）</div>
-          </div>
-          <div class="row">
-            <div class="key">INSTAGRAM</div>
-            <div class="val">@kk_8.19（待連結）</div>
-          </div>
-          <div class="row">
-            <div class="key">YOUTUBE</div>
-            <div class="val">蘇智弦（待連結）</div>
-          </div>
-          <div class="row">
-            <div class="key">THREADS</div>
-            <div class="val">@kk_8.19（待連結）</div>
-          </div>
-          <div class="row">
-            <div class="key">SERVICE</div>
-            <div class="val">和美鎮（競選服務處設置中）</div>
-          </div>
+    <div class="eyebrow">聯絡我們</div>
+    <h2 class="sec-title">有話想跟智弦說?</h2>
+    <div class="contact-card reveal">
+      <div class="contact-info">
+        <h3>蘇智弦服務處</h3>
+        <div class="contact-line"><span>地址</span><b>彰化縣和美鎮線東路三段 9 號</b></div>
+        <div class="contact-line"><span></span>彰和路、線東路交叉路口</div>
+        <div class="contact-line"><span>電話</span><b><a href="tel:047519819">04-7519819</a></b></div>
+        <div class="contact-line"><span>行動</span><b><a href="tel:0968722819">0968-722-819</a></b></div>
+        <div class="contact-socials">
+          <a href="https://www.facebook.com/chihhsien.0819" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21.9v-8h2.7l.4-3.1h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.6v3.1h2.8v8h3.1z"/></svg></a>
+          <a href="https://www.threads.com/@kk_8.19" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24"><path d="M12.2 22c-2.9 0-5.1-1-6.6-2.9C4.2 17.4 3.5 15 3.5 12c0-3 .7-5.4 2.1-7.1C7.1 3 9.3 2 12.2 2c2.2 0 4 .6 5.4 1.7 1.3 1 2.2 2.5 2.7 4.3l-2.1.6c-.7-2.7-2.7-4.4-6-4.4-2.2 0-3.9.7-5 2.2-1 1.3-1.6 3.2-1.6 5.6s.5 4.3 1.6 5.6c1.1 1.4 2.8 2.2 5 2.2 2 0 3.3-.5 4.3-1.5.8-.8 1.2-1.9 1.1-2.9-.1-.7-.4-1.3-.9-1.8-.4 1.7-1.7 4-4.7 4-1.3 0-2.4-.4-3.2-1.1-.8-.8-1.2-1.8-1.2-2.9.1-2.2 1.9-3.7 4.5-3.7.8 0 1.5.1 2.2.2 0-.6-.2-1.1-.5-1.5-.4-.5-1.1-.8-1.9-.8h-.1c-.7 0-1.6.2-2.2 1.1l-1.8-1.2c.9-1.4 2.4-2.1 4.1-2.1 1.5 0 2.7.5 3.5 1.4.8.8 1.2 2 1.3 3.4l.1.6c1.5.8 2.4 2 2.6 3.6.2 1.7-.5 3.5-1.8 4.7-1.4 1.4-3.3 2.1-5.8 2.1zm.4-8.2c-1.2 0-2.4.5-2.4 1.7 0 .8.7 1.6 2.1 1.6 1.9 0 2.6-1.9 2.7-3-.7-.2-1.6-.3-2.4-.3z"/></svg></a>
+          <a href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener" aria-label="LINE 官方帳號"><svg viewBox="0 0 24 24"><path d="M12 3C6.8 3 2.5 6.4 2.5 10.7c0 3.8 3.4 7 7.9 7.6.3.1.7.2.8.5.1.2.1.6 0 .8l-.1.8c0 .2-.2.9.8.5s5.2-3.1 7.1-5.3c1.3-1.4 1.9-2.9 1.9-4.5C21.5 6.4 17.2 3 12 3zM8.1 13.2H6.2c-.3 0-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3h1.4c.3 0 .5.2.5.5s-.2.5-.5.5zm1.9-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3.5zm4.5 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-1.9-2.6v2.3c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.2c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l1.9 2.6V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3.5zm3.1-2.3c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.9h1.4c.3 0 .5.2.5.5s-.2.5-.5.5h-1.9c-.3 0-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5h1.9c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.7h1.4z"/></svg></a>
+          <a href="https://www.instagram.com/kk_8.19" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 4.3c2.5 0 2.8 0 3.8.1.9 0 1.4.2 1.8.3.4.2.8.4 1.1.7.3.3.5.6.7 1.1.1.3.3.8.3 1.8 0 1 .1 1.3.1 3.8s0 2.8-.1 3.8c0 .9-.2 1.4-.3 1.8-.2.4-.4.8-.7 1.1-.3.3-.6.5-1.1.7-.3.1-.8.3-1.8.3-1 0-1.3.1-3.8.1s-2.8 0-3.8-.1c-.9 0-1.4-.2-1.8-.3-.4-.2-.8-.4-1.1-.7-.3-.3-.5-.6-.7-1.1-.1-.3-.3-.8-.3-1.8 0-1-.1-1.3-.1-3.8s0-2.8.1-3.8c0-.9.2-1.4.3-1.8.2-.4.4-.8.7-1.1.3-.3.6-.5 1.1-.7.3-.1.8-.3 1.8-.3 1-.1 1.3-.1 3.8-.1zM12 2.2c-2.7 0-3 0-4 .1-1 .1-1.8.2-2.4.5-.6.2-1.2.6-1.7 1.1-.5.5-.9 1.1-1.1 1.7-.3.6-.4 1.3-.5 2.4 0 1-.1 1.3-.1 4s0 3 .1 4c.1 1 .2 1.8.5 2.4.2.6.6 1.2 1.1 1.7.5.5 1.1.9 1.7 1.1.6.3 1.3.4 2.4.5 1 0 1.3.1 4 .1s3 0 4-.1c1-.1 1.8-.2 2.4-.5.6-.2 1.2-.6 1.7-1.1.5-.5.9-1.1 1.1-1.7.3-.6.4-1.3.5-2.4 0-1 .1-1.3.1-4s0-3-.1-4c-.1-1-.2-1.8-.5-2.4-.2-.6-.6-1.2-1.1-1.7-.5-.5-1.1-.9-1.7-1.1-.6-.3-1.3-.4-2.4-.5-1-.1-1.3-.1-4-.1zm0 4.8a5 5 0 100 10 5 5 0 000-10zm0 8.3a3.3 3.3 0 110-6.5 3.3 3.3 0 010 6.5zM18.4 6.8a1.2 1.2 0 11-2.3 0 1.2 1.2 0 012.3 0z"/></svg></a>
         </div>
       </div>
-
-      <div class="contact-form reveal">
-        <h3>線上陳情 / 服務申請</h3>
-        <div class="form-sub">SERVICE REQUEST FORM</div>
-
-        <div class="field-row">
-          <div class="field">
-            <label>姓名 NAME</label>
-            <input type="text" placeholder="請輸入您的姓名">
-          </div>
-          <div class="field">
-            <label>聯絡電話 PHONE</label>
-            <input type="tel" placeholder="0900-000-000">
-          </div>
-        </div>
-        <div class="field">
-          <label>居住鄉鎮 TOWN</label>
-          <select>
-            <option>請選擇您的居住鄉鎮</option>
-            <option>和美鎮</option>
-            <option>線西鄉</option>
-            <option>伸港鄉</option>
-            <option>彰化縣其他鄉鎮市</option>
-            <option>非彰化縣</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>議題類別 CATEGORY</label>
-          <select>
-            <option>請選擇</option>
-            <option>交通 / 道路 / 公共建設</option>
-            <option>育兒 / 教育 / 親子議題</option>
-            <option>產業 / 就業 / 商圈</option>
-            <option>農漁業 / 農民權益</option>
-            <option>長照 / 銀髮服務</option>
-            <option>動物保護</option>
-            <option>環境 / 海洋永續</option>
-            <option>其他</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>議題說明 MESSAGE</label>
-          <textarea placeholder="請描述您希望反映的事項，越詳細越好（時間、地點、現況）"></textarea>
-        </div>
-        <button class="form-submit" type="button" onclick="alert('表單功能尚未串接後端，請暫時使用上方電話或 Email 聯絡。')">送出申請　→</button>
+      <div class="contact-map">
+        <img src="images/map.jpg" alt="蘇智弦服務處位置地圖">
+        <div class="map-cap">服務處位置示意圖|彰化縣和美鎮線東路三段 9 號</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="cta-content">
-    <div class="label">2026 ・ 11 ・ 28　彰化縣議員選舉</div>
-    <h2>
-      <span class="accent">選弦</span>與能，<br>
-      <span class="accent">福利</span>加乘。
-    </h2>
-    <p>
-      把您的一票，交給願意跨越色彩、<br>
-      帶著國際視野與立法院實務經驗的 23 歲青年。
-    </p>
-
-    <div class="ballot">
-      <span class="ballot-label">YOUR BALLOT ／ 您的選票</span>
-      <div class="ballot-row">
-        <div class="ballot-circle"></div>
-        <div class="ballot-info">
-          <div class="name">蘇 智 弦</div>
-          <div class="role">彰化縣議員 ・ 第三選區 ・ 民眾黨提名</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="foot-grid">
-    <div class="foot-brand">
-      <h3>蘇智弦</h3>
-      <div class="slogan">SU CHIH-HSUAN ／ CHANGHUA COUNTY</div>
-      <p>2026 年彰化縣議員第三選區（和美、線西、伸港）參選人。<br>台灣民眾黨提名 ・ 23 歲 Z 世代代表。<br>以「跨越色彩、實用至上；世代融合、重塑彰化」為核心理念。</p>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <div class="f-brand">蘇智弦 Chih-Hsien<small>台灣民眾黨 ‧ 彰化縣議員候選人<br>和美鎮 ‧ 伸港鄉 ‧ 線西鄉</small></div>
+        <div class="f-socials">
+          <a href="https://www.facebook.com/chihhsien.0819" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21.9v-8h2.7l.4-3.1h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.6v3.1h2.8v8h3.1z"/></svg></a>
+          <a href="https://www.threads.com/@kk_8.19" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24"><path d="M12.2 22c-2.9 0-5.1-1-6.6-2.9C4.2 17.4 3.5 15 3.5 12c0-3 .7-5.4 2.1-7.1C7.1 3 9.3 2 12.2 2c2.2 0 4 .6 5.4 1.7 1.3 1 2.2 2.5 2.7 4.3l-2.1.6c-.7-2.7-2.7-4.4-6-4.4-2.2 0-3.9.7-5 2.2-1 1.3-1.6 3.2-1.6 5.6s.5 4.3 1.6 5.6c1.1 1.4 2.8 2.2 5 2.2 2 0 3.3-.5 4.3-1.5.8-.8 1.2-1.9 1.1-2.9-.1-.7-.4-1.3-.9-1.8-.4 1.7-1.7 4-4.7 4-1.3 0-2.4-.4-3.2-1.1-.8-.8-1.2-1.8-1.2-2.9.1-2.2 1.9-3.7 4.5-3.7.8 0 1.5.1 2.2.2 0-.6-.2-1.1-.5-1.5-.4-.5-1.1-.8-1.9-.8h-.1c-.7 0-1.6.2-2.2 1.1l-1.8-1.2c.9-1.4 2.4-2.1 4.1-2.1 1.5 0 2.7.5 3.5 1.4.8.8 1.2 2 1.3 3.4l.1.6c1.5.8 2.4 2 2.6 3.6.2 1.7-.5 3.5-1.8 4.7-1.4 1.4-3.3 2.1-5.8 2.1zm.4-8.2c-1.2 0-2.4.5-2.4 1.7 0 .8.7 1.6 2.1 1.6 1.9 0 2.6-1.9 2.7-3-.7-.2-1.6-.3-2.4-.3z"/></svg></a>
+          <a href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener" aria-label="LINE 官方帳號"><svg viewBox="0 0 24 24"><path d="M12 3C6.8 3 2.5 6.4 2.5 10.7c0 3.8 3.4 7 7.9 7.6.3.1.7.2.8.5.1.2.1.6 0 .8l-.1.8c0 .2-.2.9.8.5s5.2-3.1 7.1-5.3c1.3-1.4 1.9-2.9 1.9-4.5C21.5 6.4 17.2 3 12 3zM8.1 13.2H6.2c-.3 0-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3h1.4c.3 0 .5.2.5.5s-.2.5-.5.5zm1.9-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3.5zm4.5 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-1.9-2.6v2.3c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9.2c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l1.9 2.6V9.2c0-.3.2-.5.5-.5s.5.2.5.5v3.5zm3.1-2.3c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.9h1.4c.3 0 .5.2.5.5s-.2.5-.5.5h-1.9c-.3 0-.5-.2-.5-.5V9.2c0-.3.2-.5.5-.5h1.9c.3 0 .5.2.5.5s-.2.5-.5.5h-1.4v.7h1.4z"/></svg></a>
+          <a href="https://www.instagram.com/kk_8.19" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 4.3c2.5 0 2.8 0 3.8.1.9 0 1.4.2 1.8.3.4.2.8.4 1.1.7.3.3.5.6.7 1.1.1.3.3.8.3 1.8 0 1 .1 1.3.1 3.8s0 2.8-.1 3.8c0 .9-.2 1.4-.3 1.8-.2.4-.4.8-.7 1.1-.3.3-.6.5-1.1.7-.3.1-.8.3-1.8.3-1 0-1.3.1-3.8.1s-2.8 0-3.8-.1c-.9 0-1.4-.2-1.8-.3-.4-.2-.8-.4-1.1-.7-.3-.3-.5-.6-.7-1.1-.1-.3-.3-.8-.3-1.8 0-1-.1-1.3-.1-3.8s0-2.8.1-3.8c0-.9.2-1.4.3-1.8.2-.4.4-.8.7-1.1.3-.3.6-.5 1.1-.7.3-.1.8-.3 1.8-.3 1-.1 1.3-.1 3.8-.1zM12 2.2c-2.7 0-3 0-4 .1-1 .1-1.8.2-2.4.5-.6.2-1.2.6-1.7 1.1-.5.5-.9 1.1-1.1 1.7-.3.6-.4 1.3-.5 2.4 0 1-.1 1.3-.1 4s0 3 .1 4c.1 1 .2 1.8.5 2.4.2.6.6 1.2 1.1 1.7.5.5 1.1.9 1.7 1.1.6.3 1.3.4 2.4.5 1 0 1.3.1 4 .1s3 0 4-.1c1-.1 1.8-.2 2.4-.5.6-.2 1.2-.6 1.7-1.1.5-.5.9-1.1 1.1-1.7.3-.6.4-1.3.5-2.4 0-1 .1-1.3.1-4s0-3-.1-4c-.1-1-.2-1.8-.5-2.4-.2-.6-.6-1.2-1.1-1.7-.5-.5-1.1-.9-1.7-1.1-.6-.3-1.3-.4-2.4-.5-1-.1-1.3-.1-4-.1zm0 4.8a5 5 0 100 10 5 5 0 000-10zm0 8.3a3.3 3.3 0 110-6.5 3.3 3.3 0 010 6.5zM18.4 6.8a1.2 1.2 0 11-2.3 0 1.2 1.2 0 012.3 0z"/></svg></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>快速連結</h4>
+        <a href="#about">關於智弦</a>
+        <a href="#vision">政策主張</a>
+        <a href="#services">便民服務中心</a>
+        <a href="#faq">常見問題</a>
+        <a href="#support">支持我們</a>
+      </div>
+      <div class="f-col">
+        <h4>聯絡資訊</h4>
+        <a href="tel:047519819">☎ 04-7519819</a>
+        <a href="tel:0968722819">📱 0968-722-819</a>
+        <a href="https://maps.google.com/?q=彰化縣和美鎮線東路三段9號" target="_blank" rel="noopener">📍 彰化縣和美鎮線東路三段 9 號</a>
+      </div>
     </div>
-    <div class="foot-col">
-      <h5>NAVIGATION</h5>
-      <ul>
-        <li><a href="#manifesto">跨越色彩</a></li>
-        <li><a href="#about">認識智弦</a></li>
-        <li><a href="#journey">國際視野</a></li>
-        <li><a href="#district">三鄉鎮</a></li>
-        <li><a href="#service">行動足跡</a></li>
-        <li><a href="#policy">政見規劃</a></li>
-        <li><a href="#contact">聯絡我們</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <h5>CONTACT 聯繫</h5>
-      <ul>
-        <li>電話：0968-722-819</li>
-        <li>Email：a0968722819@gmail.com</li>
-        <li>選區：彰化縣議員第三選區</li>
-        <li>覆蓋：和美 ・ 線西 ・ 伸港</li>
-        <li>競選服務處：和美鎮（設置中）</li>
-        <li>FB / IG / YT / Threads：待連結</li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-legal">
-    本網站為「蘇智弦競選辦公室」依《公職人員選舉罷免法》及《政治獻金法》設置之競選網站。網站內容若含廣告，依法刊登廣告刊登者：蘇智弦競選辦公室。<br>
-    ⚠ 此版本為網站原型（PROTOTYPE），所有候選人簡介、政見細節、聯絡資料皆為示意內容，正式上線前須由候選人本人逐項審閱、修改、確認後方得公開使用。
-  </div>
-  <div class="foot-bottom">
-    <span>© 2026 蘇智弦競選辦公室 ・ 台灣民眾黨彰化縣議員第三選區提名候選人</span>
-    <span>HEMEI ・ XIANXI ・ SHENGANG ・ 2026</span>
+    <div class="f-bottom">© 2026 蘇智弦 Chih-Hsien. 版權所有.</div>
   </div>
 </footer>
 
 <script>
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
-  });
-},{threshold:.12});
+// mobile nav
+const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const id=a.getAttribute('href');
-    if(id.length>1){
-      const t=document.querySelector(id);
-      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
-    }
-  });
+// stat counters
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,target=+el.dataset.n,dur=1400,t0=performance.now();
+  const step=t=>{const p=Math.min((t-t0)/dur,1);el.textContent=Math.round(target*(1-Math.pow(1-p,3))).toLocaleString();if(p<1)requestAnimationFrame(step)};
+  requestAnimationFrame(step);co.unobserve(el);
+}),{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>co.observe(el));
+
+// accordions
+document.querySelectorAll('.acc-head').forEach(btn=>btn.addEventListener('click',()=>{
+  const item=btn.parentElement,body=item.querySelector('.acc-body'),open=item.classList.contains('open');
+  item.parentElement.querySelectorAll('.acc-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.acc-body').style.maxHeight=0});
+  if(!open){item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px'}
+}));
+
+// copy helpers
+document.querySelectorAll('.copy-tag').forEach(t=>t.addEventListener('click',()=>{
+  navigator.clipboard.writeText(t.dataset.copy).then(()=>{t.textContent='已複製';setTimeout(()=>t.textContent='複製',1500)});
+}));
+document.getElementById('copyTpl').addEventListener('click',function(){
+  navigator.clipboard.writeText(document.getElementById('mailTpl').textContent).then(()=>{this.textContent='已複製樣板';setTimeout(()=>this.textContent='複製樣板',1500)});
 });
 </script>
-
 </body>
 </html>
