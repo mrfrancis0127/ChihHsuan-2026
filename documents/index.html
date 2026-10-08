@@ -1,30 +1,33 @@
 ---
 layout: default
 title: 政見文件目錄
-description: 蘇智弦八大政見文件目錄。每份文件標示文件類型、狀態、發布日期與資料來源，原文完成查核後依序上線。
+description: 蘇智弦八大政見文件目錄：居住正義、產業復興、交通安全、活絡觀光、全齡友愛、地方教育、地方困境突破、舊埕翻新與空間治理。每份文件標示類型、狀態、發布日期與資料來源，政見為候選人主張，尚未實施。
 permalink: /documents/
 ---
 <main class="article-wrap">
   <div class="container">
     <div class="eyebrow">政見文件</div>
-    <h1 class="sec-title">蘇智弦八大政見文件</h1>
-    <p class="sec-sub" style="margin-bottom:32px">每份文件都標示類型、狀態、發布日期與資料來源；政見為候選人主張，尚未實施。</p>
+    <h1 class="sec-title">蘇智弦八大政見</h1>
+    <p class="sec-sub" style="margin-bottom:32px">每項政見列出重點做法；點「查看詳細內容」可閱讀完整文件，包含現況、資料來源與常見問答。政見為候選人主張，尚未實施。</p>
     <div class="policy-list">
-      {% assign items = site.policies | sort: "order" %}
-      {% for p in items %}
-      <a class="policy-card" href="{{ p.url | relative_url }}">
-        <div class="no">政見 {{ p.order | prepend: '0' | slice: -2, 2 }}｜{{ p.area }}｜{{ p.doc_type | default: "政見提案" }}</div>
-        <h2>{{ p.title }}</h2>
-        <p>{{ p.description }}</p>
-      </a>
-      {% endfor %}
-      {% assign done = items | map: "order" %}
-      {% for s in site.data.upcoming %}{% unless done contains s.order %}
-      <div class="policy-card soon">
-        <div class="no">政見 {{ s.order | prepend: '0' | slice: -2, 2 }}｜查核中，即將上線</div>
+      {% for s in site.data.upcoming %}
+      {% assign doc = nil %}
+      {% for p in site.policies %}{% if p.order == s.order %}{% assign doc = p %}{% endif %}{% endfor %}
+      <section class="policy-card{% unless doc %} soon{% endunless %}" id="policy-{{ s.order }}">
+        <div class="no">政見 {{ s.order | prepend: '0' | slice: -2, 2 }}｜{{ s.area }}</div>
         <h2>{{ s.title }}</h2>
-      </div>
-      {% endunless %}{% endfor %}
+        {% if s.hook %}<p class="policy-hook">{{ s.hook }}</p>{% endif %}
+        <ul class="policy-points">
+          {% for pt in s.points %}<li>{{ pt }}</li>
+          {% endfor %}
+        </ul>
+        {% if doc %}
+        <a class="policy-more" href="{{ doc.url | relative_url }}" aria-label="查看〈{{ s.title }}〉詳細內容">查看詳細內容 →</a>
+        {% else %}
+        <span class="policy-more is-soon">詳細文件查核中，即將上線</span>
+        {% endif %}
+      </section>
+      {% endfor %}
     </div>
   </div>
 </main>

@@ -287,3 +287,18 @@ button#copyTpl{font:inherit;cursor:pointer;background:none}
 .doc-status span{font-size:.82rem;background:var(--teal-lighter);border:1px solid var(--teal-light);color:var(--teal-deep);border-radius:999px;padding:3px 12px}
 .sources{font-size:.92rem}
 .sources li{margin-bottom:6px}
+
+/* v3.1: width/height 屬性只用來保留比例，實際高度依寬度自動計算，避免圖片變形 */
+:where(img){height:auto}
+
+/* v3.2: 政見目錄卡片（條列重點＋查看詳細內容按鈕） */
+section.policy-card:hover{transform:none}
+.policy-card.soon{opacity:1;box-shadow:var(--shadow);border:none}
+.policy-card .policy-hook{color:var(--gray);font-style:italic;margin:2px 0 10px}
+.policy-card .policy-points{margin:0 0 16px 1.3em;padding:0;color:var(--ink);line-height:1.75}
+.policy-card .policy-points li{margin-bottom:6px}
+.policy-card .policy-more{display:inline-block;background:var(--teal-deep);color:#fff;font-weight:700;padding:10px 24px;border-radius:999px;text-decoration:none;transition:.2s}
+.policy-card .policy-more:hover{background:var(--teal-dark);transform:translateY(-2px)}
+.policy-card .policy-more:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.policy-card .policy-more.is-soon{background:var(--teal-light);color:var(--teal-dark);font-weight:500;cursor:default}
+.policy-card .policy-more.is-soon:hover{transform:none}
