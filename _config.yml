@@ -1,0 +1,45 @@
+# ===== 網站基本設定 =====
+# 綁定自有網域後：url 改成 "https://新網域"，baseurl 改成 ""
+title: 蘇智弦
+tagline: 彰化縣議員候選人｜和美・伸港・線西
+description: 蘇智弦，台灣民眾黨彰化縣議員候選人（和美鎮、伸港鄉、線西鄉）。選弦與能，打造宜居、宜業、宜遊的新和線伸。
+url: "https://mrfrancis0127.github.io"
+baseurl: "/ChihHsuan-2026"
+lang: zh-Hant-TW
+locale: zh_TW
+timezone: Asia/Taipei
+logo: /images/hero.jpg
+social:
+  name: 蘇智弦
+  links:
+    - https://www.facebook.com/chihhsien.0819
+    - https://www.instagram.com/kk_8.19
+    - https://www.threads.com/@kk_8.19
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 政見文章：放在 _policies 資料夾，一篇一個 .md 檔
+collections:
+  policies:
+    output: true
+    permalink: /documents/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/hero.jpg
+  - scope:
+      path: ""
+      type: policies
+    values:
+      layout: policy
+
+exclude:
+  - README.md
+  - 新增文章教學.md
+  - 一週執行清單.md
+  - 來源清冊.csv
+  - AI測試紀錄表.csv

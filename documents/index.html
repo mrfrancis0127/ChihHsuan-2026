@@ -1,0 +1,30 @@
+---
+layout: default
+title: 政見文件目錄
+description: 蘇智弦八大政見文件目錄。每份文件標示文件類型、狀態、發布日期與資料來源，原文完成查核後依序上線。
+permalink: /documents/
+---
+<main class="article-wrap">
+  <div class="container">
+    <div class="eyebrow">政見文件</div>
+    <h1 class="sec-title">蘇智弦八大政見文件</h1>
+    <p class="sec-sub" style="margin-bottom:32px">每份文件都標示類型、狀態、發布日期與資料來源；政見為候選人主張，尚未實施。</p>
+    <div class="policy-list">
+      {% assign items = site.policies | sort: "order" %}
+      {% for p in items %}
+      <a class="policy-card" href="{{ p.url | relative_url }}">
+        <div class="no">政見 {{ p.order | prepend: '0' | slice: -2, 2 }}｜{{ p.area }}｜{{ p.doc_type | default: "政見提案" }}</div>
+        <h2>{{ p.title }}</h2>
+        <p>{{ p.description }}</p>
+      </a>
+      {% endfor %}
+      {% assign done = items | map: "order" %}
+      {% for s in site.data.upcoming %}{% unless done contains s.order %}
+      <div class="policy-card soon">
+        <div class="no">政見 {{ s.order | prepend: '0' | slice: -2, 2 }}｜查核中，即將上線</div>
+        <h2>{{ s.title }}</h2>
+      </div>
+      {% endunless %}{% endfor %}
+    </div>
+  </div>
+</main>
