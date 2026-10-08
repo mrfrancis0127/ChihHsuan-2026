@@ -51,3 +51,6 @@ exclude:
   - 一週執行清單.md
   - 來源清冊.csv
   - AI測試紀錄表.csv
+# ===== 搜尋引擎驗證 =====
+webmaster_verifications:
+  google: p15Ut1KKTalSdBMu3RD9u7Y1E-QD6w1UJxG3_yXKqHk
