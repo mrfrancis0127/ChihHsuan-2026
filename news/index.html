@@ -1,0 +1,23 @@
+---
+layout: default
+title: 新聞動態
+description: 蘇智弦競選團隊發布的記者會、新聞稿與活動紀錄。每篇標示發布日期、發布者與資料來源；文中政見為候選人主張，尚未實施。
+permalink: /news/
+---
+<main class="article-wrap">
+  <div class="container">
+    <div class="eyebrow">新聞動態</div>
+    <h1 class="sec-title">蘇智弦新聞動態</h1>
+    <p class="sec-sub" style="margin-bottom:32px">記者會、新聞稿與活動紀錄，依發布日期由新到舊排列。</p>
+    <div class="policy-list">
+      {% assign items = site.news | sort: "date" | reverse %}
+      {% for n in items %}
+      <a class="policy-card" href="{{ n.url | relative_url }}">
+        <div class="no">{{ n.date | date: "%Y-%m-%d" }}｜{{ n.category | default: "新聞稿" }}</div>
+        <h2>{{ n.title }}</h2>
+        <p>{{ n.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</main>

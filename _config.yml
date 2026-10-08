@@ -25,6 +25,9 @@ collections:
   policies:
     output: true
     permalink: /documents/:name/
+  news:
+    output: true
+    permalink: /news/:name/
 
 defaults:
   - scope:
@@ -36,6 +39,11 @@ defaults:
       type: policies
     values:
       layout: policy
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: news
 
 exclude:
   - README.md

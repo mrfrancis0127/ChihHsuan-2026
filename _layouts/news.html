@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<main class="article-wrap">
+  <article class="article">
+    <div class="crumb"><a href="{{ '/' | relative_url }}">首頁</a> › <a href="{{ '/news/' | relative_url }}">新聞動態</a> › {{ page.short_title | default: page.title }}</div>
+    <div class="kicker">新聞動態｜{{ page.category | default: "新聞稿" }}｜{{ page.date | date: "%Y-%m-%d" }}</div>
+    <h1>{{ page.title }}</h1>
+    <div class="doc-status"><span>文件類型：{{ page.doc_type | default: "新聞稿" }}</span><span>狀態：{{ page.status | default: "文中政見為候選人主張，尚未實施" }}</span><span>發布者：{{ page.publisher | default: "蘇智弦競選團隊" }}</span></div>
+    <div class="summary">{{ page.description }}</div>
+    {% if page.image %}
+    <figure style="margin:0 0 24px">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" width="{{ page.image_width | default: 1200 }}" height="{{ page.image_height | default: 1600 }}" style="width:100%;height:auto;border-radius:12px" loading="lazy">
+      {% if page.image_caption %}<figcaption style="font-size:.85rem;color:var(--gray);margin-top:6px">{{ page.image_caption }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+    {{ content }}
+    {% if page.sources %}
+    <h2>資料來源</h2>
+    <ul class="sources">
+      {% for s in page.sources %}<li>{{ s.publisher }}，〈{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a>{% else %}{{ s.title }}{% endif %}〉{% if s.date %}，{{ s.date }}{% endif %}{% if s.supports %}。支持內容：{{ s.supports }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="article-cta">
+      <b>對這個議題有想法？</b><br>
+      歡迎透過 <a href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 官方帳號</a> 告訴智弦，或來電服務處 04-7519819。
+    </div>
+    <div class="meta">發布：{{ page.date | date: "%Y-%m-%d" }}{% if page.last_modified_at %}｜更新：{{ page.last_modified_at | date: "%Y-%m-%d" }}{% endif %}｜發布者：{{ page.publisher | default: "蘇智弦競選團隊" }}｜<a href="{{ '/news/' | relative_url }}">所有新聞動態</a></div>
+  </article>
+</main>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "inLanguage": "zh-Hant-TW",
+  "author": { "@id": "{{ '/#person' | absolute_url }}", "@type": "Person", "name": "蘇智弦" },
+  "publisher": { "@type": "Organization", "name": {{ page.publisher | default: "蘇智弦競選團隊" | jsonify }} },
+  "about": {{ page.keywords | jsonify }},
+  "mainEntityOfPage": "{{ page.url | absolute_url }}",
+  "image": "{{ page.image | default: '/images/hero.jpg' | absolute_url }}"
+}
+</script>
+{% if page.faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{% for item in page.faq %}
+    { "@type": "Question", "name": {{ item.q | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | jsonify }} } }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}
+</script>
+{% endif %}
