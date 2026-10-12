@@ -1,0 +1,218 @@
+---
+layout: page
+title: 企業家早餐會報名｜伸港・線西・和美三場
+kicker: 活動報名
+description: 蘇智弦主辦企業家早餐會，2026 年 10 月 23 日伸港場、10 月 30 日線西場、11 月 6 日和美場，每場週五 07:30–08:30。現場實作 AI 工具，並交流在地人才外流與缺工議題；早餐各自付費，請事先報名。
+permalink: /breakfast/
+updated: 2026-10-12
+# 報名資料接收網址：部署 Google Apps Script 後，把「網頁應用程式網址」貼在下面的引號中
+form_endpoint: "https://script.google.com/macros/s/AKfycbySJaEvLEt7_21-IanRpFjQ4Qvq0kILSYYIXZiCT_UdVppFEOgF5FQz3J2ssQHle5Mj9g/exec"
+---
+
+<style>
+.bf-sessions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 8px}
+.bf-session{border:2px solid var(--teal-deep);border-radius:14px;padding:14px 16px;line-height:1.5}
+.bf-session .t{color:var(--teal-dark);font-weight:700;font-size:.92rem}
+.bf-session .d{color:var(--teal-deep);font-weight:900;font-size:1.7rem;line-height:1.2}
+.bf-session .v{font-weight:700;margin-top:4px}
+.bf-session .a{color:var(--gray);font-size:.88rem}
+.bf-agenda{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+.bf-agenda > div{background:var(--teal-light);border-radius:14px;padding:16px 18px}
+.bf-agenda h3{margin:0 0 6px;color:var(--teal-deep);font-size:1.1rem}
+.bf-agenda ul{margin:0;padding-left:1.1em}
+.bf-form{background:var(--teal-lighter);border:1px solid var(--teal-light);border-radius:16px;padding:22px;margin-top:14px}
+.bf-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.bf-field label,.bf-field legend{font-weight:700}
+.bf-field .req{color:#b42318;margin-left:2px}
+.bf-field .hint{font-size:.85rem;color:var(--gray)}
+.bf-field input[type=text],.bf-field input[type=tel],.bf-field input[type=email]{font:inherit;padding:12px 14px;border:1px solid #9cc9c7;border-radius:10px;background:#fff;min-height:44px;box-sizing:border-box;width:100%}
+.bf-field input:focus{outline:3px solid #ffd335;outline-offset:1px;border-color:var(--teal-deep)}
+.bf-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+fieldset.bf-field{border:0;padding:0;margin:0 0 16px}
+.bf-option{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #9cc9c7;border-radius:10px;padding:12px 14px;margin-top:8px;cursor:pointer;min-height:44px;box-sizing:border-box}
+.bf-option input{margin-top:5px;width:18px;height:18px;flex:0 0 18px}
+.bf-option.closed{opacity:.5;cursor:not-allowed}
+.bf-consent{display:flex;gap:10px;align-items:flex-start;margin:6px 0 18px}
+.bf-consent input{margin-top:5px;width:18px;height:18px;flex:0 0 18px}
+.bf-submit{font:inherit;font-weight:700;background:var(--teal-deep);color:#fff;border:0;border-radius:999px;padding:14px 34px;min-height:48px;cursor:pointer}
+.bf-submit:hover{background:#0d4d51}
+.bf-submit[disabled]{background:#8aa9a7;cursor:not-allowed}
+.bf-msg{margin-top:14px;padding:12px 14px;border-radius:10px;display:none}
+.bf-msg.ok{display:block;background:#e7f6ec;color:#14532d}
+.bf-msg.err{display:block;background:#fdecea;color:#7a1c12}
+.bf-msg.info{display:block;background:#fff6d6;color:#5c4400}
+.bf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.bf-privacy{font-size:.86rem;color:var(--gray);background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:12px;line-height:1.7}
+@media(max-width:720px){.bf-sessions,.bf-agenda,.bf-row{grid-template-columns:1fr}}
+</style>
+
+<h2>活動資訊</h2>
+<p>一份早餐、一小時，當天就帶走 AI 技能，回公司馬上就能開始。三場內容相同，請選一場方便的時間參加。</p>
+
+<div class="bf-sessions">
+  <div class="bf-session"><div class="t">伸港場</div><div class="d">10/23（五）</div><div class="v">拉亞漢堡 伸港中興</div><div class="a">彰化縣伸港鄉大同村中興路二段 350 號</div></div>
+  <div class="bf-session"><div class="t">線西場</div><div class="d">10/30（五）</div><div class="v">莫尼 Morni 線西店</div><div class="a">彰化縣線西鄉頂犁村中華東路 11 號</div></div>
+  <div class="bf-session"><div class="t">和美場</div><div class="d">11/06（五）</div><div class="v">哥寶哈妮</div><div class="a">彰化縣和美鎮和東里彰美路五段 114 號</div></div>
+</div>
+
+<table class="page-facts">
+<tr><th>時間</th><td>每場皆為週五 07:30–08:30</td></tr>
+<tr><th>費用</th><td>早餐各自付費，活動不另收費</td></tr>
+<tr><th>名額</th><td>每場名額有限，依報名先後確認</td></tr>
+<tr><th>主辦</th><td>蘇智弦（彰化縣議員參選人）</td></tr>
+<tr><th>洽詢</th><td><a href="tel:{{ site.data.site_info.phone | remove: '-' }}">{{ site.data.site_info.phone }}</a></td></tr>
+</table>
+
+<div class="bf-agenda">
+  <div>
+    <h3>01 AI 工具現場實作</h3>
+    <ul>
+      <li>文件自動帶入生成：報價單、出貨單，資料一填就完成</li>
+      <li>散在 LINE、Excel、紙本的客戶資料，AI 統一逐條整理成資料庫</li>
+      <li>商業運用的成功案例與企業 AI 診斷，分享政府 AI 相關補助管道</li>
+    </ul>
+  </div>
+  <div>
+    <h3>02 人才傾斜與缺工</h3>
+    <ul>
+      <li>在地年輕人才外流的現況</li>
+      <li>寫下您最缺的職缺與科系</li>
+      <li>《和線伸未來職人報》：讓在地高中生認識您的公司，先讓在地青年對家鄉企業有信心，才能創造留才機會</li>
+    </ul>
+  </div>
+</div>
+
+<h2 id="signup">線上報名</h2>
+
+<form class="bf-form" id="bfForm" data-endpoint="{{ page.form_endpoint }}" novalidate>
+  <div class="bf-row">
+    <div class="bf-field">
+      <label for="bfCompany">公司名稱<span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="bfCompany" name="company" required autocomplete="organization" maxlength="80">
+    </div>
+    <div class="bf-field">
+      <label for="bfTaxId">公司統一編號<span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="bfTaxId" name="taxId" required inputmode="numeric" pattern="[0-9]{8}" maxlength="8" aria-describedby="bfTaxIdHint">
+      <span class="hint" id="bfTaxIdHint">8 碼數字</span>
+    </div>
+  </div>
+  <div class="bf-row">
+    <div class="bf-field">
+      <label for="bfName">姓名<span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="bfName" name="name" required autocomplete="name" maxlength="40">
+    </div>
+    <div class="bf-field">
+      <label for="bfJobTitle">職稱<span class="req" aria-hidden="true">*</span></label>
+      <input type="text" id="bfJobTitle" name="jobTitle" required autocomplete="organization-title" maxlength="40">
+    </div>
+  </div>
+  <div class="bf-row">
+    <div class="bf-field">
+      <label for="bfPhone">聯絡電話<span class="req" aria-hidden="true">*</span></label>
+      <input type="tel" id="bfPhone" name="phone" required autocomplete="tel" maxlength="20" aria-describedby="bfPhoneHint">
+      <span class="hint" id="bfPhoneHint">手機或公司電話，例如 0912-345-678</span>
+    </div>
+    <div class="bf-field">
+      <label for="bfEmail">Email<span class="req" aria-hidden="true">*</span></label>
+      <input type="email" id="bfEmail" name="email" required autocomplete="email" maxlength="100">
+    </div>
+  </div>
+
+  <fieldset class="bf-field">
+    <legend>報名場次<span class="req" aria-hidden="true">*</span></legend>
+    <label class="bf-option" data-close="2026-10-22T23:59:59+08:00"><input type="radio" name="session" value="伸港場 10/23（五）拉亞漢堡 伸港中興" required><span><strong>伸港場｜10/23（五）07:30–08:30</strong><br>拉亞漢堡 伸港中興（伸港鄉中興路二段 350 號）</span></label>
+    <label class="bf-option" data-close="2026-10-29T23:59:59+08:00"><input type="radio" name="session" value="線西場 10/30（五）莫尼 Morni 線西店"><span><strong>線西場｜10/30（五）07:30–08:30</strong><br>莫尼 Morni 線西店（線西鄉中華東路 11 號）</span></label>
+    <label class="bf-option" data-close="2026-11-05T23:59:59+08:00"><input type="radio" name="session" value="和美場 11/06（五）哥寶哈妮"><span><strong>和美場｜11/06（五）07:30–08:30</strong><br>哥寶哈妮（和美鎮彰美路五段 114 號）</span></label>
+  </fieldset>
+
+  <div class="bf-hp" aria-hidden="true"><label for="bfWebsite">請勿填寫</label><input type="text" id="bfWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+
+  <div class="bf-privacy">
+    <strong>個人資料蒐集告知</strong><br>
+    蘇智弦競選團隊依個人資料保護法第 8 條告知：本表單蒐集之公司名稱、統一編號、姓名、職稱、電話及 Email，僅用於本次企業家早餐會之報名確認、場地人數安排與活動聯繫，不提供予第三人，並於活動全部結束後三個月內（2027 年 2 月 6 日前）刪除。您可隨時來電 {{ site.data.site_info.phone }} 請求查詢、更正或刪除您的資料；未提供必填資料將無法完成報名。
+  </div>
+  <label class="bf-consent"><input type="checkbox" id="bfConsent" name="consent" required><span>我已閱讀並同意上述個人資料蒐集告知<span class="req" aria-hidden="true">*</span></span></label>
+
+  <button type="submit" class="bf-submit" id="bfSubmit">確認報名</button>
+  <div class="bf-msg" id="bfMsg" role="status" aria-live="polite"></div>
+</form>
+
+<script>
+(function(){
+  var form = document.getElementById('bfForm');
+  if (!form) return;
+  var endpoint = (form.getAttribute('data-endpoint') || '').trim();
+  var msg = document.getElementById('bfMsg');
+  var btn = document.getElementById('bfSubmit');
+  var phone = '{{ site.data.site_info.phone }}';
+  function show(type, text){ msg.className = 'bf-msg ' + type; msg.textContent = text; }
+
+  var now = Date.now(), openCount = 0;
+  form.querySelectorAll('.bf-option').forEach(function(opt){
+    var close = Date.parse(opt.getAttribute('data-close'));
+    var input = opt.querySelector('input');
+    if (close && now > close) {
+      input.disabled = true;
+      opt.classList.add('closed');
+      opt.querySelector('strong').textContent += '（已截止）';
+    } else { openCount++; }
+  });
+
+  if (!endpoint) {
+    btn.disabled = true;
+    show('info', '線上報名即將開放，現在可先來電 ' + phone + ' 報名。');
+    return;
+  }
+  if (openCount === 0) {
+    btn.disabled = true;
+    show('info', '三場報名皆已截止，感謝您的關注。');
+    return;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = form.elements;
+    var data = {
+      company: f.company.value.trim(),
+      taxId: f.taxId.value.trim(),
+      name: f.name.value.trim(),
+      jobTitle: f.jobTitle.value.trim(),
+      phone: f.phone.value.trim(),
+      email: f.email.value.trim(),
+      session: (form.querySelector('input[name=session]:checked') || {}).value || '',
+      consent: f.consent.checked,
+      website: f.website.value
+    };
+    var missing = [];
+    if (!data.company) missing.push('公司名稱');
+    if (!/^[0-9]{8}$/.test(data.taxId)) missing.push('統一編號（8 碼數字）');
+    if (!data.name) missing.push('姓名');
+    if (!data.jobTitle) missing.push('職稱');
+    if (!/^[0-9+\-()# ]{8,20}$/.test(data.phone)) missing.push('聯絡電話');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) missing.push('Email');
+    if (!data.session) missing.push('報名場次');
+    if (!data.consent) missing.push('同意個資告知');
+    if (missing.length) { show('err', '請確認：' + missing.join('、')); return; }
+
+    btn.disabled = true; btn.textContent = '處理中…';
+    fetch(endpoint, { method: 'POST', body: JSON.stringify(data) })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        if (res && res.ok) {
+          form.reset();
+          show('ok', '報名成功！您報名的是「' + data.session + '」。活動前一天我們會再與您聯繫確認，期待見面。');
+        } else if (res && res.code === 'full') {
+          show('err', '這個場次已額滿，請改選其他場次，或來電 ' + phone + ' 登記候補。');
+        } else if (res && res.code === 'closed') {
+          show('err', '這個場次已截止報名，請改選其他場次。');
+        } else {
+          show('err', '報名沒有成功，請確認資料後再試一次，或來電 ' + phone + ' 報名。');
+        }
+      })
+      .catch(function(){
+        show('err', '網路連線不穩，報名沒有成功。請稍後再試，或來電 ' + phone + ' 報名。');
+      })
+      .then(function(){ btn.disabled = false; btn.textContent = '確認報名'; });
+  });
+})();
+</script>
