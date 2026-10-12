@@ -1,0 +1,343 @@
+---
+layout: default
+title: 萬聖節後車廂派對｜10/31 和美仁愛夜市
+description: 萬聖節後車廂派對 10 月 31 日（六）17:30–20:30 在和美仁愛夜市舉行。裝扮後車廂開車參加，或穿上變裝來現場討糖、闖關、逛市集，報名截止 10 月 27 日中午 12:00。主辦：彰化縣大草原發展協會，協辦：蘇智弦服務團隊。
+permalink: /halloween/
+image: /images/halloween/hero.jpg
+---
+<style>
+.hw{--hw-night:#1f1638;--hw-night2:#2c1f4f;--hw-orange:#ff8a1f;--hw-orange-d:#d96500;--hw-cream:#fff6ea;--hw-ink:#2a2140}
+.hw-hero{position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(31,22,56,.97) 0%,rgba(31,22,56,.85) 40%,rgba(31,22,56,.15) 75%,rgba(31,22,56,.05) 100%),url('{{ "/images/halloween/hero.jpg" | relative_url }}') left center/cover no-repeat var(--hw-night);color:#fff;padding:150px 0 100px;min-height:560px}
+.hw-hero .container{position:relative;z-index:2}
+.hw-moon{position:absolute;right:8%;top:110px;width:180px;height:180px;border-radius:50%;background:#ffe9b8;box-shadow:0 0 80px 20px rgba(255,214,140,.35);z-index:1}
+.hw-bat{position:absolute;z-index:1;fill:#140e26;opacity:.9}
+.hw-eyebrow{display:inline-block;background:rgba(255,138,31,.18);color:#ffc58a;border:1px solid rgba(255,138,31,.5);border-radius:999px;padding:6px 16px;font-weight:700;letter-spacing:.15em;font-size:.85rem}
+.hw-hero h1{font-size:clamp(2rem,5.6vw,3.6rem);font-weight:900;line-height:1.25;margin:18px 0 14px;max-width:760px}
+.hw-hero h1 em{font-style:normal;color:var(--hw-orange)}
+.hw-hero .lead{font-size:1.08rem;color:#e6def7;max-width:620px;line-height:1.8}
+.hw-chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+.hw-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:10px 16px;font-weight:700}
+.hw-chip small{display:block;font-weight:500;color:#cfc4ea;font-size:.78rem;letter-spacing:.1em}
+.hw-cta{display:inline-block;background:var(--hw-orange);color:#1f1638;font-weight:900;padding:15px 38px;border-radius:999px;font-size:1.05rem;box-shadow:0 10px 26px rgba(255,138,31,.4);transition:.2s;text-decoration:none}
+.hw-cta:hover{transform:translateY(-2px);background:#ff9d42}
+.hw-cta:focus-visible,.hw-submit:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hw-sec{padding:72px 0}
+.hw-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;max-width:1040px;margin:0 auto}
+.hw-sec .hw-intro h2{text-align:left}
+.hw-intro p{color:#4b4360;line-height:1.9;margin-bottom:12px}
+.hw-intro .tag{display:inline-block;color:var(--hw-orange-d);font-weight:900;letter-spacing:.15em;font-size:.85rem;margin-bottom:6px}
+.hw-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hw-photos figure{margin:0}
+.hw-photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;box-shadow:0 12px 30px rgba(31,22,56,.18)}
+.hw-photos figure:nth-child(2){margin-top:36px}
+.hw-photos figcaption{font-size:.8rem;color:var(--gray);margin-top:6px;text-align:center}
+.hw-sec.alt{background:var(--hw-cream)}
+.hw-sec h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:900;color:var(--hw-ink);text-align:center;margin-bottom:8px}
+.hw-sec .sub{text-align:center;color:var(--gray);margin-bottom:36px}
+.hw-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1000px;margin:0 auto}
+.hw-card{background:#fff;border-radius:18px;padding:26px 24px;box-shadow:0 10px 30px rgba(31,22,56,.08);border-top:5px solid var(--hw-orange)}
+.hw-card .ico{font-size:2rem}
+.hw-card h3{font-size:1.15rem;color:var(--hw-ink);margin:10px 0 6px}
+.hw-card p{color:var(--gray);font-size:.95rem;line-height:1.7}
+.hw-info{max-width:760px;margin:0 auto;background:#fff;border-radius:18px;box-shadow:0 10px 30px rgba(31,22,56,.08);overflow:hidden}
+.hw-info div{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid #f0e6d8}
+.hw-info div:last-child{border-bottom:none}
+.hw-info b{background:#fbefe0;color:var(--hw-orange-d);padding:16px 18px}
+.hw-info span{padding:16px 18px}
+.hw-form{max-width:640px;margin:0 auto;background:#fff;border-radius:22px;box-shadow:0 14px 40px rgba(31,22,56,.12);padding:34px 32px}
+.hw-field{margin-bottom:18px}
+.hw-field label{display:block;font-weight:700;color:var(--hw-ink);margin-bottom:6px}
+.hw-field label .req{color:#c2410c;margin-left:4px}
+.hw-field input,.hw-field select{width:100%;border:1.5px solid #e2d7c6;border-radius:12px;padding:12px 14px;font-size:1rem;font-family:inherit;background:#fffdf9}
+.hw-field input:focus,.hw-field select:focus{outline:none;border-color:var(--hw-orange);box-shadow:0 0 0 3px rgba(255,138,31,.2)}
+.hw-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hw-hint{font-size:.85rem;color:var(--gray);margin-top:4px}
+.hw-consent{display:flex;gap:10px;align-items:flex-start;background:#fbf5ec;border-radius:12px;padding:14px;font-size:.9rem;color:#5b5368;margin:6px 0 20px}
+.hw-consent input{margin-top:4px;width:18px;height:18px;flex:none}
+.hw-submit{width:100%;background:var(--hw-night);color:#fff;font-weight:900;font-size:1.05rem;border:none;border-radius:999px;padding:15px;cursor:pointer;transition:.2s}
+.hw-submit:hover{background:var(--hw-night2)}
+.hw-submit[disabled]{opacity:.6;cursor:wait}
+.hw-msg{display:none;text-align:center;padding:26px 10px}
+.hw-msg.show{display:block}
+.hw-msg .big{font-size:2.6rem}
+.hw-msg h3{color:var(--hw-ink);font-size:1.3rem;margin:8px 0}
+.hw-error{display:none;color:#b91c1c;background:#fef2f2;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.92rem}
+.hw-notes{max-width:760px;margin:0 auto;color:#5b5368;line-height:1.85}
+.hw-notes li{margin-bottom:6px}
+@media (max-width:600px){
+  .hw-hero{padding:110px 0 64px;min-height:0;background:linear-gradient(180deg,rgba(31,22,56,.15) 0%,rgba(31,22,56,.35) 30%,rgba(31,22,56,.92) 45%,var(--hw-night) 100%),url('{{ "/images/halloween/hero.jpg" | relative_url }}') 52% top/auto 340px no-repeat var(--hw-night);padding-top:230px}
+  .hw-moon{width:110px;height:110px;right:-20px;top:90px}
+  .hw-row{grid-template-columns:1fr}
+  .hw-intro{grid-template-columns:1fr;gap:24px}
+  .hw-sec .hw-intro h2{text-align:left}
+  .hw-photos figure:nth-child(2){margin-top:0}
+  .hw-form{padding:26px 20px}
+  .hw-info div{grid-template-columns:104px 1fr}
+  .hw-info b{white-space:nowrap;padding:14px 12px}
+  .hw-info span{padding:14px 14px}
+}
+@media (prefers-reduced-motion:reduce){.hw-cta,.hw-card{transition:none}}
+</style>
+
+<style>
+.hw-hero .hw-cta2{display:inline-block;margin-left:12px;color:#fff;border:2px solid rgba(255,255,255,.5);border-radius:999px;padding:13px 28px;font-weight:700;text-decoration:none}
+.hw-hero .hw-cta2:hover{border-color:#fff}
+.hw-ways{display:grid;gap:14px;margin-top:18px}
+.hw-way{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:16px;padding:18px 18px;box-shadow:0 8px 24px rgba(31,22,56,.08)}
+.hw-way .n{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;background:#fbefe0}
+.hw-way h3{font-size:1.05rem;color:var(--hw-ink);margin-bottom:4px}
+.hw-way p{margin:0 !important;font-size:.95rem}
+.hw-themes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1040px;margin:0 auto}
+.hw-theme{border-radius:20px;padding:28px 24px;color:#fff;position:relative;overflow:hidden;min-height:200px}
+.hw-theme .lt{display:inline-block;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.2);font-weight:900;font-size:1.4rem;display:grid;place-items:center;margin-bottom:14px}
+.hw-theme h3{font-size:1.3rem;margin-bottom:8px}
+.hw-theme p{color:rgba(255,255,255,.88);line-height:1.75}
+.hw-theme .bg{position:absolute;right:-6px;bottom:-14px;font-size:5.2rem;opacity:.22}
+.t-a{background:linear-gradient(140deg,#e8740c,#b8480a)}
+.t-b{background:linear-gradient(140deg,#4b3a8f,#22184a)}
+.t-c{background:linear-gradient(140deg,#13867f,#0b4f4b)}
+.hw-awards{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;max-width:1000px;margin:0 auto}
+.hw-award{display:flex;align-items:center;gap:10px;background:#fff;border:2px solid #f3d9b8;border-radius:999px;padding:12px 22px;font-weight:700;color:var(--hw-ink)}
+.hw-award span{font-size:1.3rem}
+.hw-time{max-width:760px;margin:26px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.hw-time div{background:var(--hw-night);color:#fff;border-radius:16px;padding:16px 18px}
+.hw-time b{display:block;color:var(--hw-orange);font-size:1.05rem;margin-bottom:2px}
+.hw-radio{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hw-radio label{display:flex;gap:10px;align-items:flex-start;border:1.5px solid #e2d7c6;border-radius:14px;padding:14px;cursor:pointer;font-weight:700;color:var(--hw-ink);background:#fffdf9}
+.hw-radio label small{display:block;font-weight:500;color:var(--gray);font-size:.82rem;margin-top:2px}
+.hw-radio input{margin-top:4px;accent-color:var(--hw-orange);flex:none;width:18px;height:18px}
+.hw-radio label{justify-content:flex-start;text-align:left}
+.hw-radio label span{flex:1;text-align:left}
+.hw-radio label:has(input:checked){border-color:var(--hw-orange);background:#fff4e6}
+.hw-theme-field{display:none}
+.hw-theme-field.show{display:block}
+.hw-end{text-align:center;padding:56px 16px;background:var(--hw-night);color:#fff}
+.hw-end h2{color:#fff !important;margin-bottom:18px}
+@media (max-width:860px){.hw-themes{grid-template-columns:1fr}.hw-time{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){
+  .hw-hero .hw-cta2{margin:12px 0 0 0}
+  .hw-time{grid-template-columns:1fr}
+  .hw-radio{grid-template-columns:1fr}
+}
+</style>
+
+<main class="hw">
+  <section class="hw-hero">
+    <svg class="hw-bat" style="left:6%;top:120px;width:70px" viewBox="0 0 100 40" aria-hidden="true"><path d="M50 14c3-6 8-6 10 0 6-8 18-12 30-6-8 2-12 8-12 14-6-4-12-2-14 4-2-4-6-6-8-6s-6 2-8 6c-2-6-8-8-14-4 0-6-4-12-12-14 12-6 24-2 30 6 2-6 7-6 10 0z"/></svg>
+    <div class="container">
+      <span class="hw-eyebrow">HALLOWEEN 2026</span>
+      <h1>萬聖節<br><em>後車廂派對</em></h1>
+      <p class="lead">把後車廂變成你的創意小天地，或穿上喜歡的變裝，和我們一起討糖、闖關、逛市集！</p>
+      <div class="hw-chips">
+        <div class="hw-chip"><small>日期</small>10/31（六）</div>
+        <div class="hw-chip"><small>時間</small>17:30–20:30</div>
+        <div class="hw-chip"><small>地點</small>和美仁愛夜市</div>
+        <div class="hw-chip"><small>報名截止</small>10/27（二）12:00</div>
+      </div>
+      <a class="hw-cta" href="#signup">立即報名</a><a class="hw-cta2" href="#info">活動資訊</a>
+    </div>
+  </section>
+
+  <section class="hw-sec">
+    <div class="container">
+      <div class="hw-intro">
+        <div>
+          <span class="tag">TRUNK OR TREAT</span>
+          <h2>兩種方式，一起加入派對</h2>
+          <p>國外很受歡迎的「後車廂討糖」來到和美！大家把車停成一排，打開後車廂布置成萬聖節小舞台，大朋友小朋友變裝後一車一車去討糖。</p>
+          <div class="hw-ways">
+            <div class="hw-way"><div class="n" aria-hidden="true">🚗</div><div><h3>裝扮車廂，開車來參加</h3><p>發揮創意，裝飾自己的後車廂，再把車開到現場，和大家分享你的作品！</p></div></div>
+            <div class="hw-way"><div class="n" aria-hidden="true">🧙</div><div><h3>穿上變裝，來現場討糖</h3><p>不用準備主題車，也能穿上喜歡的裝扮，和家人、朋友一起享受萬聖節！</p></div></div>
+          </div>
+        </div>
+        <div class="hw-photos">
+          <figure><img src="{{ '/images/halloween/trunk-1.jpg' | relative_url }}" alt="布置成南瓜與綠色怪物造型的汽車後車廂" width="499" height="505" loading="lazy"><figcaption>示意照片</figcaption></figure>
+          <figure><img src="{{ '/images/halloween/trunk-2.jpg' | relative_url }}" alt="以紫色蝙蝠氣球和南瓜燈布置的休旅車後車廂" width="504" height="498" loading="lazy"><figcaption>示意照片</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-sec alt">
+    <div class="container">
+      <h2>三大車廂主題，任你發想</h2>
+      <p class="sub">選擇一個喜歡的方向，打造專屬的後車廂</p>
+      <div class="hw-themes">
+        <div class="hw-theme t-a"><div class="lt">A</div><h3>南瓜歡樂村</h3><p>南瓜、秋季農場、可愛怪獸，打造充滿歡樂的萬聖節小村莊。</p><div class="bg" aria-hidden="true">🎃</div></div>
+        <div class="hw-theme t-b"><div class="lt">B</div><h3>魔法探險街</h3><p>巫師、星空、神祕森林，讓後車廂成為奇幻的魔法世界。</p><div class="bg" aria-hidden="true">🪄</div></div>
+        <div class="hw-theme t-c"><div class="lt">C</div><h3>奇想角色城</h3><p>海盜、太空、童話、原創角色，把喜歡的故事搬進後車廂！</p><div class="bg" aria-hidden="true">🚀</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-sec">
+    <div class="container">
+      <h2>現場有什麼好玩的？</h2>
+      <p class="sub">大人小孩都能玩，一起感受熱鬧的派對氣氛</p>
+      <div class="hw-cards">
+        <div class="hw-card"><div class="ico" aria-hidden="true">🍬</div><h3>變裝討糖</h3><p>穿上你的裝扮，拜訪各個創意車廂。</p></div>
+        <div class="hw-card"><div class="ico" aria-hidden="true">🗺️</div><h3>闖關遊戲</h3><p>和家人、朋友一起挑戰有趣的關卡。</p></div>
+        <div class="hw-card"><div class="ico" aria-hidden="true">🏮</div><h3>小市集</h3><p>逛逛攤位，感受熱鬧的派對氣氛。</p></div>
+        <div class="hw-card"><div class="ico" aria-hidden="true">🗳️</div><h3>車廂競賽</h3><p>當天現場投票，一起選出最喜歡的作品！</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-sec alt">
+    <div class="container">
+      <h2>後車廂五大獎項</h2>
+      <p class="sub">由現場來賓投票選出</p>
+      <div class="hw-awards">
+        <div class="hw-award"><span aria-hidden="true">👑</span>最佳造型獎</div>
+        <div class="hw-award"><span aria-hidden="true">🤝</span>最佳互動體驗獎</div>
+        <div class="hw-award"><span aria-hidden="true">😂</span>最幽默創意獎</div>
+        <div class="hw-award"><span aria-hidden="true">🎯</span>最佳主題獎</div>
+        <div class="hw-award"><span aria-hidden="true">♻️</span>最環保手作獎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-sec" id="info">
+    <div class="container">
+      <h2>活動資訊</h2>
+      <p class="sub">車廂招募目標 30 台創意主題車，歡迎提早報名</p>
+      <div class="hw-info">
+        <div><b>活動日期</b><span>2026 年 10 月 31 日（六）17:30–20:30</span></div>
+        <div><b>活動地點</b><span>和美仁愛夜市（彰化縣和美鎮山犁里鹿和路六段 178 號）<br><a href="https://maps.google.com/?q=彰化縣和美鎮鹿和路六段178號" target="_blank" rel="noopener">開啟 Google 地圖</a></span></div>
+        <div><b>活動對象</b><span>所有人</span></div>
+        <div><b>參加費用</b><span>你的裝扮，就是參加這場活動的費用！</span></div>
+        <div><b>報名截止</b><span>10 月 27 日（二）中午 12:00</span></div>
+        <div><b>車廂招募</b><span>30 台創意主題車</span></div>
+        <div><b>主辦單位</b><span>彰化縣大草原發展協會</span></div>
+        <div><b>協辦單位</b><span>蘇智弦服務團隊</span></div>
+        <div><b>洽詢</b><span>04-7519819｜<a href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 官方帳號</a></span></div>
+      </div>
+      <div class="hw-time">
+        <div><b>17:00–17:30</b>進場</div>
+        <div><b>17:30–19:30</b>闖關遊戲</div>
+        <div><b>19:30–20:00</b>現場投票選車廂＋自由逛市集</div>
+        <div><b>20:00–20:30</b>頒獎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-sec alt" id="signup">
+    <div class="container">
+      <h2>線上報名</h2>
+      <p class="sub">報名截止：10 月 27 日（二）中午 12:00</p>
+      <div class="hw-form">
+        <form id="hwForm" novalidate>
+          <div class="hw-error" id="hwError" role="alert"></div>
+          <fieldset class="hw-field" style="border:none;padding:0">
+            <legend style="font-weight:700;color:var(--hw-ink);margin-bottom:8px">參加方式<span class="req" style="color:#c2410c;margin-left:4px" aria-hidden="true">*</span></legend>
+            <div class="hw-radio">
+              <label><input type="radio" name="join_type" value="裝扮車廂"><span>裝扮車廂，開車來參加<small>報名車廂主題車</small></span></label>
+              <label><input type="radio" name="join_type" value="變裝討糖"><span>穿上變裝，來現場討糖<small>不需準備主題車</small></span></label>
+            </div>
+          </fieldset>
+          <div class="hw-field hw-theme-field" id="hwThemeField">
+            <label for="hwTheme">車廂主題<span class="req" aria-hidden="true">*</span></label>
+            <select id="hwTheme" name="trunk_theme">
+              <option value="">請選擇</option>
+              <option>A｜南瓜歡樂村</option>
+              <option>B｜魔法探險街</option>
+              <option>C｜奇想角色城</option>
+            </select>
+          </div>
+          <div class="hw-field">
+            <label for="hwName">報名人姓名<span class="req" aria-hidden="true">*</span></label>
+            <input id="hwName" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="hw-field">
+            <label for="hwPhone">手機號碼<span class="req" aria-hidden="true">*</span></label>
+            <input id="hwPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09xxxxxxxx" required>
+          </div>
+          <div class="hw-row">
+            <div class="hw-field">
+              <label for="hwAdults">大人人數</label>
+              <select id="hwAdults" name="adults"><option>0</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5 人以上</option></select>
+            </div>
+            <div class="hw-field">
+              <label for="hwKids">小孩人數</label>
+              <select id="hwKids" name="kids"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 人以上</option></select>
+            </div>
+          </div>
+          <div class="hw-field">
+            <label for="hwAges">小孩年齡或年級</label>
+            <input id="hwAges" name="kid_ages" type="text" placeholder="例：5 歲、小二（沒有小孩可不填）">
+          </div>
+          <div class="hw-field">
+            <label for="hwVillage">居住里別</label>
+            <select id="hwVillage" name="village">
+              <option value="">請選擇</option>
+              <option>和美鎮</option><option>伸港鄉</option><option>線西鄉</option><option>其他地區</option>
+            </select>
+            <input id="hwVillage2" name="village_detail" type="text" placeholder="里或村名，例：山犁里" style="margin-top:8px" aria-label="里或村名">
+          </div>
+          <label class="hw-consent">
+            <input type="checkbox" id="hwConsent" name="consent" required>
+            <span>我同意主辦單位彰化縣大草原發展協會及協辦單位蘇智弦服務團隊蒐集以上資料，僅用於本次活動報名、聯繫與保險，活動結束後 30 日內刪除，不作其他用途。</span>
+          </label>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <button class="hw-submit" type="submit" id="hwSubmit">確認報名</button>
+        </form>
+        <div class="hw-msg" id="hwDone" role="status" aria-live="polite">
+          <div class="big" aria-hidden="true">🎃</div>
+          <h3>報名成功！</h3>
+          <p>謝謝你的報名，10 月 31 日和美仁愛夜市見！<br>有問題歡迎來電 04-7519819。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-sec">
+    <div class="container">
+      <h2>注意事項</h2>
+      <ul class="hw-notes">
+        <li>車廂主題車請於 17:00–17:30 進場完成布置。</li>
+        <li>兒童請由家長陪同參加。</li>
+        <li>如遇天候不佳，活動異動將另行通知。</li>
+        <li>報名資料僅用於本活動，活動結束後 30 日內刪除。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="hw-end">
+    <h2>帶著你的創意或變裝，一起來玩！</h2>
+    <a class="hw-cta" href="#signup">立即報名</a>
+  </section>
+</main>
+
+<script>
+(function(){
+  // 部署 Google Apps Script 後，把網址貼在這裡；留空時為預覽模式（不會存資料）
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbx7OQBingZBdYYdnJNDy18pDpVC6vjabnbhI1QiCpVmjy6WvCg_2POC8a5GzRI_40954g/exec";
+  var f=document.getElementById('hwForm'), err=document.getElementById('hwError'),
+      btn=document.getElementById('hwSubmit'), done=document.getElementById('hwDone'),
+      themeField=document.getElementById('hwThemeField');
+  f.addEventListener('change',function(e){
+    if(e.target.name==='join_type') themeField.classList.toggle('show', e.target.value==='裝扮車廂');
+  });
+  function fail(msg){err.textContent=msg;err.style.display='block';err.scrollIntoView({block:'center'});}
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); err.style.display='none';
+    var el=f.elements, jt=(f.querySelector('input[name="join_type"]:checked')||{}).value,
+        name=el['name'].value.trim(), phone=el['phone'].value.replace(/\D/g,'');
+    if(!jt) return fail('請選擇參加方式。');
+    if(jt==='裝扮車廂' && !el['trunk_theme'].value) return fail('請選擇車廂主題。');
+    if(!name) return fail('請填寫報名人姓名。');
+    if(!/^09\d{8}$/.test(phone)) return fail('請填寫正確的手機號碼（09 開頭共 10 碼）。');
+    if(!el['consent'].checked) return fail('請勾選同意個人資料蒐集說明。');
+    if(el['website'].value) return;
+    var data=new URLSearchParams(new FormData(f)); data.set('phone',phone);
+    if(jt!=='裝扮車廂') data.set('trunk_theme','');
+    btn.disabled=true; btn.textContent='處理中…';
+    var finish=function(){f.style.display='none';done.classList.add('show');};
+    if(!ENDPOINT){ setTimeout(finish,500); return; }
+    fetch(ENDPOINT,{method:'POST',body:data,mode:'no-cors'}).then(finish).catch(function(){
+      btn.disabled=false; btn.textContent='確認報名';
+      fail('報名未完成，請稍後再試，或來電 04-7519819 報名。');
+    });
+  });
+})();
+</script>
