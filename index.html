@@ -3,6 +3,14 @@ layout: default
 faq_schema: true
 ---
 <!-- HERO -->
+<!-- 活動橫幅（電腦版，位於頁首下方；11/1 起自動隱藏） -->
+<section class="eb-top" id="event-halloween-top" aria-label="近期活動">
+  <div class="eb-top-in">
+    <span class="eb-tag">近期活動</span>
+    <div class="eb-top-txt"><a class="eb-top-title" href="{{ '/halloween/' | relative_url }}">萬聖節後車廂派對</a><span>10/31（六）17:30–20:30｜和美仁愛夜市｜報名截止 10/27（二）12:00</span></div>
+    <div class="eb-top-btns"><a class="eb-btn" href="{{ '/halloween/#signup' | relative_url }}">我要報名</a><a class="eb-btn2" href="{{ '/halloween/' | relative_url }}">活動詳情</a></div>
+  </div>
+</section>
 <section class="hero" id="top">
   <div class="container hero-grid">
     <div>
@@ -22,16 +30,20 @@ faq_schema: true
 
 <!-- EVENT BANNER：萬聖節後車廂派對（11/1 起自動隱藏） -->
 <section class="event-banner" id="event-halloween" aria-label="近期活動">
-  <a class="eb-card" href="{{ '/halloween/' | relative_url }}">
+  <div class="eb-card">
     <div class="eb-text">
       <span class="eb-tag">近期活動｜HALLOWEEN</span>
-      <h2>萬聖節後車廂派對</h2>
-      <p>10/31（六）17:30–20:30｜和美仁愛夜市<br>裝扮後車廂開車來，或穿上變裝來討糖、闖關、逛市集！</p>
-      <span class="eb-btns"><span class="eb-btn">立即報名</span><span class="eb-note">報名截止 10/27（二）12:00</span></span>
+      <h2><a href="{{ '/halloween/' | relative_url }}">萬聖節後車廂派對</a></h2>
+      <p><b>10/31（六）17:30–20:30｜和美仁愛夜市</b><br>裝扮後車廂開車來，或穿上變裝來討糖、闖關、逛市集！</p>
     </div>
-  </a>
+    <div class="eb-actions">
+      <a class="eb-btn" href="{{ '/halloween/#signup' | relative_url }}">我要報名</a>
+      <a class="eb-btn2" href="{{ '/halloween/' | relative_url }}">活動詳情</a>
+      <span class="eb-note">報名截止 10/27（二）12:00</span>
+    </div>
+  </div>
 </section>
-<script>(function(){if(new Date()>=new Date('2026-11-01T00:00:00+08:00')){var e=document.getElementById('event-halloween');if(e)e.remove();}})();</script>
+<script>(function(){if(new Date()>=new Date('2026-11-01T00:00:00+08:00')){['event-halloween','event-halloween-top'].forEach(function(id){var e=document.getElementById(id);if(e)e.remove();});}})();</script>
 
 <!-- STATS -->
 <section class="stats" id="stats">

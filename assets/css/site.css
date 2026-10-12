@@ -305,17 +305,40 @@ section.policy-card:hover{transform:none}
 
 /* 活動 Banner（首頁） */
 .event-banner{padding:28px 16px 8px;background:var(--teal-lighter)}
-.event-banner .eb-card{display:block;max-width:1100px;margin:0 auto;border-radius:24px;overflow:hidden;text-decoration:none;color:#fff;background:linear-gradient(90deg,rgba(31,22,56,.96) 0%,rgba(31,22,56,.82) 45%,rgba(31,22,56,.15) 100%),url('../../images/halloween/hero.jpg') left center/cover no-repeat #1f1638;box-shadow:0 14px 34px rgba(31,22,56,.25);transition:.2s}
-.event-banner .eb-card:hover{transform:translateY(-3px)}
-.event-banner .eb-card:focus-visible{outline:3px solid #ff8a1f;outline-offset:4px}
-.event-banner .eb-text{padding:34px 40px;max-width:600px}
+.event-banner .eb-card{max-width:1100px;margin:0 auto;border-radius:24px;overflow:hidden;color:#fff;background:linear-gradient(90deg,rgba(31,22,56,.97) 0%,rgba(31,22,56,.86) 50%,rgba(31,22,56,.35) 100%),url('../../images/halloween/hero.jpg') center 40%/cover no-repeat #1f1638;box-shadow:0 14px 34px rgba(31,22,56,.25);display:flex;align-items:center;justify-content:space-between;gap:28px;padding:28px 40px}
 .event-banner .eb-tag{display:inline-block;color:#ffc58a;border:1px solid rgba(255,138,31,.55);border-radius:999px;padding:4px 14px;font-size:.8rem;font-weight:700;letter-spacing:.12em}
-.event-banner h2{font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:900;margin:12px 0 8px;color:#fff}
-.event-banner p{color:#e6def7;line-height:1.8;margin-bottom:16px}
-.event-banner .eb-btns{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
-.event-banner .eb-btn{background:#ff8a1f;color:#1f1638;font-weight:900;padding:11px 28px;border-radius:999px}
-.event-banner .eb-note{font-size:.88rem;color:#cfc4ea}
-@media (max-width:600px){
-  .event-banner .eb-card{background:linear-gradient(180deg,rgba(31,22,56,.25) 0%,rgba(31,22,56,.92) 45%,#1f1638 100%),url('../../images/halloween/hero.jpg') 52% top/auto 200px no-repeat #1f1638}
-  .event-banner .eb-text{padding:150px 22px 26px}
+.event-banner h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;margin:10px 0 6px}
+.event-banner h2 a{color:#fff;text-decoration:none}
+.event-banner h2 a:hover{text-decoration:underline}
+.event-banner p{color:#e6def7;line-height:1.75;margin:0}
+.event-banner p b{color:#fff}
+.event-banner .eb-actions{display:flex;flex-direction:column;align-items:stretch;gap:10px;flex:none;min-width:200px;text-align:center}
+.event-banner .eb-btn{display:block;background:#ff8a1f;color:#1f1638;font-weight:900;font-size:1.05rem;padding:13px 30px;border-radius:999px;text-decoration:none;box-shadow:0 8px 20px rgba(255,138,31,.35);transition:.2s}
+.event-banner .eb-btn:hover{background:#ff9d42;transform:translateY(-2px)}
+.event-banner .eb-btn2{display:block;color:#fff;border:2px solid rgba(255,255,255,.55);font-weight:700;padding:10px 26px;border-radius:999px;text-decoration:none}
+.event-banner .eb-btn2:hover{border-color:#fff}
+.event-banner a:focus-visible{outline:3px solid #ff8a1f;outline-offset:3px}
+.event-banner .eb-note{font-size:.82rem;color:#cfc4ea}
+/* 電腦版：頁首下方橫幅；手機版：主視覺下方卡片 */
+.eb-top{display:none}
+@media (min-width:901px){
+  .event-banner{display:none}
+  .eb-top{display:block;padding:0;margin-top:64px;color:#fff;background:linear-gradient(90deg,rgba(31,22,56,.97) 0%,rgba(31,22,56,.9) 55%,rgba(31,22,56,.55) 100%),url('../../images/halloween/hero.jpg') center 45%/cover no-repeat #1f1638}
+  .eb-top-in{max-width:1180px;margin:0 auto;padding:16px 22px;display:flex;align-items:center;gap:22px}
+  .eb-top .eb-tag{display:inline-block;flex:none;color:#ffc58a;border:1px solid rgba(255,138,31,.55);border-radius:999px;padding:4px 14px;font-size:.8rem;font-weight:700;letter-spacing:.12em}
+  .eb-top-txt{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+  .eb-top-title{color:#fff;font-weight:900;font-size:1.35rem;text-decoration:none}
+  .eb-top-title:hover{text-decoration:underline}
+  .eb-top-txt span{color:#e6def7;font-size:.92rem}
+  .eb-top-btns{display:flex;gap:10px;flex:none}
+  .eb-top .eb-btn{display:inline-block;background:#ff8a1f;color:#1f1638;font-weight:900;padding:11px 28px;border-radius:999px;text-decoration:none;box-shadow:0 8px 20px rgba(255,138,31,.35);transition:.2s}
+  .eb-top .eb-btn:hover{background:#ff9d42;transform:translateY(-2px)}
+  .eb-top .eb-btn2{display:inline-block;color:#fff;border:2px solid rgba(255,255,255,.55);font-weight:700;padding:9px 22px;border-radius:999px;text-decoration:none}
+  .eb-top .eb-btn2:hover{border-color:#fff}
+  .eb-top a:focus-visible{outline:3px solid #ff8a1f;outline-offset:3px}
+  .eb-top + .hero{padding-top:52px}
+}
+@media (max-width:900px){
+  .event-banner .eb-card{flex-direction:column;align-items:stretch;padding:150px 22px 26px;background:linear-gradient(180deg,rgba(31,22,56,.2) 0%,rgba(31,22,56,.92) 45%,#1f1638 100%),url('../../images/halloween/hero.jpg') 52% top/auto 200px no-repeat #1f1638}
+  .event-banner .eb-actions{min-width:0}
 }
