@@ -281,6 +281,11 @@ image: /images/halloween/hero.jpg
           <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
           <button class="hw-submit" type="submit" id="hwSubmit">確認報名</button>
         </form>
+        <div class="hw-msg" id="hwClosed" role="status">
+          <div class="big" aria-hidden="true">🦇</div>
+          <h3>線上報名已截止</h3>
+          <p>感謝大家熱烈報名！沒有報名的朋友，<br>歡迎 10/31（六）17:30 穿上變裝直接來現場同樂。<br>有問題歡迎來電 04-7519819。</p>
+        </div>
         <div class="hw-msg" id="hwDone" role="status" aria-live="polite">
           <div class="big" aria-hidden="true">🎃</div>
           <h3>報名成功！</h3>
@@ -312,9 +317,19 @@ image: /images/halloween/hero.jpg
 (function(){
   // 部署 Google Apps Script 後，把網址貼在這裡；留空時為預覽模式（不會存資料）
   var ENDPOINT = "https://script.google.com/macros/s/AKfycbx7OQBingZBdYYdnJNDy18pDpVC6vjabnbhI1QiCpVmjy6WvCg_2POC8a5GzRI_40954g/exec";
+  // 報名截止時間（台灣時間）。想提早關閉報名，把日期時間改成更早即可。
+  var CLOSE_AT = new Date("2026-10-27T12:00:00+08:00");
   var f=document.getElementById('hwForm'), err=document.getElementById('hwError'),
       btn=document.getElementById('hwSubmit'), done=document.getElementById('hwDone'),
       themeField=document.getElementById('hwThemeField');
+  if(new Date() >= CLOSE_AT){
+    f.style.display='none';
+    document.getElementById('hwClosed').classList.add('show');
+    var cta=document.querySelectorAll('a.hw-cta[href="#signup"]');
+    for(var i=0;i<cta.length;i++){ cta[i].textContent='報名已截止'; cta[i].setAttribute('href','#info'); }
+    var sub=document.querySelector('#signup .sub'); if(sub) sub.textContent='線上報名已於 10 月 27 日（二）中午 12:00 截止';
+    return;
+  }
   f.addEventListener('change',function(e){
     if(e.target.name==='join_type') themeField.classList.toggle('show', e.target.value==='裝扮車廂');
   });
@@ -340,28 +355,4 @@ image: /images/halloween/hero.jpg
     });
   });
 })();
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "萬聖節後車廂派對",
-  "description": {{ page.description | jsonify }},
-  "startDate": "2026-10-31T17:30:00+08:00",
-  "endDate": "2026-10-31T20:30:00+08:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "isAccessibleForFree": true,
-  "inLanguage": "zh-Hant-TW",
-  "image": "{{ '/images/halloween/hero.jpg' | absolute_url }}",
-  "url": "{{ page.url | absolute_url }}",
-  "location": {
-    "@type": "Place",
-    "name": "和美仁愛夜市",
-    "address": { "@type": "PostalAddress", "streetAddress": "鹿和路六段 178 號", "addressLocality": "和美鎮", "addressRegion": "彰化縣", "addressCountry": "TW" }
-  },
-  "organizer": { "@type": "Organization", "name": "彰化縣大草原發展協會" },
-  "contributor": { "@type": "Organization", "name": "蘇智弦服務團隊", "url": "{{ '/' | absolute_url }}" }
-}
 </script>
