@@ -10,4 +10,5 @@ map_url: https://maps.google.com/?q=彰化縣和美鎮線東路三段9號
 service_hours: ""        # 例："週一至週六 09:00–18:00"（確認後填入）
 booking_note: ""         # 例："請先透過 LINE 官方帳號預約"（確認後填入）
 donation_email: ""       # 政治獻金申報收件信箱（確認後填入）
+ballot_number: ""     # 候選人號次（抽籤後填數字，例："3"），投票資訊頁會自動顯示
 donate_url: "https://donate.tpp.org.tw/support/oFetuvTb"   # 線上捐款平台網址（台灣民眾黨小額捐款頁）

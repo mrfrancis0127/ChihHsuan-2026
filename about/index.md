@@ -23,4 +23,4 @@ sources:
 <tr><th>公開管道</th><td><a href="https://www.facebook.com/chihhsien.0819">Facebook</a>、<a href="https://www.instagram.com/kk_8.19">Instagram</a>、<a href="https://www.threads.com/@kk_8.19">Threads</a>、<a href="{{ site.data.site_info.line_url }}">LINE 官方帳號</a></td></tr>
 </table>
 
-政見內容請見[政見文件目錄]({{ '/documents/' | relative_url }})；政見為候選人主張，尚未實施。
+政見內容請見[政見文件目錄]({{ '/documents/' | relative_url }})；政見為候選人主張，尚未實施。問政方式請見[縣議員在做什麼？蘇智弦的問政承諾]({{ '/councilor/' | relative_url }})；投票日期與方式請見[投票資訊]({{ '/vote/' | relative_url }})。
