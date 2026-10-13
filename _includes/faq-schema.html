@@ -50,7 +50,12 @@
         "@type": "Answer",
         "text": "歡迎掃描或點選「尚少年挺阿弦」LINE 社群連結加入志工行列,不論是活動支援、文宣協助或社區服務,每一份力量都是改變的開始。"
       }
-    }
+    }{% if page.url == "/faq/" %}{% assign plist = site.policies | sort: "order" %}{% for p in plist %}{% if p.faq %},
+    {
+      "@type": "Question",
+      "name": {{ p.faq[0].q | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ p.faq[0].a | jsonify }} }
+    }{% endif %}{% endfor %}{% endif %}
   ]
 }
 </script>

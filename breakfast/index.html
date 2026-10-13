@@ -216,3 +216,27 @@ fieldset.bf-field{border:0;padding:0;margin:0 0 16px}
   });
 })();
 </script>
+
+{% assign bf_sessions = "伸港場|2026-10-23|拉亞漢堡 伸港中興|中興路二段 350 號|伸港鄉;線西場|2026-10-30|莫尼 Morni 線西店|中華東路 11 號|線西鄉;和美場|2026-11-06|哥寶哈妮|彰美路五段 114 號|和美鎮" | split: ";" %}
+<script type="application/ld+json">
+[{% for s in bf_sessions %}{% assign f = s | split: "|" %}
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "蘇智弦企業家早餐會｜{{ f[0] }}",
+    "description": "蘇智弦主辦企業家早餐會{{ f[0] }}：現場實作 AI 工具，並交流在地人才外流與缺工議題。活動不另收費，早餐各自付費，請事先報名。",
+    "startDate": "{{ f[1] }}T07:30:00+08:00",
+    "endDate": "{{ f[1] }}T08:30:00+08:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "inLanguage": "zh-Hant-TW",
+    "url": "{{ page.url | absolute_url }}",
+    "location": {
+      "@type": "Place",
+      "name": "{{ f[2] }}",
+      "address": { "@type": "PostalAddress", "streetAddress": "{{ f[3] }}", "addressLocality": "{{ f[4] }}", "addressRegion": "彰化縣", "addressCountry": "TW" }
+    },
+    "organizer": { "@id": "{{ '/#person' | absolute_url }}", "@type": "Person", "name": "蘇智弦" }
+  }{% unless forloop.last %},{% endunless %}{% endfor %}
+]
+</script>

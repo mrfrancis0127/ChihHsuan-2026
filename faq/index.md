@@ -2,9 +2,9 @@
 layout: page
 title: 關於蘇智弦的常見問題
 kicker: 常見問題
-description: 關於彰化縣議員第三選區候選人蘇智弦的常見問題：他是誰、所屬政黨與選區、政見方向、服務項目、聯絡方式與志工參與。
+description: 關於彰化縣議員第三選區候選人蘇智弦的常見問題：他是誰、所屬政黨與選區、八大政見（居住、產業、交通、觀光、長照育兒、教育、治安環保、國土計畫）重點、服務項目、聯絡方式與志工參與。
 permalink: /faq/
-updated: 2026-10-07
+updated: 2026-10-13
 faq_schema: true
 ---
 
@@ -31,5 +31,15 @@ faq_schema: true
 ### 如何擔任志工或參與?
 
 歡迎掃描或點選「尚少年挺阿弦」LINE 社群連結加入志工行列,不論是活動支援、文宣協助或社區服務,每一份力量都是改變的開始。
+
+## 八大政見問答
+
+以下為各項政見的重點摘要，點標題可閱讀完整政見文件（含現況、做法與資料來源）。政見為候選人主張，尚未實施。
+
+{% assign plist = site.policies | sort: "order" %}{% for p in plist %}{% if p.faq %}
+### {{ p.faq[0].q }}
+
+{{ p.faq[0].a }}　→ [閱讀〈{{ p.short_title }}〉完整政見]({{ p.url | relative_url }})
+{% endif %}{% endfor %}
 
 基本資料與來源請見[基本資料]({{ '/about/' | relative_url }})。

@@ -341,3 +341,27 @@ image: /images/halloween/hero.jpg
   });
 })();
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "萬聖節後車廂派對",
+  "description": {{ page.description | jsonify }},
+  "startDate": "2026-10-31T17:30:00+08:00",
+  "endDate": "2026-10-31T20:30:00+08:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "isAccessibleForFree": true,
+  "inLanguage": "zh-Hant-TW",
+  "image": "{{ '/images/halloween/hero.jpg' | absolute_url }}",
+  "url": "{{ page.url | absolute_url }}",
+  "location": {
+    "@type": "Place",
+    "name": "和美仁愛夜市",
+    "address": { "@type": "PostalAddress", "streetAddress": "鹿和路六段 178 號", "addressLocality": "和美鎮", "addressRegion": "彰化縣", "addressCountry": "TW" }
+  },
+  "organizer": { "@type": "Organization", "name": "彰化縣大草原發展協會" },
+  "contributor": { "@type": "Organization", "name": "蘇智弦服務團隊", "url": "{{ '/' | absolute_url }}" }
+}
+</script>

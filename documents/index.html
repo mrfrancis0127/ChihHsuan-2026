@@ -31,3 +31,16 @@ permalink: /documents/
     </div>
   </div>
 </main>
+{% assign plist = site.policies | sort: "order" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "蘇智弦八大政見",
+  "description": {{ page.description | jsonify }},
+  "numberOfItems": {{ site.data.upcoming | size }},
+  "itemListElement": [{% for s in site.data.upcoming %}{% assign doc = nil %}{% for p in plist %}{% if p.order == s.order %}{% assign doc = p %}{% endif %}{% endfor %}
+    { "@type": "ListItem", "position": {{ s.order }}, "name": {{ s.title | jsonify }}{% if doc %}, "url": "{{ doc.url | absolute_url }}"{% endif %} }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}
+</script>
