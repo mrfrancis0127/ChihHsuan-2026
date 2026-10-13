@@ -1,0 +1,96 @@
+---
+layout: null
+permalink: /halloween/live/
+sitemap: false
+---
+{%- assign v = site.data.halloween_vote -%}
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>現場投票｜大螢幕｜萬聖節後車廂派對</title>
+<style>
+:root{--night:#1f1638;--card:#2c2447;--line:#4f4867;--orange:#ff8a1f;--orange-l:#ffc58a;--soft:#e6def7}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--night);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;overflow:hidden}
+.stage{height:100vh;display:grid;grid-template-columns:1.25fr 1fr;gap:4vw;align-items:center;padding:5vh 5vw;background:radial-gradient(circle at 85% 15%,rgba(255,138,31,.18),transparent 45%),var(--night)}
+.tag{display:inline-block;border:2px solid var(--orange);color:var(--orange-l);border-radius:999px;padding:.4vh 1.4vw;font-size:clamp(14px,1.4vw,26px);font-weight:700;letter-spacing:.2em}
+h1{margin:2.5vh 0 1vh;font-size:clamp(36px,5.2vw,104px);line-height:1.1;font-weight:900;color:var(--orange)}
+.status{font-size:clamp(18px,2vw,38px);font-weight:700;color:var(--soft);margin-bottom:4vh}
+.status b{color:#fff}
+.count{background:var(--card);border:2px solid var(--line);border-radius:3vw;padding:3vh 3vw;display:inline-block;min-width:60%}
+.count small{display:block;font-size:clamp(16px,1.7vw,32px);color:var(--soft);letter-spacing:.15em}
+.count .num{font-size:clamp(90px,13vw,260px);font-weight:900;line-height:1;font-variant-numeric:tabular-nums;color:#fff;transition:transform .25s}
+.count .num.bump{transform:scale(1.08);color:var(--orange)}
+.count .unit{font-size:clamp(20px,2.4vw,46px);font-weight:900;margin-left:.6vw}
+.qr{background:#fff;border-radius:3vw;padding:3vh 2.5vw;text-align:center;color:var(--night)}
+.qr img{width:100%;max-width:min(40vw,62vh);height:auto;display:block;margin:0 auto}
+.qr .t1{font-size:clamp(22px,2.6vw,52px);font-weight:900;margin-top:1.5vh}
+.qr .t2{font-size:clamp(14px,1.4vw,26px);color:#5b5368;margin-top:.6vh}
+.foot{position:fixed;left:5vw;bottom:3vh;font-size:clamp(12px,1.1vw,20px);color:#a99fc2}
+.testbar{position:fixed;top:0;left:0;right:0;background:#0f7a74;text-align:center;font-weight:700;padding:6px}
+.fs{position:fixed;right:2vw;bottom:2vh;background:transparent;border:1px solid var(--line);color:#a99fc2;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:14px}
+@media (max-aspect-ratio:1/1){.stage{grid-template-columns:1fr;overflow:auto}html,body{overflow:auto}}
+</style>
+</head>
+<body>
+<div class="testbar" id="testbar" hidden>測試模式（顯示測試票數）</div>
+<main class="stage">
+  <section>
+    <span class="tag">HALLOWEEN 2026｜和美仁愛夜市</span>
+    <h1>萬聖節後車廂派對<br>現場投票</h1>
+    <div class="status" id="status">讀取中…</div>
+    <div class="count" aria-live="polite">
+      <small>目前投票人數</small>
+      <span class="num" id="num">0</span><span class="unit">人</span>
+    </div>
+  </section>
+  <aside class="qr">
+    <img src="{{ '/images/halloween/vote-qr.svg' | relative_url }}" alt="投票頁 QR Code" width="370" height="370">
+    <div class="t1">手機掃描，馬上投票</div>
+    <div class="t2">五大獎項，每支手機限投一次</div>
+  </aside>
+</main>
+<div class="foot">主辦｜彰化縣大草原發展協會　協辦｜蘇智弦服務團隊</div>
+<button class="fs" id="fs" type="button">全螢幕</button>
+<script>
+(function(){
+  var ENDPOINT = {{ v.endpoint | jsonify }};
+  var START = new Date({{ v.start | jsonify }}), END = new Date({{ v.end | jsonify }});
+  var TEST = /[?&]test=1\b/.test(location.search);
+  if (TEST) document.getElementById('testbar').hidden = false;
+  var numEl = document.getElementById('num'), stEl = document.getElementById('status'), last = -1;
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function hm(d){ return pad(d.getHours()) + ':' + pad(d.getMinutes()); }
+  function renderStatus(){
+    var now = new Date();
+    if (!TEST && now < START) stEl.innerHTML = '投票將於 <b>' + hm(START) + '</b> 開始';
+    else if (!TEST && now > END) stEl.innerHTML = '投票已結束，<b>20:00 頒獎</b>揭曉！';
+    else {
+      var s = Math.max(0, Math.floor((END - now) / 1000));
+      stEl.innerHTML = TEST ? '測試中，票數即時更新' : '投票進行中｜剩下 <b>' + Math.floor(s / 60) + ' 分 ' + pad(s % 60) + ' 秒</b>';
+    }
+  }
+  function setNum(n){
+    if (typeof n !== 'number') return;
+    numEl.textContent = n;
+    if (last >= 0 && n !== last) { numEl.classList.add('bump'); setTimeout(function(){ numEl.classList.remove('bump'); }, 400); }
+    last = n;
+  }
+  function poll(){
+    if (!ENDPOINT) { setNum(0); return; }
+    fetch(ENDPOINT + (TEST ? '?test=1' : '') + (TEST ? '&' : '?') + 't=' + Date.now())
+      .then(function(r){ return r.json(); }).then(function(d){ setNum(d.total); }).catch(function(){});
+  }
+  renderStatus(); poll();
+  setInterval(renderStatus, 1000);
+  setInterval(poll, 5000);
+  document.getElementById('fs').addEventListener('click', function(){
+    var el = document.documentElement; (el.requestFullscreen || el.webkitRequestFullscreen || function(){}).call(el);
+  });
+})();
+</script>
+</body>
+</html>

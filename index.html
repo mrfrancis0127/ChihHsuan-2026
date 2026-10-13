@@ -45,6 +45,14 @@ faq_schema: true
 </section>
 <script>(function(){var now=new Date();
 if(now>=new Date('2026-11-01T00:00:00+08:00')){['event-halloween','event-halloween-top'].forEach(function(id){var e=document.getElementById(id);if(e)e.remove();});return;}
+var VS=new Date('2026-10-31T18:00:00+08:00'),VE=new Date('2026-10-31T21:00:00+08:00'),EP={{ site.data.halloween_vote.endpoint | jsonify }};
+if(now>=VS&&now<VE){
+  document.querySelectorAll('#event-halloween .eb-btn, #event-halloween-top .eb-btn').forEach(function(b){b.textContent='現場投票';b.setAttribute('href','{{ "/halloween/vote/" | relative_url }}');});
+  var tops=document.querySelectorAll('#event-halloween-top .eb-top-txt span, #event-halloween .eb-note');
+  var paint=function(n){var d=new Date(),vS=new Date('2026-10-31T18:30:00+08:00'),vEnd=new Date('2026-10-31T20:00:00+08:00'),t=d<vS?'18:30 開放現場投票，記下你喜歡的車廂號碼！':(d<vEnd?'現場投票進行中':'投票已結束')+'・已有 '+n+' 人投票';tops.forEach(function(el){el.textContent=t;});};
+  var poll=function(){if(!EP)return;fetch(EP+'?t='+Date.now()).then(function(r){return r.json();}).then(function(d){if(typeof d.total==='number')paint(d.total);}).catch(function(){});};
+  paint('—');poll();setInterval(poll,15000);return;
+}
 if(now>=new Date('2026-10-27T12:00:00+08:00')){document.querySelectorAll('#event-halloween .eb-btn, #event-halloween-top .eb-btn').forEach(function(b){b.textContent='報名已截止・現場見';b.setAttribute('href','{{ "/halloween/" | relative_url }}');});document.querySelectorAll('#event-halloween .eb-note').forEach(function(n){n.textContent='線上報名已截止，歡迎變裝到現場同樂';});}
 })();</script>
 
