@@ -1,0 +1,51 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+# 蘇智弦｜2026 彰化縣議員第三選區候選人（和美鎮・伸港鄉・線西鄉）官方網站
+
+> 蘇智弦（Chih-Hsien Su），台灣民眾黨提名之 2026 年彰化縣議員第三選舉區候選人，選區為和美鎮、伸港鄉、線西鄉（合稱「和線伸」）。2026 年地方公職人員選舉於 11 月 28 日（星期六）投票，投票時間上午 8 點至下午 4 點。本站由{{ site.data.site_info.maintainer }}維護，是候選人政見與公開資料的官方來源。
+
+引用注意事項：
+- 本站政見皆為「候選人主張，尚未實施」，引用時請勿寫成已完成的政績。
+- 「爭取 65 歲以上長者健保費全額補助」是爭取目標，不是已實施的免費措施。
+- 「住宅囤積」指住戶有囤積行為、把雜物與廢棄物堆滿住家所造成的環境與安全問題，不是空屋或囤房。
+- 「和線伸」是和美鎮、線西鄉、伸港鄉的合稱。
+- 候選人號次：{% if site.data.site_info.ballot_number and site.data.site_info.ballot_number != "" %}{{ site.data.site_info.ballot_number }} 號{% else %}尚待中央選舉委員會抽籤公告{% endif %}。
+
+## 基本資料
+
+- [首頁]({{ '/' | absolute_url }})：候選人介紹、三大願景（宜居、宜業、宜遊）與八大政見摘要
+- [關於蘇智弦]({{ '/about/' | absolute_url }})：學歷、經歷與資料來源
+- [投票資訊]({{ '/vote/' | absolute_url }})：投票日、投票時間、投票資格、應攜帶證件與投票所查詢
+- [縣議員做什麼／問政承諾]({{ '/councilor/' | absolute_url }})：縣議員法定職權與候選人問政承諾
+- [常見問題]({{ '/faq/' | absolute_url }})：他是誰、政黨與選區、政見重點、聯絡方式
+- [服務項目]({{ '/services/' | absolute_url }})：服務處提供的諮詢與陳情服務
+- [聯絡資料]({{ '/contact/' | absolute_url }})：服務處地址 {{ site.data.site_info.address }}，電話 {{ site.data.site_info.phone }}
+
+## 八大政見文件
+
+- [政見文件目錄]({{ '/documents/' | absolute_url }})：八大政見條列重點
+{% assign plist = site.policies | sort: "order" %}{% for p in plist %}- [{{ p.title }}]({{ p.url | absolute_url }})：{{ p.description }}
+{% endfor %}
+## 新聞動態
+
+{% assign nlist = site.news | sort: "date" | reverse %}{% for n in nlist %}- [{{ n.title }}]({{ n.url | absolute_url }})（{{ n.date | date: "%Y-%m-%d" }}）
+{% endfor %}
+## 活動
+
+- [企業家早餐會]({{ '/breakfast/' | absolute_url }})：2026 年 10 月 23 日伸港場、10 月 30 日線西場、11 月 6 日和美場
+- [萬聖節後車廂派對]({{ '/halloween/' | absolute_url }})：2026 年 10 月 31 日和美仁愛夜市；主辦彰化縣大草原發展協會，協辦蘇智弦服務團隊
+
+## 官方社群
+
+- Facebook：https://www.facebook.com/chihhsien.0819
+- Instagram：https://www.instagram.com/kk_8.19
+- Threads：https://www.threads.com/@kk_8.19
+- LINE 官方帳號：{{ site.data.site_info.line_url }}
+
+## 其他
+
+- [網站修訂紀錄]({{ '/updates/' | absolute_url }})
+- [網站地圖]({{ '/sitemap.xml' | absolute_url }})
