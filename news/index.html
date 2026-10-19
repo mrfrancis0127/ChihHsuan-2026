@@ -1,23 +1,48 @@
 ---
 layout: default
 title: 新聞動態
-description: 蘇智弦競選團隊發布的記者會、新聞稿與活動紀錄。每篇標示發布日期、發布者與資料來源；文中政見為候選人主張，尚未實施。
+description: 蘇智弦競選團隊發布的記者會、新聞稿與活動紀錄，分為「政策主張」與「行程活動」兩類，並列出各則新聞的媒體報導連結。文中政見為候選人主張，尚未實施。
 permalink: /news/
 ---
+{% assign items = site.news | sort: "date" | reverse %}
+{% assign policy_items = items | where: "section", "政策主張" %}
+{% assign event_items = items | where: "section", "行程活動" %}
 <main class="article-wrap">
   <div class="container">
     <div class="eyebrow">新聞動態</div>
     <h1 class="sec-title">蘇智弦新聞動態</h1>
-    <p class="sec-sub" style="margin-bottom:32px">記者會、新聞稿與活動紀錄，依發布日期由新到舊排列。</p>
-    <div class="policy-list">
-      {% assign items = site.news | sort: "date" | reverse %}
+    <p class="sec-sub" style="margin-bottom:24px">記者會、新聞稿與活動紀錄，依發布日期由新到舊排列。</p>
+    <nav class="news-tabs" aria-label="新聞分類">
+      <a href="#all" class="news-tab is-active" data-filter="all">全部（{{ items | size }}）</a>
+      <a href="#policy" class="news-tab" data-filter="政策主張">政策主張（{{ policy_items | size }}）</a>
+      <a href="#events" class="news-tab" data-filter="行程活動">行程活動（{{ event_items | size }}）</a>
+    </nav>
+    <div class="policy-list" id="news-list">
       {% for n in items %}
-      <a class="policy-card" href="{{ n.url | relative_url }}">
-        <div class="no">{{ n.date | date: "%Y-%m-%d" }}｜{{ n.category | default: "新聞稿" }}</div>
+      <a class="policy-card news-card" data-section="{{ n.section | default: '政策主張' }}" href="{{ n.url | relative_url }}">
+        <div class="no">{{ n.date | date: "%Y-%m-%d" }}｜{{ n.section | default: "政策主張" }}｜{{ n.category | default: "新聞稿" }}</div>
         <h2>{{ n.title }}</h2>
         <p>{{ n.description }}</p>
+        {% if n.media %}<span class="news-media-count">媒體報導 {{ n.media | size }} 則：{% for m in n.media limit:4 %}{{ m.outlet }}{% unless forloop.last %}、{% endunless %}{% endfor %}{% if n.media.size > 4 %} 等{% endif %}</span>{% endif %}
       </a>
       {% endfor %}
     </div>
   </div>
 </main>
+<script>
+(function(){
+  var map={'#policy':'政策主張','#events':'行程活動'};
+  var tabs=document.querySelectorAll('.news-tab');
+  var cards=document.querySelectorAll('.news-card');
+  function apply(f){
+    tabs.forEach(function(t){
+      var on=t.getAttribute('data-filter')===f;
+      t.classList.toggle('is-active',on);
+      t.setAttribute('aria-current',on?'true':'false');
+    });
+    cards.forEach(function(c){c.hidden=!(f==='all'||c.getAttribute('data-section')===f);});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){apply(t.getAttribute('data-filter'));});});
+  apply(map[location.hash]||'all');
+})();
+</script>

@@ -350,3 +350,19 @@ section.policy-card:hover{transform:none}
   .event-banner .eb-card{flex-direction:column;align-items:stretch;padding:150px 22px 26px;background:linear-gradient(180deg,rgba(31,22,56,.2) 0%,rgba(31,22,56,.92) 45%,#1f1638 100%),url('../../images/halloween/hero.jpg') 52% top/auto 200px no-repeat #1f1638}
   .event-banner .eb-actions{min-width:0}
 }
+
+/* ===== 新聞分類與媒體報導 ===== */
+.news-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 24px}
+.news-tab{padding:8px 18px;border-radius:999px;background:var(--teal-light);color:var(--teal-dark);font-weight:700;font-size:.95rem;text-decoration:none;transition:.2s}
+.news-tab:hover{background:var(--mint)}
+.news-tab.is-active{background:var(--teal-deep);color:#fff}
+.news-tab:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.news-card[hidden]{display:none}
+.news-media-count{display:block;margin-top:10px;font-size:.85rem;color:var(--teal);font-weight:700}
+.media-list{list-style:none;padding:0;margin:0 0 24px}
+.media-list li{padding:12px 0;border-bottom:1px solid var(--teal-light)}
+.media-list a{display:block;font-weight:700;color:var(--teal-deep);text-decoration:none;line-height:1.5}
+.media-list a:hover{text-decoration:underline}
+.media-outlet{display:inline-block;background:var(--teal-light);color:var(--teal-dark);font-size:.78rem;padding:2px 10px;border-radius:999px;margin-right:8px;vertical-align:2px}
+.media-meta{display:block;font-size:.82rem;color:var(--gray);margin-top:4px}
+.article h2[id]{scroll-margin-top:88px}

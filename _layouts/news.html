@@ -4,7 +4,7 @@ layout: default
 <main class="article-wrap">
   <article class="article">
     <div class="crumb"><a href="{{ '/' | relative_url }}">首頁</a> › <a href="{{ '/news/' | relative_url }}">新聞動態</a> › {{ page.short_title | default: page.title }}</div>
-    <div class="kicker">新聞動態｜{{ page.category | default: "新聞稿" }}｜{{ page.date | date: "%Y-%m-%d" }}</div>
+    <div class="kicker">新聞動態｜{{ page.section | default: "政策主張" }}｜{{ page.category | default: "新聞稿" }}｜{{ page.date | date: "%Y-%m-%d" }}</div>
     <h1>{{ page.title }}</h1>
     <div class="doc-status"><span>文件類型：{{ page.doc_type | default: "新聞稿" }}</span><span>狀態：{{ page.status | default: "文中政見為候選人主張，尚未實施" }}</span><span>發布者：{{ page.publisher | default: "蘇智弦競選團隊" }}</span></div>
     <div class="summary">{{ page.description }}</div>
@@ -15,6 +15,13 @@ layout: default
     </figure>
     {% endif %}
     {{ content }}
+    {% if page.media %}
+    <h2 id="media">媒體報導（{{ page.media | size }} 則）</h2>
+    <ul class="media-list">
+      {% for m in page.media %}<li><a href="{{ m.url }}" target="_blank" rel="noopener"><span class="media-outlet">{{ m.outlet }}</span>{{ m.title }}</a><span class="media-meta">{% if m.reporter %}記者 {{ m.reporter }}｜{% endif %}{{ m.date }}{% if m.via %}｜{{ m.via }}轉載{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     {% if page.sources %}
     <h2>資料來源</h2>
     <ul class="sources">
@@ -41,6 +48,10 @@ layout: default
   "author": { "@id": "{{ '/#person' | absolute_url }}", "@type": "Person", "name": "蘇智弦" },
   "publisher": { "@type": "Organization", "name": {{ page.publisher | default: "蘇智弦競選團隊" | jsonify }} },
   "about": {{ page.keywords | jsonify }},
+  "articleSection": {{ page.section | default: "政策主張" | jsonify }},{% if page.media %}
+  "citation": [{% for m in page.media %}
+    { "@type": "NewsArticle", "headline": {{ m.title | jsonify }}, "url": {{ m.url | jsonify }}, "datePublished": {{ m.date | jsonify }}, "publisher": { "@type": "Organization", "name": {{ m.outlet | jsonify }} }{% if m.reporter %}, "author": { "@type": "Person", "name": {{ m.reporter | jsonify }} }{% endif %} }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ],{% endif %}
   "mainEntityOfPage": "{{ page.url | absolute_url }}",
   "image": "{{ page.image | default: '/images/hero.jpg' | absolute_url }}"
 }

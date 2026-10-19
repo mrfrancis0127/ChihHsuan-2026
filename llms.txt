@@ -31,7 +31,7 @@ sitemap: false
 {% endfor %}
 ## 新聞動態
 
-{% assign nlist = site.news | sort: "date" | reverse %}{% for n in nlist %}- [{{ n.title }}]({{ n.url | absolute_url }})（{{ n.date | date: "%Y-%m-%d" }}）
+{% assign nlist = site.news | sort: "date" | reverse %}{% for n in nlist %}- [{{ n.title }}]({{ n.url | absolute_url }})（{{ n.date | date: "%Y-%m-%d" }}｜{{ n.section | default: "政策主張" }}）{% if n.media %}；媒體報導：{% for m in n.media %}{{ m.outlet }}{% unless forloop.last %}、{% endunless %}{% endfor %}{% endif %}
 {% endfor %}
 ## 活動
 

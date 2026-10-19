@@ -4,10 +4,51 @@ short_title: 住宅囤積與廢車記者會
 description: 2026 年 10 月 8 日，台灣民眾黨彰化縣議員第三選區（和美鎮、伸港鄉、線西鄉）候選人蘇智弦與候選人高采翎召開記者會。蘇智弦主張研議「彰化縣住宅囤積行為處理自治條例」，建立「先關懷、後清理」、單一窗口與清理後追蹤的處理制度；高采翎主張建立廢棄車輛「一案一編號」公開追蹤機制。
 date: 2026-10-08 00:00:00 +0800
 category: 記者會
+section: 政策主張
 doc_type: 新聞稿
 status: 文中政見為候選人主張，尚未實施
 publisher: 蘇智弦競選團隊
+last_modified_at: 2026-10-19 00:00:00 +0800
 keywords: [住宅囤積, 囤積自治條例, 廢棄車輛, 環境衛生, 消防安全, 和美鎮, 竹營里, 蘇智弦, 高采翎]
+media:
+  - outlet: 聯合新聞網
+    reporter: 劉明岩
+    title: 廢車占道、住宅囤積釀惹民怨 高采翎、蘇智弦倡建立跨局處追蹤機制
+    url: https://udn.com/news/story/7325/9803932
+    date: 2026-10-08
+  - outlet: 中廣新聞網
+    reporter: 李河錫
+    title: 廢車與囤積物成不定時炸彈！民眾黨籲彰化縣府定自治條例管制
+    url: https://bccnews.com.tw/?p=821650
+    date: 2026-10-08
+  - outlet: 觀傳媒
+    reporter: 陳雅芳
+    title: （有影片）／從廢車到囤積 高采翎、蘇智弦籲彰化補足處理機制
+    url: https://www.watchmedia01.com/archives/557335
+    date: 2026-10-08
+  - outlet: 互傳媒
+    reporter: 林明佑
+    title: 影／廢車及囤積物成鄰里難題 蘇智弦與高采翎提追蹤機制、跨局處理
+    url: https://hoomedia.com.tw/2026/10/08/172638/
+    date: 2026-10-08
+  - outlet: 匯流新聞網
+    reporter: 徐德芬
+    title: 彰化廢車、囤積物成鄰里難題 議員候選人提建立追蹤機制、跨局處理
+    url: https://n.yam.com/Article/20261008987390
+    via: 蕃新聞
+    date: 2026-10-08
+  - outlet: 亞太新聞網
+    reporter: 孔亮云
+    title: 廢車、囤積物成鄰里難題 蘇智弦、高采翎提建立追蹤機制、跨局處理
+    url: https://n.yam.com/Article/20261008268922
+    via: 蕃新聞
+    date: 2026-10-08
+  - outlet: 創新聞
+    reporter: 張溎壕
+    title: 廢車、囤積惹民怨 民眾黨高采翎、蘇智弦提解方
+    url: https://n.yam.com/Article/20261008900905
+    via: 蕃新聞
+    date: 2026-10-08
 image: /images/news/2026-10-08-press-conference.jpg
 image_width: 1200
 image_height: 1600
