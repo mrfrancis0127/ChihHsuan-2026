@@ -47,5 +47,4 @@ sitemap: false
 
 ## 其他
 
-- [網站修訂紀錄]({{ '/updates/' | absolute_url }})
 - [網站地圖]({{ '/sitemap.xml' | absolute_url }})

@@ -1,7 +1,8 @@
 <meta charset="UTF-8">
 <script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% seo %}
+{% if page.collection == "policies" %}{% seo title=false %}
+<title>{{ page.short_title }}政見｜蘇智弦・彰化縣議員候選人（和美・伸港・線西）</title>{% else %}{% seo %}{% endif %}
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFFZM5MLJ3"></script>
 <script>
