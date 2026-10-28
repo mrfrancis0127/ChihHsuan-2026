@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 萬聖節後車廂派對｜10/31 和美仁愛夜市
-description: 萬聖節後車廂派對 10 月 31 日（六）17:30–20:30 在和美仁愛夜市舉行。裝扮後車廂開車參加，或穿上變裝來現場討糖、闖關、逛市集，報名截止 10 月 27 日中午 12:00。主辦：彰化縣大草原發展協會，協辦：蘇智弦服務團隊。
+description: 萬聖節後車廂派對 10 月 31 日（六）17:30–20:30 在和美仁愛夜市舉行。裝扮後車廂開車參加，或穿上變裝來現場討糖、闖關、逛市集，報名截止 10 月 29 日（四）晚上 11:59。主辦：彰化縣大草原發展協會，協辦：蘇智弦服務團隊、高采翎服務團隊。
 permalink: /halloween/
 image: /images/halloween/hero.jpg
 ---
@@ -132,7 +132,7 @@ image: /images/halloween/hero.jpg
         <div class="hw-chip"><small>日期</small>10/31（六）</div>
         <div class="hw-chip"><small>時間</small>17:30–20:30</div>
         <div class="hw-chip"><small>地點</small>和美仁愛夜市</div>
-        <div class="hw-chip"><small>報名截止</small>10/27（二）12:00</div>
+        <div class="hw-chip"><small>報名截止</small>10/29（四）23:59</div>
       </div>
       <a class="hw-cta" href="#signup">立即報名</a><a class="hw-cta2" href="#info">活動資訊</a>
     </div>
@@ -206,10 +206,10 @@ image: /images/halloween/hero.jpg
         <div><b>活動地點</b><span>和美仁愛夜市（彰化縣和美鎮山犁里鹿和路六段 178 號）<br><a href="https://maps.google.com/?q=彰化縣和美鎮鹿和路六段178號" target="_blank" rel="noopener">開啟 Google 地圖</a></span></div>
         <div><b>活動對象</b><span>所有人</span></div>
         <div><b>參加費用</b><span>你的裝扮，就是參加這場活動的費用！</span></div>
-        <div><b>報名截止</b><span>10 月 27 日（二）中午 12:00</span></div>
+        <div><b>報名截止</b><span>10 月 29 日（四）晚上 11:59</span></div>
         <div><b>車廂招募</b><span>30 台創意主題車</span></div>
         <div><b>主辦單位</b><span>彰化縣大草原發展協會</span></div>
-        <div><b>協辦單位</b><span>蘇智弦服務團隊</span></div>
+        <div><b>協辦單位</b><span>蘇智弦服務團隊、高采翎服務團隊</span></div>
         <div><b>洽詢</b><span>04-7519819｜<a href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 官方帳號</a></span></div>
       </div>
       <div class="hw-time">
@@ -224,7 +224,7 @@ image: /images/halloween/hero.jpg
   <section class="hw-sec alt" id="signup">
     <div class="container">
       <h2>線上報名</h2>
-      <p class="sub">報名截止：10 月 27 日（二）中午 12:00</p>
+      <p class="sub">報名截止：10 月 29 日（四）晚上 11:59</p>
       <div class="hw-form">
         <form id="hwForm" novalidate>
           <div class="hw-error" id="hwError" role="alert"></div>
@@ -318,7 +318,7 @@ image: /images/halloween/hero.jpg
   // 部署 Google Apps Script 後，把網址貼在這裡；留空時為預覽模式（不會存資料）
   var ENDPOINT = "https://script.google.com/macros/s/AKfycbx7OQBingZBdYYdnJNDy18pDpVC6vjabnbhI1QiCpVmjy6WvCg_2POC8a5GzRI_40954g/exec";
   // 報名截止時間（台灣時間）。想提早關閉報名，把日期時間改成更早即可。
-  var CLOSE_AT = new Date("2026-10-27T12:00:00+08:00");
+  var CLOSE_AT = new Date("2026-10-29T23:59:59+08:00");
   var f=document.getElementById('hwForm'), err=document.getElementById('hwError'),
       btn=document.getElementById('hwSubmit'), done=document.getElementById('hwDone'),
       themeField=document.getElementById('hwThemeField');
@@ -327,7 +327,7 @@ image: /images/halloween/hero.jpg
     document.getElementById('hwClosed').classList.add('show');
     var cta=document.querySelectorAll('a.hw-cta[href="#signup"]');
     for(var i=0;i<cta.length;i++){ cta[i].textContent='報名已截止'; cta[i].setAttribute('href','#info'); }
-    var sub=document.querySelector('#signup .sub'); if(sub) sub.textContent='線上報名已於 10 月 27 日（二）中午 12:00 截止';
+    var sub=document.querySelector('#signup .sub'); if(sub) sub.textContent='線上報名已於 10 月 29 日（四）晚上 11:59 截止';
     return;
   }
   f.addEventListener('change',function(e){

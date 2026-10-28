@@ -7,7 +7,7 @@ faq_schema: true
 <section class="eb-top" id="event-halloween-top" aria-label="近期活動">
   <div class="eb-top-in">
     <span class="eb-tag">近期活動</span>
-    <div class="eb-top-txt"><a class="eb-top-title" href="{{ '/halloween/' | relative_url }}">萬聖節後車廂派對</a><span>10/31（六）17:30–20:30｜和美仁愛夜市｜報名截止 10/27（二）12:00</span></div>
+    <div class="eb-top-txt"><a class="eb-top-title" href="{{ '/halloween/' | relative_url }}">萬聖節後車廂派對</a><span>10/31（六）17:30–20:30｜和美仁愛夜市｜報名截止 10/29（四）23:59</span></div>
     <div class="eb-top-btns"><a class="eb-btn" href="{{ '/halloween/#signup' | relative_url }}">我要報名</a><a class="eb-btn2" href="{{ '/halloween/' | relative_url }}">活動詳情</a></div>
   </div>
 </section>
@@ -40,7 +40,7 @@ faq_schema: true
     <div class="eb-actions">
       <a class="eb-btn" href="{{ '/halloween/#signup' | relative_url }}">我要報名</a>
       <a class="eb-btn2" href="{{ '/halloween/' | relative_url }}">活動詳情</a>
-      <span class="eb-note">報名截止 10/27（二）12:00</span>
+      <span class="eb-note">報名截止 10/29（四）23:59</span>
     </div>
   </div>
 </section>
@@ -54,7 +54,7 @@ if(now>=VS&&now<VE){
   var poll=function(){if(!EP)return;fetch(EP+'?t='+Date.now()).then(function(r){return r.json();}).then(function(d){if(typeof d.total==='number')paint(d.total);}).catch(function(){});};
   paint('—');poll();setInterval(poll,15000);return;
 }
-if(now>=new Date('2026-10-27T12:00:00+08:00')){document.querySelectorAll('#event-halloween .eb-btn, #event-halloween-top .eb-btn').forEach(function(b){b.textContent='報名已截止・現場見';b.setAttribute('href','{{ "/halloween/" | relative_url }}');});document.querySelectorAll('#event-halloween .eb-note').forEach(function(n){n.textContent='線上報名已截止，歡迎變裝到現場同樂';});}
+if(now>=new Date('2026-10-29T23:59:59+08:00')){document.querySelectorAll('#event-halloween .eb-btn, #event-halloween-top .eb-btn').forEach(function(b){b.textContent='報名已截止・現場見';b.setAttribute('href','{{ "/halloween/" | relative_url }}');});document.querySelectorAll('#event-halloween .eb-note').forEach(function(n){n.textContent='線上報名已截止，歡迎變裝到現場同樂';});}
 })();</script>
 
 <!-- STATS -->
