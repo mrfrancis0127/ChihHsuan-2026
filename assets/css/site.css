@@ -367,14 +367,26 @@ section.policy-card:hover{transform:none}
 .media-meta{display:block;font-size:.82rem;color:var(--gray);margin-top:4px}
 .article h2[id]{scroll-margin-top:88px}
 
-/* 投票提醒橫幅（覆蓋活動橫幅的萬聖節配色） */
-.eb-top.eb-vote{background:linear-gradient(90deg,var(--teal-deep) 0%,var(--teal-dark) 100%)}
-.event-banner.eb-vote .eb-card{background:linear-gradient(90deg,var(--teal-deep) 0%,var(--teal-dark) 100%);box-shadow:var(--shadow)}
-.eb-vote .eb-tag{color:var(--yellow);border-color:rgba(255,211,53,.7)}
-.eb-vote .eb-top-txt span,.event-banner.eb-vote p{color:#e9fbfa}
-.eb-vote .eb-btn{background:var(--yellow);color:var(--ink);box-shadow:0 8px 20px rgba(0,0,0,.18)}
-.eb-vote .eb-btn:hover{background:#ffe066}
-.eb-vote a:focus-visible{outline-color:var(--yellow)}
+/* 投票提醒橫幅：白底＋官網內頁主色（--teal-deep） */
+.eb-top.eb-vote{background:#fff;color:var(--ink);border-top:1px solid var(--teal-light);border-bottom:4px solid var(--teal-deep);box-shadow:var(--shadow)}
+.eb-vote .eb-top-in{gap:18px}
+.event-banner.eb-vote{background:#fff}
+.event-banner.eb-vote .eb-card{background:#fff;color:var(--ink);border:3px solid var(--teal-deep);box-shadow:var(--shadow);gap:18px;padding:24px 26px}
+.eb-vote .eb-no{flex:none;display:flex;align-items:center;justify-content:center;width:68px;height:68px;border-radius:50%;background:var(--teal-deep);color:#fff;font-size:2.6rem;font-weight:900;line-height:1}
+.eb-vote .eb-kicker{display:block;font-size:.85rem;font-weight:700;letter-spacing:.06em;color:var(--teal-deep)}
+.eb-vote .eb-top-title,.event-banner.eb-vote h2 a{color:var(--teal-deep);font-weight:900}
+.eb-vote .eb-top-title{font-size:1.5rem}
+.event-banner.eb-vote h2{margin:4px 0 2px}
+.eb-vote .eb-top-txt span:last-child,.event-banner.eb-vote p,.event-banner.eb-vote p b{color:var(--gray)}
+.eb-vote .eb-btn{background:var(--teal-deep);color:#fff;box-shadow:none}
+.eb-vote .eb-btn:hover{background:var(--teal-dark);transform:translateY(-2px)}
+.eb-vote .eb-btn2{color:var(--teal-deep);border-color:var(--teal-deep);background:#fff}
+.eb-vote .eb-btn2:hover{border-color:var(--teal-deep);background:var(--teal-lighter)}
+.eb-vote a:focus-visible{outline:3px solid var(--teal-dark);outline-offset:3px}
+@media(max-width:900px){.event-banner.eb-vote .eb-card{flex-direction:row;flex-wrap:wrap;align-items:center}.event-banner.eb-vote .eb-text{flex:1;min-width:0}.event-banner.eb-vote .eb-actions{width:100%;flex-direction:row}.event-banner.eb-vote .eb-actions a{flex:1}}
+/* 首頁主視覺：名字前的號次 */
+.hero-no{align-self:center;display:inline-flex;align-items:baseline;gap:.08em;background:#fff;color:var(--teal-deep);border-radius:.22em;padding:.04em .2em .06em;margin-right:.22em;font-size:.6em;letter-spacing:0;line-height:1.1}
+.hero-no b{font-size:1.15em;font-weight:900}
 .acc-more{margin-top:12px}
 .acc-more a{color:var(--teal-deep);font-weight:700;text-decoration:none}
 .acc-more a:hover{text-decoration:underline}
