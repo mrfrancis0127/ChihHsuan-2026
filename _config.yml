@@ -1,8 +1,8 @@
 # ===== 網站基本設定 =====
 # 綁定自有網域後：url 改成 "https://新網域"，baseurl 改成 ""
-title: 蘇智弦
-tagline: 彰化縣議員候選人｜和美・伸港・線西
-description: 蘇智弦，台灣民眾黨彰化縣議員候選人（和美鎮、伸港鄉、線西鄉）。選弦與能，打造宜居、宜業、宜遊的新和線伸。
+title: 1 號 蘇智弦
+tagline: 彰化縣議員第三選區候選人｜和美・伸港・線西
+description: 1 號蘇智弦，台灣民眾黨提名彰化縣議員第三選區候選人（和美鎮、伸港鄉、線西鄉），11 月 28 日投票。選弦與能，打造宜居、宜業、宜遊的新和線伸。
 url: "https://mrfrancis0127.github.io"
 baseurl: "/ChihHsuan-2026"
 lang: zh-Hant-TW

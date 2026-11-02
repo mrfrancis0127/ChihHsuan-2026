@@ -1,5 +1,6 @@
 ---
 layout: page
+published: false
 title: 網站修訂紀錄
 kicker: 修訂紀錄
 description: 本頁記錄蘇智弦官方網站公開資料的新增與修改，包含日期、修改內容與原因。部署更新不等於內容更新。

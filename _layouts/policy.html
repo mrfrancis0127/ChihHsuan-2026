@@ -9,6 +9,14 @@ layout: default
     <div class="doc-status"><span>文件類型：{{ page.doc_type | default: "政見提案" }}</span><span>狀態：{{ page.status | default: "候選人主張，尚未實施" }}</span><span>發布者：{{ page.publisher | default: "蘇智弦競選團隊" }}</span></div>
     <div class="summary">{{ page.description }}</div>
     {{ content }}
+    {% assign rel_news = site.news | where_exp: "n", "n.related_policies contains page.order" | sort: "date" | reverse %}
+    {% if rel_news.size > 0 %}
+    <h2 id="related-news">相關新聞與行動紀錄</h2>
+    <ul class="related-news">
+      {% for n in rel_news %}<li><a href="{{ n.url | relative_url }}">{{ n.title }}</a><span class="media-meta">{{ n.date | date: "%Y-%m-%d" }}｜{{ n.category | default: "新聞稿" }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     <div class="article-cta">
       <b>對這項政見有想法？</b><br>
       歡迎透過 <a href="https://lin.ee/qncd4Iz" target="_blank" rel="noopener">LINE 官方帳號</a> 告訴智弦，或來電服務處 04-7519819。

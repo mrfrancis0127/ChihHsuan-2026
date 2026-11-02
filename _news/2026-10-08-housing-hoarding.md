@@ -8,6 +8,7 @@ section: 政策主張
 doc_type: 新聞稿
 status: 文中政見為候選人主張，尚未實施
 publisher: 蘇智弦競選團隊
+related_policies: [7]
 last_modified_at: 2026-10-19 00:00:00 +0800
 keywords: [住宅囤積, 囤積自治條例, 廢棄車輛, 環境衛生, 消防安全, 和美鎮, 竹營里, 蘇智弦, 高采翎]
 media:

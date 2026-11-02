@@ -366,3 +366,20 @@ section.policy-card:hover{transform:none}
 .media-outlet{display:inline-block;background:var(--teal-light);color:var(--teal-dark);font-size:.78rem;padding:2px 10px;border-radius:999px;margin-right:8px;vertical-align:2px}
 .media-meta{display:block;font-size:.82rem;color:var(--gray);margin-top:4px}
 .article h2[id]{scroll-margin-top:88px}
+
+/* 投票提醒橫幅（覆蓋活動橫幅的萬聖節配色） */
+.eb-top.eb-vote{background:linear-gradient(90deg,var(--teal-deep) 0%,var(--teal-dark) 100%)}
+.event-banner.eb-vote .eb-card{background:linear-gradient(90deg,var(--teal-deep) 0%,var(--teal-dark) 100%);box-shadow:var(--shadow)}
+.eb-vote .eb-tag{color:var(--yellow);border-color:rgba(255,211,53,.7)}
+.eb-vote .eb-top-txt span,.event-banner.eb-vote p{color:#e9fbfa}
+.eb-vote .eb-btn{background:var(--yellow);color:var(--ink);box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.eb-vote .eb-btn:hover{background:#ffe066}
+.eb-vote a:focus-visible{outline-color:var(--yellow)}
+.acc-more{margin-top:12px}
+.acc-more a{color:var(--teal-deep);font-weight:700;text-decoration:none}
+.acc-more a:hover{text-decoration:underline}
+.related-news{list-style:none;padding:0;margin:0 0 28px}
+.related-news li{padding:12px 0;border-bottom:1px solid var(--teal-light)}
+.related-news a{display:block;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.6}
+.related-news a:hover{color:var(--teal-deep);text-decoration:underline}
+.related-news .media-meta{font-size:.85rem;color:var(--gray)}

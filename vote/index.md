@@ -4,7 +4,8 @@ title: 2026 彰化縣議員第三選區投票資訊｜和美・伸港・線西
 kicker: 投票資訊
 description: 2026 年地方公職人員選舉於 11 月 28 日（星期六）投票。彰化縣議員第三選區包含和美鎮、伸港鄉、線西鄉，蘇智弦為台灣民眾黨提名候選人。本頁整理投票時間、投票資格、應攜帶證件、投票所查詢方式與投票注意事項。
 permalink: /vote/
-updated: 2026-10-13
+updated: 2026-11-02
+last_modified_at: 2026-11-02
 sources:
   - { publisher: 中央社, title: "2026九合一選舉 22縣市長登記參選名單一次看", url: "https://cna.com.tw/news/aipl/202609045002.aspx", date: "2026-09-04", supports: "投票日 11 月 28 日、參選人登記期間" }
   - { publisher: 聯合報, title: "選情初探／彰第三選區…藍綠票源重組 選情添變", url: "https://udn.com/vote2026/story/7325/9706850", date: "2026-08-22", supports: "第三選區應選 6 席" }

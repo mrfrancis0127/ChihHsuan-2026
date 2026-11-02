@@ -8,6 +8,7 @@ section: 行程活動
 doc_type: 活動紀錄
 status: 文中政見為候選人主張，尚未實施
 publisher: 蘇智弦競選團隊
+related_policies: [4]
 keywords: [柯文哲, 蘇智弦, 和美, 伸港, 線西, 和線伸, 伸港市場, 蚵寮, 線西夜市, 伸港早市, 沿岸觀光廊道, 掃街]
 faq:
   - q: 柯文哲陪蘇智弦走了哪些地方？

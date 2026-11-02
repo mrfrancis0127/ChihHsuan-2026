@@ -8,6 +8,7 @@ section: 政策主張
 doc_type: 新聞稿
 status: 文中政見為候選人主張，尚未實施
 publisher: 蘇智弦競選團隊
+related_policies: [7]
 keywords: [遊蕩犬, 流浪狗, 流浪貓, 犬群追咬, 雙軌治理, TNVR, 動物保護自治條例, 動保教育園區, 寵物登記, 絕育, 和美, 太平路, 伸港, 線西, 蘇智弦, 温宗諭]
 media:
   - outlet: 聯合新聞網
