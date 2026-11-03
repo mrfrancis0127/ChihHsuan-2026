@@ -395,3 +395,115 @@ section.policy-card:hover{transform:none}
 .related-news a{display:block;font-weight:700;color:var(--ink);text-decoration:none;line-height:1.6}
 .related-news a:hover{color:var(--teal-deep);text-decoration:underline}
 .related-news .media-meta{font-size:.85rem;color:var(--gray)}
+
+/* ===== 智弦在哪裡（即時位置） ===== */
+.live-wrap .sec-sub{margin-bottom:24px}
+.live-card{max-width:880px;margin:0 auto;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.live-status{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:16px 22px;font-size:1.05rem;color:var(--teal-deep)}
+.live-time{font-size:.88rem;color:var(--gray)}
+.live-dot{width:12px;height:12px;border-radius:50%;background:#b8c6c5;flex:none}
+.live-status[data-state="on"] .live-dot{background:#2bb673;box-shadow:0 0 0 0 rgba(43,182,115,.6);animation:livePulse 1.6s infinite}
+.live-status[data-state="error"] .live-dot{background:#ff4d2e}
+@keyframes livePulse{70%{box-shadow:0 0 0 12px rgba(43,182,115,0)}100%{box-shadow:0 0 0 0 rgba(43,182,115,0)}}
+.live-map{height:min(62vh,520px);min-height:320px;background:var(--teal-lighter)}
+.live-actions{display:flex;flex-wrap:wrap;gap:10px;padding:16px 22px}
+.live-btn{flex:1 1 220px;text-align:center;background:var(--teal-deep);color:#fff;font-weight:700;padding:12px 18px;border-radius:999px;text-decoration:none}
+.live-btn.ghost{background:var(--teal-light);color:var(--teal-dark)}
+.live-btn[hidden]{display:none}
+.live-notes{max-width:880px;margin:20px auto 0;color:var(--gray);font-size:.9rem;padding-left:1.2em}
+.live-pin{background:none;border:none}
+.live-pin span{display:flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--yellow);border:3px solid var(--teal-deep);box-shadow:0 4px 12px rgba(0,0,0,.25);font-weight:900;font-size:.82rem;line-height:1.15;color:var(--teal-deep);text-align:center}
+.live-pin b{transform:rotate(45deg);font-weight:900}
+.nav-links a.nav-live{color:var(--teal-dark);font-weight:700}
+
+/* 卡通風地圖 */
+.live-card{border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+.live-map{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.live-map .leaflet-tile-pane{filter:grayscale(1) sepia(.55) hue-rotate(125deg) saturate(1.9) brightness(1.08) contrast(.95)}
+.live-map .leaflet-control-zoom{border:3px solid var(--ink)!important;box-shadow:3px 3px 0 var(--ink)}
+.live-map .leaflet-control-zoom a{color:var(--ink);font-weight:900}
+.live-town span{display:inline-block;transform:translate(-50%,-50%) rotate(-4deg);white-space:nowrap;background:#fff;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);border-radius:999px;padding:2px 14px;font-weight:900;font-size:1rem;color:var(--teal-deep);letter-spacing:.08em}
+.live-spot{position:relative}
+.live-spot i{display:block;width:44px;height:44px;border-radius:50%;background:#fffaf0;border:3px solid var(--ink);box-shadow:2px 2px 0 var(--ink);padding:4px;transition:transform .2s}
+.live-spot i svg{width:100%;height:100%;display:block}
+.live-spot:hover i{transform:scale(1.12) rotate(-6deg)}
+.live-spot em{position:absolute;left:50%;top:48px;transform:translateX(-50%);white-space:nowrap;font-style:normal;font-size:.78rem;font-weight:700;color:var(--ink);background:rgba(255,255,255,.92);border-radius:6px;padding:0 6px}
+.live-map.far .live-spot em{display:none}
+.live-map.far .live-spot i{transform:scale(.75)}
+.live-pin span{border-width:4px;border-color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.live-status[data-state="on"] ~ .live-map .live-pin span,.live-pin span{animation:pinBob 1.8s ease-in-out infinite}
+@keyframes pinBob{0%,100%{translate:0 0}50%{translate:0 -6px}}
+
+/* 地圖改用民眾黨青綠＋白配色 */
+.live-card{border-color:var(--teal-deep);box-shadow:6px 6px 0 var(--teal-deep)}
+.live-map{border-color:var(--teal-deep)}
+.live-map .leaflet-control-zoom{border-color:var(--teal-deep)!important;box-shadow:3px 3px 0 var(--teal-deep)}
+.live-map .leaflet-control-zoom a{color:var(--teal-deep)}
+.live-town span{background:var(--teal-dark);color:#fff;border-color:#fff;box-shadow:0 0 0 3px var(--teal-deep),3px 3px 0 3px var(--teal-deep)}
+.live-spot i{background:#fff;border-color:var(--teal-deep);box-shadow:2px 2px 0 var(--teal-deep)}
+.live-spot em{color:var(--teal-deep)}
+.live-pin span{background:#fff;border-color:var(--teal-deep);box-shadow:0 0 0 4px #fff,5px 5px 0 4px var(--teal-deep)}
+.live-pin b{color:var(--teal-deep)}
+.live-pin span{background:var(--teal-deep);border-color:#fff;box-shadow:0 0 0 3px var(--teal-deep),5px 5px 0 3px rgba(18,52,51,.45)}
+.live-pin b{color:#fff}
+.live-map .leaflet-tile-pane{filter:grayscale(1) sepia(.5) hue-rotate(80deg) saturate(1.35) brightness(.98) contrast(.98)}
+
+/* 智弦卡通頭像標記 */
+.live-avatar{display:flex;flex-direction:column;align-items:center;animation:pinBob 1.8s ease-in-out infinite}
+.live-avatar .ava{width:84px;height:84px;border-radius:50%;background:#fff;border:4px solid var(--teal-deep);box-shadow:0 0 0 3px #fff,4px 4px 0 3px rgba(18,52,51,.35);overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.live-avatar .ava img{width:82px;height:82px;display:block}
+.live-avatar .tag{margin-top:-10px;position:relative;z-index:1;background:var(--teal-deep);color:#fff;font-weight:900;font-size:.78rem;padding:1px 10px;border-radius:999px;border:2px solid #fff;white-space:nowrap}
+.live-avatar .tip{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:12px solid var(--teal-deep);margin-top:-1px}
+.leaflet-marker-icon.live-avatar{display:flex!important;flex-direction:column;align-items:center}
+.live-avatar .ava,.live-avatar .tag,.live-avatar .tip{display:block;flex:none}
+.live-avatar .ava{box-sizing:border-box}
+.live-avatar .tag{height:22px;line-height:18px;box-sizing:border-box}
+.leaflet-marker-icon.live-avatar{animation:none}
+.live-avatar .ava{animation:avaBob 1.8s ease-in-out infinite}
+@keyframes avaBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px) rotate(-3deg)}}
+
+/* 地圖配色：參考插畫地圖（米白街道、灰綠公園、珊瑚紅／灰藍點綴） */
+.live-map .leaflet-tile-pane{filter:grayscale(.75) sepia(.25) hue-rotate(55deg) saturate(.8) brightness(1.05) contrast(.88)}
+.live-card{border:2px solid var(--teal-deep);box-shadow:var(--shadow)}
+.live-map{border-color:#d9ddd6;border-width:1px;background:#f4f3ee}
+.live-map .leaflet-control-zoom{border:1px solid #c9cec6!important;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.live-map .leaflet-control-zoom a{color:#4a5559}
+.live-town span{background:#f7f4ec;color:#4a5559;border:1.5px solid #4a5559;box-shadow:none;font-weight:700;letter-spacing:.12em;transform:translate(-50%,-50%)}
+.live-spot i{background:#fbf8f1;border:2px solid #4a5559;box-shadow:0 2px 4px rgba(0,0,0,.12)}
+.live-spot em{color:#4a5559;background:rgba(247,244,236,.92)}
+
+/* 今天走過的路 */
+.live-legend{display:flex;align-items:center;gap:10px;padding:10px 22px 0;color:#4a5559;font-size:.92rem}
+.live-legend[hidden]{display:none}
+.live-legend .swatch{width:34px;height:8px;border-radius:999px;background:#28C8C8;box-shadow:0 0 0 2px #12666b}
+.live-legend b{color:var(--teal-deep)}
+.live-start span{display:inline-block;transform:translate(-50%,-50%);background:#fff;color:var(--teal-deep);border:2px solid var(--teal-deep);border-radius:999px;padding:0 8px;font-size:.75rem;font-weight:900;white-space:nowrap}
+
+/* 日期選單 */
+.live-dates{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:0 22px 14px;font-size:.92rem;color:#4a5559}
+.live-dates select{font:inherit;font-weight:700;color:var(--teal-deep);background:#fff;border:2px solid var(--teal-deep);border-radius:999px;padding:6px 14px;min-width:200px;max-width:100%}
+/* 服務處 */
+.live-office{position:relative}
+.live-office i{display:block;width:52px;height:52px;border-radius:14px;background:var(--teal-deep);border:3px solid #fff;box-shadow:0 0 0 2px var(--teal-deep),0 4px 10px rgba(0,0,0,.25);padding:6px;transform:rotate(-4deg)}
+.live-office i svg{width:100%;height:100%;display:block}
+.live-office em{position:absolute;left:50%;top:56px;transform:translateX(-50%);white-space:nowrap;font-style:normal;font-size:.8rem;font-weight:900;color:#fff;background:var(--teal-deep);border-radius:999px;padding:1px 10px}
+.live-map .leaflet-popup-content{font-size:.9rem;line-height:1.6}
+.live-map .leaflet-popup-content a{color:var(--teal-deep);font-weight:700}
+
+/* 里程統計 */
+.live-stats{padding:14px 22px 4px}
+.live-stats[hidden]{display:none}
+.live-stats h2{font-size:1rem;color:var(--teal-deep);margin:0 0 10px;letter-spacing:.06em}
+.live-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.live-tiles div{background:var(--teal-lighter);border:1px solid var(--teal-light);border-radius:12px;padding:10px 8px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.live-tiles span{font-size:.8rem;color:#4a5559}
+.live-tiles b{font-size:1.6rem;line-height:1.2;color:var(--teal-deep);font-weight:900;font-variant-numeric:tabular-nums}
+.live-tiles small{font-size:.75rem;color:#6b7678}
+.live-bars{display:flex;align-items:flex-end;gap:6px;height:120px;margin:16px 0 4px;padding-top:16px}
+.live-bars .bar{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.live-bars .bar i{display:block;width:100%;max-width:34px;background:#9fd9d4;border-radius:6px 6px 0 0}
+.live-bars .bar.is-today i{background:var(--teal)}
+.live-bars .bar em{font-style:normal;font-size:.7rem;color:#4a5559;margin-bottom:2px;font-variant-numeric:tabular-nums}
+.live-bars .bar span{font-size:.7rem;color:#6b7678;margin-top:4px;white-space:nowrap}
+.live-stats-note{font-size:.78rem;color:#6b7678;margin:6px 0 0}
+@media (max-width:520px){.live-tiles{grid-template-columns:repeat(2,1fr)}.live-bars .bar em{font-size:.62rem}}
