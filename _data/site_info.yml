@@ -12,4 +12,4 @@ booking_note: ""         # 例："請先透過 LINE 官方帳號預約"（確認
 donation_email: ""       # 政治獻金申報收件信箱（確認後填入）
 ballot_number: "1"     # 候選人號次（抽籤後填數字，例："3"），投票資訊頁會自動顯示
 donate_url: "https://donate.tpp.org.tw/support/oFetuvTb"   # 線上捐款平台網址（台灣民眾黨小額捐款頁）
-live_location_endpoint: ""   # 即時位置：貼上 Apps Script 網頁應用程式網址（…/exec）；空白時「智弦在哪裡」頁顯示「即將開放」
+live_location_endpoint: "https://script.google.com/macros/s/AKfycbxB-9Okb1c1Y-MUxIpHuvz2rvFe-XOr6CgluN1YsWSiRO2YNfaxddEFjrRG2uNRrl5vvg/exec"   # 即時位置：貼上 Apps Script 網頁應用程式網址（…/exec）；空白時「智弦在哪裡」頁顯示「即將開放」
