@@ -45,7 +45,7 @@ last_modified_at: 2026-11-03
     <ul class="live-notes">
       <li>位置由蘇智弦本人手機分享，只在掃街、拜票期間公開；其他時間地圖不會顯示位置。</li>
       <li>青綠色線條是智弦掃街走過的路；用上方的日期選單，可以回看每一天走過哪些地方。</li>
-      <li>地圖每 1 分鐘自動更新。手機訊號或定位誤差可能讓位置有數十公尺落差，以現場為準。</li>
+      <li>地圖每 3 分鐘自動更新。手機訊號或定位誤差可能讓位置有數十公尺落差，以現場為準。</li>
       <li>服務處：{{ site.data.site_info.address }}，電話 {{ site.data.site_info.phone }}。</li>
     </ul>
   </div>
@@ -54,7 +54,7 @@ last_modified_at: 2026-11-03
 <script>
 (function () {
   var ENDPOINT = {{ site.data.site_info.live_location_endpoint | default: "" | jsonify }};
-  var REFRESH_MS = 60000;
+  var REFRESH_MS = 180000; // 每 3 分鐘更新一次
   var HOME = [24.1025, 120.5065]; // 和美鎮：市區與服務處都在畫面內
   var HOME_ZOOM = 14;
   var map = L.map('liveMap', { scrollWheelZoom: false }).setView(HOME, HOME_ZOOM);
@@ -72,8 +72,8 @@ last_modified_at: 2026-11-03
     oyster: '<svg viewBox="0 0 40 40"><path d="M6 24c0-9 6-15 14-15s14 6 14 15c-5 5-23 5-28 0z" fill="#efe7d6" stroke="#4a5559" stroke-width="2.5" stroke-linejoin="round"/><path d="M12 22c2-5 5-8 8-9m0 9c1-4 3-7 6-8" fill="none" stroke="#4a5559" stroke-width="2" stroke-linecap="round"/><circle cx="27" cy="24" r="3" fill="#fff" stroke="#4a5559" stroke-width="2"/></svg>',
     market: '<svg viewBox="0 0 40 40"><path d="M5 15h30l-3-7H8z" fill="#d9705f" stroke="#4a5559" stroke-width="2.5" stroke-linejoin="round"/><path d="M5 15q3.75 5 7.5 0 3.75 5 7.5 0 3.75 5 7.5 0 3.75 5 7.5 0" fill="#fff" stroke="#4a5559" stroke-width="2.5" stroke-linejoin="round"/><rect x="8" y="19" width="24" height="13" fill="#f3e6c8" stroke="#4a5559" stroke-width="2.5"/></svg>'
   };
-  // 和美服務處（彰和路、線東路三段交叉路口；座標取自 OpenStreetMap 道路交點）
-  var OFFICE = { ll: [24.09206, 120.51980], name: '智弦服務處',
+  // 和美服務處：508 彰化縣和美鎮線東路三段 9 號（門牌座標）
+  var OFFICE = { ll: [24.09244, 120.51971], name: '智弦服務處',
     addr: {{ site.data.site_info.address | jsonify }}, phone: {{ site.data.site_info.phone | jsonify }} };
   L.marker(OFFICE.ll, { title: OFFICE.name, zIndexOffset: 500,
     icon: L.divIcon({ className: 'live-office',
