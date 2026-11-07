@@ -147,6 +147,7 @@ last_modified_at: 2026-11-07
   var device = store('sv_device');
   if (!device) { device = Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12); store('sv_device', device); }
 
+  function ga(name, params){ try{ if (window.gtag) gtag('event', name, params || {}); }catch(e){} }
   var f = document.getElementById('svForm'), err = document.getElementById('svErr'), btn = document.getElementById('svSubmit');
   function show(id){ f.style.display = 'none'; document.getElementById(id).classList.add('show'); window.scrollTo(0, 0); }
   var PREVIEW = /[?&]preview=1\b/.test(location.search);
@@ -155,6 +156,8 @@ last_modified_at: 2026-11-07
   if (store(KEY) === '1') { show('svDup'); return; }
   store('sv_popup', 'seen');
 
+  var started = false;
+  f.addEventListener('input', function(){ if (!started) { started = true; ga('form_start', { form_name: 'issue_survey' }); } });
   var boxes = f.querySelectorAll('#svPolicies input');
   function sync(){
     var n = f.querySelectorAll('#svPolicies input:checked').length;
@@ -185,7 +188,12 @@ last_modified_at: 2026-11-07
     data.set('issue', el['issue'].value.trim()); data.set('sources', src.join('｜'));
     if (name || phone) { data.set('name', name); data.set('phone', phone); data.set('consent', '1'); }
     btn.disabled = true; btn.textContent = '提交中…';
-    var done = function(){ store(KEY, '1'); store('sv_popup', 'done'); show('svDone'); };
+    var done = function(){
+      store(KEY, '1'); store('sv_popup', 'done');
+      ga('form_submit', { form_name: 'issue_survey' });
+      ga('generate_lead', { lead_source: 'issue_survey', town: town, left_contact: (name || phone) ? 'yes' : 'no' });
+      show('svDone');
+    };
     if (!ENDPOINT) { setTimeout(done, 500); return; }
     fetch(ENDPOINT, { method: 'POST', body: data }).then(function(r){ return r.json(); }).then(function(d){
       if (d.ok) return done();
