@@ -1,0 +1,37 @@
+# 議題問卷設定
+# endpoint：Google Apps Script「議題問卷」部署後的網址（/exec 結尾）；留空時為預覽模式（不會存資料）
+endpoint: "https://script.google.com/macros/s/AKfycbzGcvNotE5J91LHA1t7xDAHFujsh8KIhC72iL2rKUvZ3MPpKuTWcHU-MVU9mzzTpk32/exec"
+# popup：進入網站時是否跳出問卷邀請（true 開啟、false 關閉）
+popup: true
+# 停止收件日（台灣時間），過了這天問卷頁顯示「已截止」、不再跳出邀請
+close_at: "2026-11-27T23:59:59+08:00"
+
+towns: [和美鎮, 伸港鄉, 線西鄉, 其他地區]
+
+policies:
+  - n: 一
+    title: 青年住得起，好宅看得到
+    note: 青年住宅、可負擔社宅、囤房稅
+  - n: 二
+    title: 家鄉有工作，青年不外流
+    note: 青年創業基地、傳產升級、高值農漁業
+  - n: 三
+    title: 上學上班，路上更安心
+    note: 人行道、智慧號誌、共享單車、公車與捷運和美線
+  - n: 四
+    title: 老街變景點，海岸變廊道
+    note: 特色商圈、紡織文化觀光、濱海廊道
+  - n: 五
+    title: 老有所依，小有所托
+    note: 長者接送、健保費補助、托育、共融公園
+  - n: 六
+    title: 三語扎根，贏在 AI 時代
+    note: 三語教育、AI 程式課程、職涯探索
+  - n: 七
+    title: 家園安全，環境乾淨
+    note: 遊蕩犬管理、住宅囤積、環保稽查
+  - n: 八
+    title: 老聚落新生，發展不缺地
+    note: 國土與都市計畫、水五金產業園區、閒置公有建物
+
+sources: [Facebook, Instagram／Threads, LINE, 新聞媒體, 官方網站, 市場拜票或掃街, 親友介紹, 活動現場, 其他]

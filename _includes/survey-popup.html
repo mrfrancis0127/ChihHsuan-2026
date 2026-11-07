@@ -1,0 +1,52 @@
+{%- assign sv = site.data.survey -%}
+{%- assign skip = false -%}
+{%- if page.url contains '/survey/' or page.url contains '/vote/' or page.url contains '/halloween/live/' -%}{%- assign skip = true -%}{%- endif -%}
+{%- if sv.popup and sv.endpoint != "" and skip == false -%}
+<style>
+.svp{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(10,40,40,.55)}
+.svp.show{display:flex}
+.svp-box{position:relative;max-width:420px;width:100%;background:#fff;border-radius:22px;padding:30px 26px 24px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.svp-x{position:absolute;right:12px;top:10px;width:36px;height:36px;border:none;background:none;font-size:1.6rem;line-height:1;color:var(--gray);cursor:pointer;border-radius:50%}
+.svp-x:hover{background:var(--teal-light)}
+.svp-tag{display:inline-block;background:var(--teal-light);color:var(--teal-deep);font-weight:700;font-size:.82rem;letter-spacing:.15em;border-radius:999px;padding:4px 14px}
+.svp h2{font-size:1.35rem;font-weight:900;color:var(--teal-deep);line-height:1.45;margin:12px 0 8px}
+.svp p{color:var(--gray);font-size:.95rem;line-height:1.7}
+.svp-go{display:block;margin-top:20px;background:var(--teal-dark);color:#fff;border-radius:999px;padding:14px;font-weight:900;font-size:1.05rem;text-decoration:none}
+.svp-go:hover{background:var(--teal-deep)}
+.svp-skip{display:block;width:100%;margin-top:10px;background:none;border:2px solid #dbecec;border-radius:999px;padding:12px;font:inherit;font-weight:700;color:var(--ink);cursor:pointer}
+.svp-skip:hover{border-color:var(--teal)}
+.svp-go:focus-visible,.svp-skip:focus-visible,.svp-x:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+</style>
+<div class="svp" id="svPopup" role="dialog" aria-modal="true" aria-labelledby="svpTitle">
+  <div class="svp-box">
+    <button class="svp-x" type="button" data-svp-close aria-label="關閉">×</button>
+    <span class="svp-tag">議題問卷・1 分鐘</span>
+    <h2 id="svpTitle">和美、伸港、線西的鄉親，<br>你最在意哪些地方議題？</h2>
+    <p>從八大政見選出你最希望優先推動的 3 項，也可以寫下你覺得最需要改善的問題。</p>
+    <a class="svp-go" href="{{ '/survey/' | relative_url }}">填寫問卷</a>
+    <button class="svp-skip" type="button" data-svp-close>直接進入網站</button>
+  </div>
+</div>
+<script>
+(function(){
+  var CLOSE_AT = new Date({{ sv.close_at | jsonify }}), SNOOZE_DAYS = 7;
+  if (new Date() > CLOSE_AT) return;
+  function get(k){ try{ return localStorage.getItem(k); }catch(e){ return 'blocked'; } }
+  function set(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
+  var st = get('sv_popup');
+  if (st === 'blocked' || st === 'done' || st === 'seen' || get('sv_done') === '1') return;
+  if (st && /^\d+$/.test(st) && Date.now() - Number(st) < SNOOZE_DAYS * 864e5) return;
+  var box = document.getElementById('svPopup'), last = null;
+  function close(){ box.classList.remove('show'); set('sv_popup', String(Date.now())); document.removeEventListener('keydown', onKey); if (last) last.focus(); }
+  function onKey(e){ if (e.key === 'Escape') close(); }
+  box.addEventListener('click', function(e){ if (e.target === box || e.target.hasAttribute('data-svp-close')) close(); });
+  box.querySelector('.svp-go').addEventListener('click', function(){ set('sv_popup', 'seen'); });
+  setTimeout(function(){
+    last = document.activeElement;
+    box.classList.add('show');
+    document.addEventListener('keydown', onKey);
+    box.querySelector('.svp-go').focus();
+  }, 1200);
+})();
+</script>
+{%- endif -%}
