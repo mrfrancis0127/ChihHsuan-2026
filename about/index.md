@@ -8,7 +8,8 @@ updated: 2026-11-07
 sources:
   - { publisher: 台灣民眾黨, title: "2026 候選人資料：蘇智弦", url: "https://www.tpp.org.tw/election2026/candidatedetail.php?cid=214", date: "2026-10-05 查閱", supports: "政黨提名、學歷、經歷、選區、政見方向" }
   - { publisher: 蘇智弦競選團隊, title: "官方網站首頁", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/", date: "2026-10-07 查閱", supports: "暱稱、成長地、志工經歷、立法院工作內容、參選初衷" }
-  - { publisher: 蘇智弦競選團隊, title: "柯文哲再赴和線伸　陪蘇智弦市場拜票、騎單車繞選區", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/news/2026-11-04-ko-wen-je-bike-tour/", date: "2026-11-04", supports: "徒步走訪超過 100 公里、柯文哲評價" }
+  - { publisher: 蘇智弦競選團隊, title: "智弦在哪裡｜掃街即時位置與里程紀錄", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/live/", date: "2026-11-07 查閱", supports: "走訪里程（健行筆記 App 紀錄與官網即時定位，走路、騎腳踏車都列入）" }
+  - { publisher: 蘇智弦競選團隊, title: "柯文哲再赴和線伸　陪蘇智弦市場拜票、騎單車繞選區", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/news/2026-11-04-ko-wen-je-bike-tour/", date: "2026-11-04", supports: "柯文哲評價" }
   - { publisher: 蘇智弦競選團隊, title: "蘇智弦和美競選總部成立　黨主席黃國昌到場支持", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/news/2026-09-28-campaign-hq-opening/", date: "2026-09-28", supports: "黃國昌評價" }
 ---
 
@@ -25,8 +26,8 @@ sources:
 .article .ab-btns .ab-sub{border:2px solid var(--teal);color:var(--teal-deep)}
 .ab-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
 .ab-fact{background:var(--teal-lighter,#f2fbfa);border:1px solid var(--teal-light);border-radius:14px;padding:16px}
-.ab-fact b{display:block;color:var(--teal-deep);font-size:1.25rem;font-weight:900;margin-bottom:4px}
-.ab-fact span{font-size:.92rem;color:var(--gray)}
+.ab-fact>b{display:block;color:var(--teal-deep);font-size:1.25rem;font-weight:900;margin-bottom:4px}
+.ab-fact>span{font-size:.92rem;color:var(--gray)}
 .article .ab-steps{list-style:none;padding:0;margin:12px 0}
 .ab-steps>li{display:grid;grid-template-columns:150px 1fr;gap:18px;margin:0 0 20px;align-items:start}
 .ab-steps img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
@@ -82,7 +83,7 @@ sources:
 <div class="ab-facts">
   <div class="ab-fact"><b>和美囝仔</b><span>在嘉犁、詔安、鎮平一帶長大，從國小就參加公益服務。</span></div>
   <div class="ab-fact"><b>立法院第一線</b><span>待過三位立法委員的服務團隊，做法案也做選民服務。</span></div>
-  <div class="ab-fact"><b>走了 100 多公里</b><span>9 月中起用雙腳走訪和美、伸港、線西，聽鄉親說家裡、巷口的事。</span></div>
+  <div class="ab-fact"><b>走了 <span id="abKm">300 多</span> 公里</b><span>7 月 24 日起用雙腳走訪和美、伸港、線西，聽鄉親說家裡、巷口的事。每天的路線都公開在<a href="{{ '/live/' | relative_url }}">智弦在哪裡</a>。</span></div>
 </div>
 
 ## 為什麼回家參選
@@ -157,3 +158,26 @@ sources:
     <a href="{{ '/survey/' | relative_url }}">填議題問卷</a>
   </div>
 </div>
+
+<script>
+// 累計公里數：與「智弦在哪裡」頁同一份資料、同一套算法（過去每天公里數＋今天即時路線），每分鐘更新；讀不到時維持「300 多」
+(function(){
+  var ep = {{ site.data.site_info.live_location_endpoint | default: "" | jsonify }}, el = document.getElementById('abKm');
+  if (!ep || !el || !window.fetch) return;
+  function dist(a, b){ var R = 6371008.8, r = Math.PI / 180, dLat = (b[0] - a[0]) * r, dLng = (b[1] - a[1]) * r,
+    h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    return 2 * R * Math.asin(Math.sqrt(h)); }
+  function routeKm(route){ var m = 0, prev = null;
+    (route || []).forEach(function(p){ if (p && p.length >= 2) { if (prev) m += dist(prev, p); prev = p; } else prev = null; });
+    return m / 1000; }
+  function load(){
+    fetch(ep + (ep.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now()).then(function(r){ return r.json(); }).then(function(d){
+      var days = (d && d.days) || [], today = d && d.date, hit = days.filter(function(x){ return x.date === today; })[0];
+      var todayKm = hit ? (+hit.km || 0) : routeKm(d && d.route);
+      var total = days.filter(function(x){ return x.date !== today; }).reduce(function(a, x){ return a + (+x.km || 0); }, 0) + (todayKm > 0 ? todayKm : 0);
+      if (total >= 100) el.textContent = Math.round(total).toLocaleString('zh-TW');
+    }).catch(function(){});
+  }
+  load(); setInterval(load, 60000);
+})();
+</script>
