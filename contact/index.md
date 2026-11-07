@@ -6,7 +6,7 @@ description: 蘇智弦服務處位於彰化縣和美鎮線東路三段 9 號（�
 permalink: /contact/
 updated: 2026-10-07
 sources:
-  - { publisher: 蘇智弦競選團隊, title: "官方網站聯絡區塊（網站自述）", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/#contact", date: "2026-10-07 查閱", supports: "地址、電話、LINE" }
+  - { publisher: 蘇智弦競選團隊, title: "官方網站聯絡區塊", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/#contact", date: "2026-10-07 查閱", supports: "地址、電話、LINE" }
 ---
 
 <table class="page-facts">

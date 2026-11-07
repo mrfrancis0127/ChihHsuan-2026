@@ -6,7 +6,7 @@ description: 蘇智弦服務團隊提供創業、育兒、長照、法律諮詢�
 permalink: /services/
 updated: 2026-10-07
 sources:
-  - { publisher: 蘇智弦競選團隊, title: "官方網站服務區塊（網站自述）", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/#services", date: "2026-10-07 查閱", supports: "服務項目與說明" }
+  - { publisher: 蘇智弦競選團隊, title: "官方網站服務區塊", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/#services", date: "2026-10-07 查閱", supports: "服務項目與說明" }
 ---
 
 | 服務 | 內容 |
