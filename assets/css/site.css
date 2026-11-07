@@ -507,3 +507,4 @@ section.policy-card:hover{transform:none}
 .live-bars .bar span{font-size:.7rem;color:#6b7678;margin-top:4px;white-space:nowrap}
 .live-stats-note{font-size:.78rem;color:#6b7678;margin:6px 0 0}
 @media (max-width:520px){.live-tiles{grid-template-columns:repeat(2,1fr)}.live-bars .bar em{font-size:.62rem}}
+@media (max-width:520px){.live-bars .bar:nth-child(even) span{visibility:hidden}.live-bars{gap:4px}}

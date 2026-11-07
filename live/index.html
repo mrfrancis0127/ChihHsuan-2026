@@ -4,7 +4,7 @@ title: 智弦在哪裡｜1 號 蘇智弦掃街即時位置
 short_title: 智弦在哪裡
 description: 蘇智弦在和美、伸港、線西掃街時，會公開分享手機即時位置。打開這個頁面就能看到 1 號蘇智弦現在在哪裡，歡迎鄉親來現場聊聊。
 permalink: /live/
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-07
 ---
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <main class="article-wrap live-wrap">
@@ -44,8 +44,8 @@ last_modified_at: 2026-11-03
 
     <ul class="live-notes">
       <li>位置由蘇智弦本人手機分享，只在掃街、拜票期間公開；其他時間地圖不會顯示位置。</li>
-      <li>青綠色線條是智弦掃街走過的路；用上方的日期選單，可以回看每一天走過哪些地方。</li>
-      <li>地圖每 3 分鐘自動更新。手機訊號或定位誤差可能讓位置有數十公尺落差，以現場為準。</li>
+      <li>青綠色線條是智弦掃街走過、騎過的路；用上方的日期選單，可以回看每一天走過哪些地方。</li>
+      <li>地圖每 10 秒自動更新。手機訊號或定位誤差可能讓位置有數十公尺落差，以現場為準。</li>
       <li>服務處：{{ site.data.site_info.address }}，電話 {{ site.data.site_info.phone }}。</li>
     </ul>
   </div>
@@ -54,7 +54,7 @@ last_modified_at: 2026-11-03
 <script>
 (function () {
   var ENDPOINT = {{ site.data.site_info.live_location_endpoint | default: "" | jsonify }};
-  var REFRESH_MS = 180000; // 每 3 分鐘更新一次
+  var REFRESH_MS = 10000; // 每 10 秒更新一次
   var HOME = [24.1025, 120.5065]; // 和美鎮：市區與服務處都在畫面內
   var HOME_ZOOM = 14;
   var map = L.map('liveMap', { scrollWheelZoom: false }).setView(HOME, HOME_ZOOM);
@@ -136,7 +136,12 @@ last_modified_at: 2026-11-03
   function fmtDay(iso) { var p = iso.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]); return (+p[1]) + '/' + (+p[2]) + '（' + WEEK[d.getDay()] + '）'; }
   // 里程統計：以每天的公里數加總；今天用地圖上即時路線計算
   var todayKm = 0, lastDays = [], lastToday = null;
-  function routeKm(pts) { var m = 0; for (var i = 1; i < pts.length; i++) m += map.distance(pts[i - 1], pts[i]); return m / 1000; }
+  function routeKm(route) {
+    var m = 0;
+    segmentsOf(route).forEach(function (s) { for (var i = 1; i < s.length; i++) m += map.distance(s[i - 1], s[i]); });
+    return m / 1000;
+  }
+  function dayKm(days, date) { var hit = (days || []).filter(function (x) { return x.date === date; })[0]; return hit ? +hit.km : null; }
   function fmtKm(x) { return x >= 100 ? Math.round(x) : x.toFixed(1); }
   function renderStats(days, today) {
     if (days) lastDays = days; if (today) lastToday = today;
@@ -158,7 +163,7 @@ last_modified_at: 2026-11-03
     }).join('');
     $bars.setAttribute('aria-label', '最近 ' + recent.length + ' 天每日公里數');
     var first = list[list.length - 1].date.split('-');
-    document.getElementById('stNote').textContent = '自 ' + (+first[1]) + '/' + (+first[2]) + ' 開始記錄，只計算公開掃街期間走過的路（直線距離加總，實際步行會略多）。';
+    document.getElementById('stNote').textContent = '自 ' + (+first[1]) + '/' + (+first[2]) + ' 開始記錄。里程來自蘇智弦的健行筆記 App 紀錄與官網即時定位；走路、騎腳踏車都列入。';
     $st.hidden = false;
   }
   function fillDates(days, today) {
@@ -169,15 +174,26 @@ last_modified_at: 2026-11-03
     });
     if ($date.innerHTML !== html) { $date.innerHTML = html; $date.value = cur; if (!$date.value) $date.value = 'today'; }
   }
-  function drawRoute(pts) {
-    pts = (pts || []).filter(function (p) { return p && p.length === 2; });
-    routeCase.setLatLngs(pts); routeLine.setLatLngs(pts);
+  // 路線可能有斷點（null）：開車移動、休息超過 15 分鐘、住家範圍，斷開不連線
+  function segmentsOf(route) {
+    var segs = [], cur = [];
+    (route || []).forEach(function (p) {
+      if (p && p.length >= 2) cur.push([p[0], p[1]]);
+      else { if (cur.length) segs.push(cur); cur = []; }
+    });
+    if (cur.length) segs.push(cur);
+    return segs;
+  }
+  function kmText(km) { return km >= 1 ? km.toFixed(1) + ' 公里' : Math.round(km * 1000) + ' 公尺'; }
+  function drawRoute(route, kmOverride) {
+    var segs = segmentsOf(route), drawn = segs.filter(function (s) { return s.length > 1; });
+    routeCase.setLatLngs(drawn); routeLine.setLatLngs(drawn);
     if (routeStart) { map.removeLayer(routeStart); routeStart = null; }
+    var pts = [].concat.apply([], segs);
     if (pts.length > 1) {
       routeStart = L.marker(pts[0], { interactive: false, keyboard: false,
         icon: L.divIcon({ className: 'live-start', html: '<span>起點</span>', iconSize: null }) }).addTo(map);
-      var m = 0; for (var i = 1; i < pts.length; i++) m += map.distance(pts[i - 1], pts[i]);
-      $km.textContent = m >= 1000 ? (m / 1000).toFixed(1) + ' 公里' : Math.round(m) + ' 公尺';
+      $km.textContent = kmText(kmOverride != null ? kmOverride : routeKm(route));
       $legend.hidden = false;
     } else { $legend.hidden = true; }
     return pts;
@@ -186,7 +202,7 @@ last_modified_at: 2026-11-03
     clear();
     fillDates(d.days, null);
     renderStats(d.days, null);
-    var pts = drawRoute(d.route);
+    var pts = drawRoute(d.route, dayKm(d.days, d.date));
     $legendLabel.textContent = fmtDay(d.date) + ' 走過的路';
     if (pts.length > 1) {
       map.fitBounds(routeLine.getBounds(), { padding: [40, 40], maxZoom: 16 });
@@ -199,8 +215,9 @@ last_modified_at: 2026-11-03
   function render(d) {
     fillDates(d && d.days, d && d.date);
     $legendLabel.textContent = '今天走過的路';
-    var pts = drawRoute(d && d.route);
-    todayKm = routeKm(pts);
+    var serverToday = dayKm(d && d.days, d && d.date);
+    var pts = drawRoute(d && d.route, serverToday);
+    todayKm = serverToday != null ? serverToday : routeKm(d && d.route);
     renderStats(d && d.days, d && d.date);
     if (!d || !d.active) {
       clear();
@@ -239,7 +256,8 @@ last_modified_at: 2026-11-03
       .catch(function () { setState('error', '暫時無法讀取這一天的路線', ''); });
   });
   load();
-  setInterval(load, REFRESH_MS);
+  // 分頁在背景時不更新，減少後台負擔；切回來立刻更新
+  setInterval(function () { if (!document.hidden) load(); }, REFRESH_MS);
   document.addEventListener('visibilitychange', function () { if (!document.hidden) load(); });
 })();
 </script>
