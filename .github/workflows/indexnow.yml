@@ -1,0 +1,85 @@
+# 網站更新後，自動通知 Bing（IndexNow）來抓有變動的頁面
+name: IndexNow 通知 Bing
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      all:
+        description: "通知全部頁面（勾選）或只通知這次有變動的頁面"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  pages: read
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 等 GitHub Pages 發布完成
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 40); do
+            read -r st sha <<< "$(gh api repos/${{ github.repository }}/pages/builds/latest --jq '.status + " " + .commit' 2>/dev/null || echo "unknown x")"
+            echo "第 $i 次檢查：$st $sha"
+            if [ "$st" = "built" ] && [ "$sha" = "${{ github.sha }}" ]; then exit 0; fi
+            if [ "$st" = "errored" ] && [ "$sha" = "${{ github.sha }}" ]; then echo "網站發布失敗，不通知"; exit 1; fi
+            sleep 15
+          done
+          echo "等太久，仍繼續通知"
+
+      - name: 通知 IndexNow
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          ALL: ${{ github.event_name == 'workflow_dispatch' && inputs.all }}
+        run: |
+          python3 - <<'PY'
+          import os, re, json, glob, subprocess, urllib.request
+          HOST = "mrfrancis0127.github.io"
+          BASE = "https://mrfrancis0127.github.io/ChihHsuan-2026/"
+          key = os.path.basename(glob.glob("[0-9a-f]" * 32 + ".txt")[0])[:-4]
+          sitemap = urllib.request.urlopen(BASE + "sitemap.xml").read().decode()
+          live = re.findall(r"<loc>([^<]+)</loc>", sitemap)
+
+          before, after = os.environ.get("BEFORE", ""), os.environ["AFTER"]
+          send_all = os.environ.get("ALL") == "true" or not before or set(before) == {"0"}
+          urls = set()
+          if not send_all:
+              files = subprocess.run(["git", "diff", "--name-only", before, after],
+                                     capture_output=True, text=True).stdout.split()
+              print("變動檔案：", files)
+              for f in files:
+                  if f.startswith(("_layouts/", "_includes/", "_data/", "assets/")) or f == "_config.yml":
+                      send_all = True
+                  elif f.startswith("_news/") and f.endswith(".md"):
+                      urls |= {BASE + "news/" + os.path.basename(f)[:-3] + "/", BASE + "news/", BASE}
+                  elif f.startswith("_policies/") and f.endswith(".md"):
+                      urls |= {BASE + "documents/" + os.path.basename(f)[:-3] + "/", BASE + "documents/"}
+                  elif re.fullmatch(r"index\.(html|md)", f):
+                      urls.add(BASE)
+                  elif re.fullmatch(r"[^_.][^/]*(/[^/]+)*/index\.(html|md)", f):
+                      urls.add(BASE + os.path.dirname(f) + "/")
+          if send_all:
+              urls = set(live)
+          urls = sorted(u for u in urls if u in live)
+          if not urls:
+              print("這次沒有需要通知的頁面"); raise SystemExit(0)
+          print("通知", len(urls), "頁：", *urls, sep="\n")
+          body = json.dumps({"host": HOST, "key": key,
+                             "keyLocation": BASE + key + ".txt", "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              r = urllib.request.urlopen(req); print("IndexNow 回應：", r.status, "（200 或 202 代表成功）")
+          except urllib.error.HTTPError as e:
+              print("IndexNow 錯誤：", e.code, e.read().decode()[:300]); raise SystemExit(1)
+          PY
