@@ -4,11 +4,13 @@ title: 2026 彰化縣議員第三選區投票資訊｜和美・伸港・線西
 kicker: 投票資訊
 description: 2026 年地方公職人員選舉於 11 月 28 日（星期六）投票。彰化縣議員第三選區包含和美鎮、伸港鄉、線西鄉，蘇智弦為台灣民眾黨提名候選人。本頁整理投票時間、投票資格、應攜帶證件、投票所查詢方式與投票注意事項。
 permalink: /vote/
-updated: 2026-11-02
-last_modified_at: 2026-11-02
+updated: 2026-11-16
+last_modified_at: 2026-11-16
 sources:
   - { publisher: 中央社, title: "2026九合一選舉 22縣市長登記參選名單一次看", url: "https://cna.com.tw/news/aipl/202609045002.aspx", date: "2026-09-04", supports: "投票日 11 月 28 日、參選人登記期間" }
   - { publisher: 聯合報, title: "選情初探／彰第三選區…藍綠票源重組 選情添變", url: "https://udn.com/vote2026/story/7325/9706850", date: "2026-08-22", supports: "第三選區應選 6 席" }
+  - { publisher: 全國法規資料庫, title: "公職人員選舉罷免法", url: "https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=D0020010", date: "2026-11-16 查閱", supports: "選舉人應於戶籍地投票所投票" }
+  - { publisher: 桃園市中壢區戶政事務所, title: "115年地方公職人員選舉及全國性公民投票於11/28投票", url: "https://www.zhongli-hro.tycg.gov.tw/News_Content.aspx?n=12496&s=1945703", date: "2026-11-12", supports: "內政部戶政司投票所地點查詢服務開放時間、同日舉行全國性公民投票" }
   - { publisher: 中央選舉委員會, title: "中央選舉委員會全球資訊網", url: "https://www.cec.gov.tw/", date: "2026-10-13 查閱", supports: "選舉公告、選舉公報、候選人號次與投票所資訊" }
 ---
 
@@ -33,11 +35,18 @@ sources:
 
 ## 去哪裡投票？
 
-投票所寫在投票通知單上。也可以在投票日前，到[中央選舉委員會網站](https://www.cec.gov.tw/)查詢投票所位置，或洽詢戶籍所在地的戶政事務所。
+投票所寫在投票通知單上。也可以用下面的方式查詢：
+
+- **內政部戶政司全球資訊網**的「投票所地點查詢服務」：11 月 23 日上午 8 點起開放到投票日，網址 [ris.gov.tw](https://www.ris.gov.tw/)。
+- [中央選舉委員會網站](https://www.cec.gov.tw/)，或洽詢戶籍所在地的戶政事務所。
+
+## 人在外地工作或讀書，要怎麼投票？
+
+縣議員選舉要回到**戶籍地的投票所**投票，不能在工作地或就學地投票。戶籍在和美鎮、伸港鄉或線西鄉的鄉親，11 月 28 日請記得回家投票；投票所地點寫在寄到戶籍地址的投票通知單上，可以先請家人幫忙看。
 
 ## 當天會拿到幾張票？
 
-11 月 28 日是地方公職人員選舉，和美、伸港、線西的選民同一天會投縣長、縣議員、鄉鎮長、鄉鎮民代表與村里長。**縣議員是其中一張選票**，領票時可以留意每張票的顏色與名稱。
+11 月 28 日是地方公職人員選舉，和美、伸港、線西的選民同一天會投縣長、縣議員、鄉鎮長、鄉鎮民代表與村里長。**縣議員是其中一張選票**，領票時可以留意每張票的顏色與名稱。同一天另有全國性公民投票，年滿 18 歲可以領公投票。
 
 ## 投票注意事項
 
@@ -64,6 +73,8 @@ sources:
     { "@type": "Question", "name": "2026 彰化縣議員選舉哪一天投票？", "acceptedAnswer": { "@type": "Answer", "text": "2026 年地方公職人員選舉於 11 月 28 日（星期六）投票，投票時間為上午 8 點至下午 4 點。" } },
     { "@type": "Question", "name": "彰化縣議員第三選區包含哪些地方？應選幾席？", "acceptedAnswer": { "@type": "Answer", "text": "彰化縣議員第三選舉區包含和美鎮、伸港鄉、線西鄉，依聯合報 2026 年 8 月報導應選 6 席，實際以中央選舉委員會公告為準。台灣民眾黨提名蘇智弦參選。" } },
     { "@type": "Question", "name": "蘇智弦是幾號？", "acceptedAnswer": { "@type": "Answer", "text": {% if site.data.site_info.ballot_number and site.data.site_info.ballot_number != "" %}{{ "蘇智弦為彰化縣議員第三選區 " | append: site.data.site_info.ballot_number | append: " 號候選人。" | jsonify }}{% else %}"候選人號次將由選舉委員會抽籤決定，抽籤後會在本頁公布。"{% endif %} } },
+    { "@type": "Question", "name": "人在外地工作或讀書，要怎麼投縣議員？", "acceptedAnswer": { "@type": "Answer", "text": "縣議員選舉要回到戶籍地的投票所投票，不能在工作地或就學地投票。戶籍在和美鎮、伸港鄉或線西鄉的選民，11 月 28 日要回戶籍地投票，投票所地點寫在投票通知單上。" } },
+    { "@type": "Question", "name": "怎麼查自己的投票所？", "acceptedAnswer": { "@type": "Answer", "text": "投票所寫在投票通知單上。也可以在 11 月 23 日上午 8 點起，到內政部戶政司全球資訊網的「投票所地點查詢服務」查詢，或洽詢戶籍所在地的戶政事務所。" } },
     { "@type": "Question", "name": "投票要帶什麼？", "acceptedAnswer": { "@type": "Answer", "text": "一定要帶國民身分證；可以帶印章，沒帶也可以簽名領票；投票通知單可加快查找，沒帶一樣可以投票。" } }
   ]
 }

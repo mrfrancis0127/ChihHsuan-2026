@@ -5,57 +5,62 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "蘇智弦是誰?",
+      "name": "蘇智弦是誰？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "蘇智弦,在嘉犁、詔安、鎮平長大的和美囝仔。國立彰化高中、中國文化大學國際企業管理與政治學系雙學士。曾任立法委員王安祥(和美伸港線西區特助)、廖先翔法案助理、張啟楷服務團隊成員,具備第一線法案研擬與選民服務經驗。"
+        "text": "蘇智弦，在嘉犁、詔安、鎮平長大的和美囝仔。國立彰化高中、中國文化大學國際企業管理與政治學系雙學士。曾任立法委員王安祥（和美伸港線西區特助）、廖先翔法案助理、張啓楷服務團隊成員，具備第一線法案研擬與選民服務經驗。"
       }
     },
     {
       "@type": "Question",
-      "name": "蘇智弦是哪一黨?參選什麼?",
+      "name": "蘇智弦是哪一黨？參選什麼？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "蘇智弦為台灣民眾黨提名,參選 2026 年彰化縣議員第三選區(和美鎮、伸港鄉、線西鄉),號次 1 號。期盼打破極端對立的政治藩籬,把「專業、理性、務實」帶進地方。"
+        "text": "蘇智弦為台灣民眾黨提名，參選 2026 年彰化縣議員第三選區（和美鎮、伸港鄉、線西鄉），號次 1 號。期盼打破極端對立的政治藩籬，把「專業、理性、務實」帶進地方。"
       }
     },
     {
       "@type": "Question",
-      "name": "蘇智弦的政見是什麼?",
+      "name": "蘇智弦的政見是什麼？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "以「宜居、宜業、宜遊」三大願景為主軸,推動居住正義、產業復興、交通安全、活絡觀光、全齡友愛、地方教育、治安環保與國土空間治理等八大政策。詳見完整政見。"
+        "text": "以「宜居、宜業、宜遊」三大願景為主軸，推動居住正義、產業復興、交通安全、活絡觀光、全齡友愛、地方教育、治安環保與國土空間治理等八大政策。詳見完整政見。"
       }
     },
     {
       "@type": "Question",
-      "name": "服務處提供哪些服務?",
+      "name": "服務處提供哪些服務？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "創業諮詢、育兒諮詢、長照諮詢、法律諮詢、補助申請、看診接送與各類陳情案件服務。透過 LINE 官方帳號即可預約,全部免費。"
+        "text": "創業諮詢、育兒諮詢、長照諮詢、法律諮詢、補助申請、看診接送與各類陳情案件服務。透過 LINE 官方帳號即可預約，全部免費。"
       }
     },
     {
       "@type": "Question",
-      "name": "如何聯絡蘇智弦服務團隊?",
+      "name": "如何聯絡蘇智弦服務團隊？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "服務處位於彰化縣和美鎮線東路三段 9 號(彰和路、線東路交叉路口),電話 04-7519819,行動電話 0968-722-819,或透過 Facebook、Instagram、LINE 官方帳號與我們聯繫。"
+        "text": "服務處位於彰化縣和美鎮線東路三段 9 號（彰和路、線東路交叉路口），電話 04-7519819，行動電話 0968-722-819，或透過 Facebook、Instagram、LINE 官方帳號與我們聯繫。"
       }
     },
     {
       "@type": "Question",
-      "name": "如何擔任志工或參與?",
+      "name": "如何擔任志工或參與？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "歡迎掃描或點選「尚少年挺阿弦」LINE 社群連結加入志工行列,不論是活動支援、文宣協助或社區服務,每一份力量都是改變的開始。"
+        "text": "歡迎掃描或點選「尚少年挺阿弦」LINE 社群連結加入志工行列，不論是活動支援、文宣協助或社區服務，每一份力量都是改變的開始。"
       }
-    }{% if page.url == "/faq/" %}{% assign plist = site.policies | sort: "order" %}{% for p in plist %}{% if p.faq %},
+    }{% if page.url == "/faq/" %},
+    { "@type": "Question", "name": "蘇智弦是幾號？", "acceptedAnswer": { "@type": "Answer", "text": {{ "蘇智弦是彰化縣議員第三選區 " | append: site.data.site_info.ballot_number | append: " 號候選人。11 月 28 日投票時，縣議員選票上的 " | append: site.data.site_info.ballot_number | append: " 號就是蘇智弦。" | jsonify }} } },
+    { "@type": "Question", "name": "怎麼知道蘇智弦今天在哪裡掃街？", "acceptedAnswer": { "@type": "Answer", "text": "官網的「智弦在哪裡」頁面會顯示他掃街時的即時位置、每天走過的路線與累計里程。他從 7 月 24 日起步行走訪和美、伸港、線西，累計已超過 400 公里。" } },
+    { "@type": "Question", "name": "彰化的薪水為什麼偏低？蘇智弦有什麼主張？", "acceptedAnswer": { "@type": "Answer", "text": "依勞動部勞工保險局的勞工退休金提繳工資統計，2025 年彰化縣勞工平均月薪 35,944 元，連續四年是全台最低。彰化將近一半的勞工在製造業，但彰化製造業的平均薪資只有全國製造業的三分之二左右。蘇智弦主張爭取青年創業基地、協助傳統產業升級、發展無人載具測試與高值農漁業，讓在地企業有能力調薪、年輕人留得下來。此為候選人主張，尚未實施。" } },
+    { "@type": "Question", "name": "蘇智弦當選後會怎麼做？", "acceptedAnswer": { "@type": "Answer", "text": "蘇智弦承諾問政有數據與現場勘查、陳情案件登記追蹤並回覆、照顧和美伸港線西三個鄉鎮、成果公開接受檢驗、跨黨合作爭取資源，並把八大政見拆成里程碑定期報告。" } },
+    { "@type": "Question", "name": "什麼時候投票？", "acceptedAnswer": { "@type": "Answer", "text": "2026 年 11 月 28 日（星期六）上午 8 點至下午 4 點。" } }{% assign plist = site.policies | sort: "order" %}{% for p in plist %}{% if p.faq %}{% for f in p.faq %},
     {
       "@type": "Question",
-      "name": {{ p.faq[0].q | jsonify }},
-      "acceptedAnswer": { "@type": "Answer", "text": {{ p.faq[0].a | jsonify }} }
-    }{% endif %}{% endfor %}{% endif %}
+      "name": {{ f.q | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | jsonify }} }
+    }{% endfor %}{% endif %}{% endfor %}{% endif %}
   ]
 }
 </script>

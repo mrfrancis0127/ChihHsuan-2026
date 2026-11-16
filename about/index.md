@@ -4,11 +4,16 @@ title: 蘇智弦基本資料
 kicker: 認識智弦
 description: 1 號蘇智弦，在和美嘉犁、詔安、鎮平長大的和美囝仔，曾任立法委員法案助理與地方特助，台灣民眾黨提名 2026 年彰化縣議員第三選區（和美鎮、伸港鄉、線西鄉）候選人。本頁整理他的故事、學經歷與政見，並逐項標示資料來源。
 permalink: /about/
-updated: 2026-11-07
+updated: 2026-11-16
+last_modified_at: 2026-11-16
 sources:
   - { publisher: 台灣民眾黨, title: "2026 候選人資料：蘇智弦", url: "https://www.tpp.org.tw/election2026/candidatedetail.php?cid=214", date: "2026-10-05 查閱", supports: "政黨提名、學歷、經歷、選區、政見方向" }
   - { publisher: 蘇智弦競選團隊, title: "官方網站首頁", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/", date: "2026-10-07 查閱", supports: "暱稱、成長地、志工經歷、立法院工作內容、參選初衷" }
   - { publisher: 蘇智弦競選團隊, title: "智弦在哪裡｜掃街即時位置與里程紀錄", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/live/", date: "2026-11-07 查閱", supports: "走訪里程（健行筆記 App 紀錄與官網即時定位，走路、騎腳踏車都列入）" }
+  - { publisher: 聯合新聞網, title: "藍營彰化縣長人選未定 民眾黨是否推人選 黃國昌這樣回應", url: "https://udn.com/news/story/124652/9447924", date: "2026-04-17", supports: "台灣民眾黨提名參選彰化縣議員第三選區" }
+  - { publisher: 互傳媒, title: "影／黃國昌挺蘇智弦拚議會關鍵席次 喊話「藍白合作」民眾黨說到做到", url: "https://hoomedia.com.tw/2026/09/28/170561/", date: "2026-09-28", supports: "競選總部成立、黃國昌評價" }
+  - { publisher: 聯合新聞網, title: "廢車占道、住宅囤積釀惹民怨 高采翎、蘇智弦倡建立跨局處追蹤機制", url: "https://udn.com/news/story/7325/9803932", date: "2026-10-08", supports: "住宅囤積政策主張" }
+  - { publisher: 彰化人彰化事新聞, title: "柯文哲赴彰化挺蘇智弦　肯定返鄉參選為地方爭取資源", url: "https://www.changhuanews.com/2026/11/news-0410.html", date: "2026-11-04", supports: "柯文哲評價" }
   - { publisher: 蘇智弦競選團隊, title: "柯文哲再赴和線伸　陪蘇智弦市場拜票、騎單車繞選區", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/news/2026-11-04-ko-wen-je-bike-tour/", date: "2026-11-04", supports: "柯文哲評價" }
   - { publisher: 蘇智弦競選團隊, title: "蘇智弦和美競選總部成立　黨主席黃國昌到場支持", url: "https://mrfrancis0127.github.io/ChihHsuan-2026/news/2026-09-28-campaign-hq-opening/", date: "2026-09-28", supports: "黃國昌評價" }
 ---
@@ -24,6 +29,14 @@ sources:
 .article .ab-btns a{display:inline-block;border-radius:999px;padding:10px 22px;font-weight:700;text-decoration:none}
 .article .ab-btns .ab-main{background:var(--teal-deep);color:#fff}
 .article .ab-btns .ab-sub{border:2px solid var(--teal);color:var(--teal-deep)}
+.ab-intro{font-size:1.06rem;line-height:1.85;background:var(--teal-lighter,#f2fbfa);border-radius:14px;padding:16px 18px;margin:14px 0 4px}
+.ab-top3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
+.article .ab-top3 a{display:block;border:2px solid var(--teal-light);border-radius:14px;padding:16px;text-decoration:none;color:var(--ink)}
+.article .ab-top3 a:hover{border-color:var(--teal)}
+.ab-top3 em{font-style:normal;display:inline-block;background:var(--teal-deep);color:#fff;border-radius:999px;width:28px;height:28px;line-height:28px;text-align:center;font-weight:900;margin-bottom:8px}
+.ab-top3 b{display:block;color:var(--teal-deep);font-size:1.15rem;font-weight:900;margin-bottom:6px}
+.ab-top3 span{display:block;font-size:.92rem;line-height:1.7}
+.ab-top3 i{font-style:normal;display:block;margin-top:8px;font-size:.88rem;font-weight:700;color:var(--teal-deep)}
 .ab-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0}
 .ab-fact{background:var(--teal-lighter,#f2fbfa);border:1px solid var(--teal-light);border-radius:14px;padding:16px}
 .ab-fact>b{display:block;color:var(--teal-deep);font-size:1.25rem;font-weight:900;margin-bottom:4px}
@@ -56,6 +69,7 @@ sources:
   .ab-hero img{max-width:220px;margin:0 auto}
   .ab-chips,.ab-btns{justify-content:center}
   .ab-facts{grid-template-columns:1fr}
+  .ab-top3{grid-template-columns:1fr}
   .ab-steps>li{grid-template-columns:1fr}
   .ab-pol{grid-template-columns:1fr}
 }
@@ -78,15 +92,17 @@ sources:
   </div>
 </div>
 
-## 一分鐘認識智弦
+<p class="ab-intro"><strong>蘇智弦是 2026 年彰化縣議員第三選區（和美鎮、伸港鄉、線西鄉）{{ site.data.site_info.ballot_number }} 號候選人，由台灣民眾黨提名，投票日是 11 月 28 日（星期六）。</strong>他在和美長大，畢業於國立彰化高中與中國文化大學，曾在立法院擔任法案助理與和美伸港線西區特助。7 月 24 日起，他用走路的方式拜訪和美、伸港、線西的鄉親，累計已超過 400 公里。</p>
+
+## 蘇智弦是誰？
 
 <div class="ab-facts">
   <div class="ab-fact"><b>和美囝仔</b><span>在嘉犁、詔安、鎮平一帶長大，從國小就參加公益服務。</span></div>
   <div class="ab-fact"><b>立法院第一線</b><span>待過三位立法委員的服務團隊，做法案也做選民服務。</span></div>
-  <div class="ab-fact"><b>走了 <span id="abKm">300 多</span> 公里</b><span>7 月 24 日起用雙腳走訪和美、伸港、線西，聽鄉親說家裡、巷口的事。每天的路線都公開在<a href="{{ '/live/' | relative_url }}">智弦在哪裡</a>。</span></div>
+  <div class="ab-fact"><b>走了 <span id="abKm">400 多</span> 公里</b><span>7 月 24 日起用雙腳走訪和美、伸港、線西，聽鄉親說家裡、巷口的事。每天的路線都公開在<a href="{{ '/live/' | relative_url }}">智弦在哪裡</a>。</span></div>
 </div>
 
-## 為什麼回家參選
+## 蘇智弦為什麼參選？
 
 <div class="quote-bar"><b>勤於問政：</b>「我不想只做一個『選舉才出現』的參選人。」</div>
 <div class="quote-bar"><b>勤於服務：</b>「只要跟智弦反映，不分貧富貴賤，每一位鄉親的事情都放在第一位。」</div>
@@ -94,7 +110,7 @@ sources:
 
 智弦想把在中央練就的專業帶回地方：讓長輩在家鄉安心養老，讓年輕人不必為了工作離開彰化，讓 20 年沒什麼改變的和線伸，開始變得不太一樣。
 
-## 一路走來
+## 蘇智弦做過什麼？
 
 <ol class="ab-steps">
   <li>
@@ -116,7 +132,17 @@ sources:
 <div class="ab-say"><b>柯文哲</b>肯定蘇智弦從國會助理做起，選擇回到家鄉參選、為地方爭取資源，而不是選擇較容易的都市選區。<small>2026 年 11 月 4 日陪同走訪選區時表示｜<a href="{{ '/news/2026-11-04-ko-wen-je-bike-tour/' | relative_url }}">看新聞</a></small></div>
 <div class="ab-say"><b>黃國昌</b>表示蘇智弦具備國會與地方公共事務經驗，希望鄉親給青年一個機會。<small>2026 年 9 月 28 日和美競選總部成立時表示｜<a href="{{ '/news/2026-09-28-campaign-hq-opening/' | relative_url }}">看新聞</a></small></div>
 
-<h2 id="policies">智弦的八大政見</h2>
+## 智弦最想先做的三件事
+
+<div class="ab-top3">
+  <a href="{{ '/documents/05-care/' | relative_url }}"><em>1</em><b>生育與托育有支持</b><span>爭取坐月子營養金與孕產婦心理諮商補助；提高公托名額，準公托收費比照公托並補貼差額；童萌卡適用年齡由 3 歲提高到 6 歲。</span><i>看〈全齡友愛〉政見 ›</i></a>
+  <a href="{{ '/documents/05-care/' | relative_url }}"><em>2</em><b>長輩出門有公車接駁</b><span>推動「幸福小巴」與社區預約共乘，串聯偏遠聚落到醫院、公所、市場與轉運站，長輩看病、買菜不必再麻煩家人。</span><i>看〈全齡友愛〉政見 ›</i></a>
+  <a href="{{ '/documents/01-housing/' | relative_url }}"><em>3</em><b>青年有住宅</b><span>盤點和線伸的公有地推動平價青年住宅，並引導民間建案提供平價社宅，以市價 5～7 折供青年承租或首購。</span><i>看〈居住正義〉政見 ›</i></a>
+</div>
+
+以上為候選人主張，尚未實施。
+
+<h2 id="policies">蘇智弦的八大政見</h2>
 
 點選任一項，看要解決的問題、具體做法與預期成果。
 
@@ -160,7 +186,7 @@ sources:
 </div>
 
 <script>
-// 累計公里數：與「智弦在哪裡」頁同一份資料、同一套算法（過去每天公里數＋今天即時路線），每分鐘更新；讀不到時維持「300 多」
+// 累計公里數：與「智弦在哪裡」頁同一份資料、同一套算法（過去每天公里數＋今天即時路線），每分鐘更新；讀不到時維持「400 多」
 (function(){
   var ep = {{ site.data.site_info.live_location_endpoint | default: "" | jsonify }}, el = document.getElementById('abKm');
   if (!ep || !el || !window.fetch) return;
