@@ -1,0 +1,142 @@
+---
+layout: default
+title: 彰化縣議員第三選區開票進度｜和美・伸港・線西
+short_title: 開票進度
+description: 11 月 28 日投票結束後，蘇智弦競選團隊的監票志工會從和美、伸港、線西 114 個開票所回報縣議員各候選人得票，這個頁面約每 30 秒更新一次。數字為志工回報的非官方統計。
+permalink: /count/
+last_modified_at: 2026-11-23
+---
+<style>
+.cnt-card{max-width:880px;margin:24px auto 0;background:#fff;border-radius:var(--radius);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:22px}
+.cnt-status{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:6px}
+.cnt-status b{font-size:1.5rem;font-weight:900;color:var(--teal-deep)}
+.cnt-status b span{font-size:1rem;font-weight:700;color:var(--gray)}
+.cnt-status small{color:var(--gray);font-size:.9rem}
+.cnt-prog{height:10px;background:var(--teal-light);border-radius:6px;overflow:hidden;margin-bottom:6px}
+.cnt-prog i{display:block;height:100%;width:0;background:var(--teal);transition:width .6s}
+.cnt-towns{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--gray);font-size:.9rem;margin-bottom:16px}
+.cnt-msg{text-align:center;font-weight:700;color:var(--teal-deep);padding:26px 0}
+.cnt-row{display:grid;grid-template-columns:1.6em 2.2em minmax(4.2em,6em) 1fr auto;gap:8px;align-items:center;padding:7px 8px;border-radius:10px}
+.cnt-row .pos{color:var(--gray);font-weight:700;text-align:center}
+.cnt-row .no{background:var(--ink);color:#fff;font-weight:900;text-align:center;border-radius:6px;line-height:1.7}
+.cnt-row .nm{font-weight:900;font-size:1.1rem;white-space:nowrap}
+.cnt-row .bar{height:12px;background:var(--teal-light);border-radius:4px;overflow:hidden}
+.cnt-row .bar i{display:block;height:100%;background:#9fb3b1;transition:width .6s}
+.cnt-row.in .bar i{background:var(--teal)}
+.cnt-row .v{font-weight:900;font-size:1.15rem;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cnt-row .v small{font-weight:500;color:var(--gray);font-size:.8rem;margin-left:4px}
+.cnt-row.me{background:var(--yellow)}
+.cnt-row.me .bar{background:rgba(18,52,51,.15)}
+.cnt-row.me .bar i{background:var(--teal-deep)}
+.cnt-row.me .v small,.cnt-row.me .pos{color:var(--ink)}
+.cnt-line{border-top:2px dashed #c0392b;margin:4px 0;position:relative;height:0}
+.cnt-line span{position:absolute;right:0;top:-.8em;background:#fff;color:#c0392b;font-size:.8rem;font-weight:700;padding:0 6px}
+.cnt-note{color:var(--gray);font-size:.88rem;margin-top:14px;line-height:1.7}
+.cnt-detail{max-width:880px;margin:18px auto 0}
+.cnt-detail details{background:#fff;border-radius:12px;box-shadow:var(--shadow);margin-bottom:10px;overflow:hidden}
+.cnt-detail summary{cursor:pointer;font-weight:900;color:var(--teal-deep);padding:14px 18px}
+.cnt-scroll{overflow-x:auto;padding:0 12px 12px}
+.cnt-detail table{border-collapse:collapse;font-size:.85rem;min-width:640px;width:100%;font-variant-numeric:tabular-nums}
+.cnt-detail th,.cnt-detail td{padding:5px 6px;text-align:right;border-bottom:1px solid var(--teal-light);white-space:nowrap}
+.cnt-detail th:first-child,.cnt-detail td:first-child{text-align:left;position:sticky;left:0;background:#fff}
+.cnt-detail th{color:var(--gray);font-weight:700;line-height:1.3}
+.cnt-detail .mecol{background:#fff7d1;font-weight:900}
+.cnt-detail tr.wait td{color:#9fb3b1}
+@media(max-width:640px){.cnt-card{padding:16px 12px}.cnt-row{gap:6px;padding:6px 4px}.cnt-row .nm{font-size:1rem}}
+</style>
+<main class="article-wrap">
+  <div class="container">
+    <div class="eyebrow">開票進度</div>
+    <h1 class="sec-title">縣議員第三選區開票進度</h1>
+    <p class="sec-sub">和美、伸港、線西 114 個開票所，由監票志工在現場回報，約每 30 秒更新一次。</p>
+
+    <div class="cnt-card">
+      <div id="cntMsg" class="cnt-msg" role="status">讀取中…</div>
+      <div id="cntBody" hidden>
+        <div class="cnt-status">
+          <b><span>已回報</span> <i id="cntDone" style="font-style:normal">0</i> <span>/ <i id="cntTotal" style="font-style:normal">114</i> 個開票所</span></b>
+          <small>更新時間 <span id="cntUpd">--:--</span></small>
+        </div>
+        <div class="cnt-prog" aria-hidden="true"><i id="cntBar"></i></div>
+        <div class="cnt-towns" id="cntTowns"></div>
+        <div id="cntRank"></div>
+      </div>
+      <p class="cnt-note">這是蘇智弦競選團隊志工在各開票所抄錄回報的<b>非官方統計</b>，只包含已回報的開票所，可能有誤差或延遲。正式結果以中央選舉委員會公告為準。</p>
+    </div>
+
+    <div class="cnt-detail" id="cntDetail" hidden></div>
+  </div>
+</main>
+<script>
+(function () {
+  var API = {{ site.data.site_info.count_endpoint | default: "" | jsonify }};
+  var CSV = {{ site.data.site_info.count_csv_url | default: "" | jsonify }};
+  var ME = {{ site.data.site_info.name | jsonify }};
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function fmt(n) { return Number(n).toLocaleString('en-US'); }
+  function msg(t) { $('cntMsg').textContent = t; $('cntMsg').hidden = false; }
+  var WAIT = '11 月 28 日（六）下午 4 點投票結束後，開始更新開票進度。';
+
+  function parse(text) {
+    var t = text.replace(/^﻿/, '').trim();
+    if (t.charAt(0) === '"') t = t.slice(1, t.lastIndexOf('"')).replace(/""/g, '"');
+    return JSON.parse(t);
+  }
+
+  function render(d) {
+    if (!d || !d.open) { $('cntBody').hidden = true; $('cntDetail').hidden = true; msg(WAIT); return; }
+    $('cntMsg').hidden = true; $('cntBody').hidden = false;
+    var n = d.cands.length, tot = [], towns = {}, order = [], i;
+    for (i = 0; i < n; i++) tot.push(0);
+    d.stations.forEach(function (s) {
+      var t = towns[s[1]] || (towns[s[1]] = { d: 0, a: 0, rows: [] }); t.a++; t.rows.push(s);
+      if (s[3]) { t.d++; s[3].forEach(function (v, k) { tot[k] += v; }); }
+    });
+    var all = tot.reduce(function (a, b) { return a + b; }, 0), max = Math.max.apply(null, tot) || 1;
+    $('cntDone').textContent = d.done; $('cntTotal').textContent = d.total; $('cntUpd').textContent = d.updated;
+    $('cntBar').style.width = (d.total ? d.done / d.total * 100 : 0) + '%';
+    $('cntTowns').innerHTML = Object.keys(towns).map(function (k) { return '<span>' + esc(k) + ' ' + towns[k].d + '/' + towns[k].a + '</span>'; }).join('');
+    d.cands.forEach(function (c, k) { order.push({ no: c.no, name: c.name, v: tot[k] }); });
+    if (all) order.sort(function (a, b) { return b.v - a.v || a.no - b.no; });
+    var h = '';
+    order.forEach(function (o, k) {
+      if (all && k === d.seats) h += '<div class="cnt-line"><span>應選 ' + d.seats + ' 席</span></div>';
+      h += '<div class="cnt-row' + (all && k < d.seats ? ' in' : '') + (o.name === ME ? ' me' : '') + '"><div class="pos">' + (all ? k + 1 : '') + '</div><div class="no">' + o.no + '</div><div class="nm">' + esc(o.name) + '</div>' +
+        '<div class="bar"><i style="width:' + (o.v / max * 100) + '%"></i></div><div class="v">' + fmt(o.v) + '<small>' + (all ? (o.v / all * 100).toFixed(1) : '0.0') + '%</small></div></div>';
+    });
+    $('cntRank').innerHTML = h;
+
+    var open = {}; Array.prototype.forEach.call(document.querySelectorAll('#cntDetail details'), function (x) { open[x.getAttribute('data-t')] = x.open; });
+    var dh = '';
+    Object.keys(towns).forEach(function (k) {
+      var t = towns[k], sub = d.cands.map(function () { return 0; });
+      dh += '<details data-t="' + esc(k) + '"' + (open[k] ? ' open' : '') + '><summary>' + esc(k) + '各開票所得票（' + t.d + '/' + t.a + ' 所已回報）</summary><div class="cnt-scroll"><table><thead><tr><th>開票所</th>';
+      d.cands.forEach(function (c) { dh += '<th' + (c.name === ME ? ' class="mecol"' : '') + '>' + c.no + '<br>' + esc(c.name) + '</th>'; });
+      dh += '</tr></thead><tbody>';
+      t.rows.forEach(function (s) {
+        dh += '<tr' + (s[3] ? '' : ' class="wait"') + '><td>' + s[0] + ' ' + esc(s[2]) + '</td>';
+        d.cands.forEach(function (c, j) { var v = s[3] ? s[3][j] : null; if (v !== null) sub[j] += v; dh += '<td' + (c.name === ME ? ' class="mecol"' : '') + '>' + (v === null ? '–' : v) + '</td>'; });
+        dh += '</tr>';
+      });
+      dh += '<tr><td><b>小計</b></td>'; sub.forEach(function (v, j) { dh += '<td' + (d.cands[j].name === ME ? ' class="mecol"' : '') + '><b>' + fmt(v) + '</b></td>'; });
+      dh += '</tr></tbody></table></div></details>';
+    });
+    $('cntDetail').innerHTML = dh; $('cntDetail').hidden = false;
+  }
+
+  function get(url) {
+    return fetch(url + (url.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); });
+  }
+  // 先讀回報系統的公開統計（約 30 秒內更新）；讀不到時改讀試算表發布的備援檔（延遲 1～5 分鐘）。
+  function pull() {
+    var p = API ? get(API + '?api=public').then(function (t) { return JSON.parse(t); }) : Promise.reject();
+    p.catch(function () { if (!CSV) throw new Error('no source'); return get(CSV).then(parse); })
+      .then(render)
+      .catch(function () { if ($('cntBody').hidden) msg('目前讀不到資料，請稍後再試。'); });
+  }
+  if (!API && !CSV) { msg(WAIT); return; }
+  pull(); setInterval(function () { if (!document.hidden) pull(); }, 30000);
+})();
+</script>

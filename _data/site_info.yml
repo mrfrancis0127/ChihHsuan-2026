@@ -13,3 +13,5 @@ donation_email: ""       # 政治獻金申報收件信箱（確認後填入）
 ballot_number: "1"     # 候選人號次（抽籤後填數字，例："3"），投票資訊頁會自動顯示
 donate_url: "https://donate.tpp.org.tw/support/oFetuvTb"   # 線上捐款平台網址（台灣民眾黨小額捐款頁）
 live_location_endpoint: "https://script.google.com/macros/s/AKfycbxB-9Okb1c1Y-MUxIpHuvz2rvFe-XOr6CgluN1YsWSiRO2YNfaxddEFjrRG2uNRrl5vvg/exec"   # 即時位置：貼上 Apps Script 網頁應用程式網址（…/exec）；空白時「智弦在哪裡」頁顯示「即將開放」
+count_endpoint: "https://script.google.com/macros/s/AKfycbwHjWGh2jOtqCMDpD3ZyNMCs_e3g3hbCPrVbKqYeC_hhYe3IKDsuvRTz1j-TzSZCbKEvg/exec"   # 開票進度頁：貼上開票回報系統的 Apps Script 網址（…/exec）；空白時 /count/ 顯示「投票結束後開始更新」
+count_csv_url: ""    # 開票進度頁備援：試算表「公開統計」發布到網路的 CSV 網址（可留空）
